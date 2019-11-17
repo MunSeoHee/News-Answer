@@ -18,5 +18,7 @@ $sql = "SELECT userkey from user where userkey='dfse'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 echo $row['userkey'];
-echo $row;
+if ($row['userkey'] == ''){
+    echo 'dfdf';
+}
 ?>
