@@ -17,8 +17,7 @@
             $sql = "SELECT userkey from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
-            $row = $row['userkey'];
-            if($row == ''){
+            if($row['userkey'] == ''){
                 $session = 1;
                 echo <<<EOD
                 {
