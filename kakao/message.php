@@ -17,7 +17,7 @@
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
             $row = $row['userkey'];
-            echo <<< EOD
+            echo <<<EOD
                 {
                     "message":
                     {
@@ -29,7 +29,7 @@
                         "buttons": ["가입", "기록", "확인"]
                     }
                 }
-                EOD;
+EOD;
             break;
  
         case "메뉴2":
