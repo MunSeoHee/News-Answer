@@ -11,21 +11,6 @@
         '3306'
     );
 
-    if ($session == 1){
-        echo <<<EOD
-                {
-                    "message":
-                    {
-                        "text": "세션1"
-                    },
-                    "keyboard":
-                    {
-                        "type": "text"
-                    }
-                }
-EOD;
-    }
- 
     switch($content)
     {
         case "가입":
@@ -33,7 +18,6 @@ EOD;
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
             if($row['userkey'] == ''){
-                $session = 1;
                 echo <<<EOD
                 {
                     "message":
@@ -96,16 +80,19 @@ EOD;
             break;
  
         default:
+            $sql = "insert into user (userkey, pw) values ($userkey, $content)";
+            $result = mysqli_query($con, $sql);
+
             echo '
                 {
                     "message":
                     {
-                        "text": "잘못된 벨류입니다."
+                        "text": "회원가입 완료"
                     },
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["메뉴1", "메뉴2", "메뉴3"]
+                        "buttons": ["가입", "기록", "확인"]
                     }
                 }';
             break;
