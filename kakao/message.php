@@ -81,7 +81,8 @@ EOD;
  
         default:
             $sql = "insert into user (userkey, pw) values ($userkey, $content)";
-            $result = mysqli_query($con, $sql);
+            mysqli_query($con, $sql);
+            mysqli_close($con);
 
             echo '
                 {
