@@ -18,11 +18,27 @@
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
             $row = $row['userkey'];
-            echo <<<EOD
+            if($row == ''){
+                $session = 1;
+                echo <<<EOD
                 {
                     "message":
                     {
-                        "text": "$userkey"
+                        "text": "가입을 위해 비밀번호를 입력해주세요."
+                    },
+                    "keyboard":
+                    {
+                        "type": "text",
+                    }
+                }
+EOD;
+            }
+            else{
+                echo <<<EOD
+                {
+                    "message":
+                    {
+                        "text": "이미 가입이 되어있습니다."
                     },
                     "keyboard":
                     {
@@ -31,6 +47,8 @@
                     }
                 }
 EOD;
+            }
+            
             break;
  
         case "메뉴2":
@@ -77,5 +95,24 @@ EOD;
                     }
                 }';
             break;
+    }
+
+    switch($session){
+        case 1:
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "session1"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["가입", "기록", "확인"]
+                }
+            }
+EOD;
+        }
+
     }
 ?>
