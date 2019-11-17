@@ -19,12 +19,11 @@
             $sql = "SELECT userkey from user";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
-            echo $row["userkey"];
             echo '
                 {
                     "message":
                     {
-                        "text": "$row['userkey']"
+                        "text": "$row"
                     },
                     "keyboard":
                     {
