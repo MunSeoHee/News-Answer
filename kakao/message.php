@@ -19,7 +19,7 @@
             $sql = "SELECT userkey from user";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
-            echo '
+            echo <<< EOD
                 {
                     "message":
                     {
@@ -30,7 +30,8 @@
                         "type": "buttons",
                         "buttons": ["메뉴1", "메뉴2", "메뉴3"]
                     }
-                }';
+                };
+                EOD;
             break;
  
         case "메뉴2":
