@@ -57,7 +57,7 @@ EOD;
                         "message_button": 
                         {
                             "label": "기록하러 가기",
-                            "url": "http://ec2-18-224-229-40.us-east-2.compute.amazonaws.com/php_project/kakao/input.php"
+                            "url": "http://ec2-18-224-229-40.us-east-2.compute.amazonaws.com/php_project/kakao/add.php"
                         }
                     },
                     "keyboard":
