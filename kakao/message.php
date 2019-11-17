@@ -14,7 +14,7 @@
     switch($content)
     {
         case "가입":
-            $sql = "SELECT userkey from user";
+            $sql = "SELECT userkey from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
             $row = $row['userkey'];

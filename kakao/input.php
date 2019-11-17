@@ -14,8 +14,9 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 echo $row["VERSION()"];
 
-$sql = "SELECT userkey from user";
+$sql = "SELECT userkey from user where userkey='dfse'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 echo $row['userkey'];
+echo $row;
 ?>
