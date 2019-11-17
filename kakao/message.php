@@ -80,7 +80,7 @@ EOD;
             break;
  
         default:
-            $sql = "insert into user (userkey, pw) values ($userkey, $content)";
+            $sql = "insert into user (userkey, pw) values ('$userkey', '$content')";
             mysqli_query($con, $sql);
             mysqli_close($con);
 
