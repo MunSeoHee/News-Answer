@@ -27,7 +27,7 @@
                     },
                     "keyboard":
                     {
-                        "type": "text",
+                        "type": "text"
                     }
                 }
 EOD;
