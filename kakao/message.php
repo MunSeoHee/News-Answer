@@ -10,6 +10,21 @@
         'sys',
         '3306'
     );
+
+    if ($session == 1){
+        echo <<<EOD
+                {
+                    "message":
+                    {
+                        "text": "세션1"
+                    },
+                    "keyboard":
+                    {
+                        "type": "text"
+                    }
+                }
+EOD;
+    }
  
     switch($content)
     {
