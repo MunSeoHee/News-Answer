@@ -1,6 +1,7 @@
 <?php
     $data = json_decode(file_get_contents('php://input'), true);
     $content = $data["content"];
+
     $con = mysqli_connect(
         '18.224.229.40',
         'admin',
@@ -25,9 +26,9 @@
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["메뉴1", "메뉴2", "메뉴3"]
+                        "buttons": ["가입", "기록", "확인"]
                     }
-                };
+                }
                 EOD;
             break;
  
