@@ -1,15 +1,30 @@
 <?php
     $data = json_decode(file_get_contents('php://input'), true);
     $content = $data["content"];
+    $con = mysqli_connect(
+        '18.224.229.40',
+        'admin',
+        'admin',
+        'sys',
+        '3306'
+    );
  
     switch($content)
     {
-        case "기록":
+        case "가입":
+            
+            if (mysqli_connect_errno()){
+                echo "fail to connect mysql : ".mysqli_connect_error();
+            }
+            $sql = "SELECT userkey from user";
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_array($result);
+            echo $row["userkey"];
             echo '
                 {
                     "message":
                     {
-                        "text": "메뉴1을 선택하셨습니다."
+                        "text": "$row['userkey']"
                     },
                     "keyboard":
                     {
