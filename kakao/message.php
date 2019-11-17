@@ -50,14 +50,14 @@ EOD;
             break;
  
         case "기록":
-            echo '
+            echo <<<EOD
                 {
                     "message":
                     {
                         "message_button": 
                         {
                             "label": "기록하러 가기",
-                            "url": "http://ec2-18-224-229-40.us-east-2.compute.amazonaws.com/php_project/kakao/add.php"
+                            "url": "http://ec2-18-224-229-40.us-east-2.compute.amazonaws.com/php_project/kakao/add.php?user='$userkey'"
                         }
                     },
                     "keyboard":
@@ -65,7 +65,8 @@ EOD;
                         "type": "buttons",
                         "buttons": ["가입", "기록", "확인"]
                     }
-                }';
+                }
+EOD;
             break;
  
         case "메뉴3":
