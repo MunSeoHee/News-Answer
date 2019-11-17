@@ -97,22 +97,5 @@ EOD;
             break;
     }
 
-    switch($session){
-        case 1:
-            echo <<<EOD
-            {
-                "message":
-                {
-                    "text": "session1"
-                },
-                "keyboard":
-                {
-                    "type": "buttons",
-                    "buttons": ["가입", "기록", "확인"]
-                }
-            }
-EOD;
-        }
-
-    }
+    
 ?>
