@@ -49,17 +49,21 @@ EOD;
             
             break;
  
-        case "메뉴2":
+        case "기록":
             echo '
                 {
                     "message":
                     {
-                        "text": "메뉴2를 선택하셨습니다."
+                        "message_button": 
+                        {
+                            "label": "기록하러 가기",
+                            "url": "http://ec2-18-224-229-40.us-east-2.compute.amazonaws.com/php_project/kakao/input.php"
+                        }
                     },
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["메뉴1", "메뉴2", "메뉴3"]
+                        "buttons": ["가입", "기록", "확인"]
                     }
                 }';
             break;
