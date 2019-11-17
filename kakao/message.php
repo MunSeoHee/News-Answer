@@ -1,5 +1,6 @@
 <?php
     $data = json_decode(file_get_contents('php://input'), true);
+    $userkey = $data["user_key"];
     $content = $data["content"];
 
     $con = mysqli_connect(
@@ -21,7 +22,7 @@
                 {
                     "message":
                     {
-                        "text": "$row"
+                        "text": "$userkey"
                     },
                     "keyboard":
                     {
