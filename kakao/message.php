@@ -23,7 +23,7 @@
                 {
                     "message":
                     {
-                        "text": "$row"
+                        "text": "$row['userkey']"
                     },
                     "keyboard":
                     {
