@@ -4,7 +4,7 @@
  
     switch($content)
     {
-        case "메뉴1":
+        case "기록":
             echo '
                 {
                     "message":
