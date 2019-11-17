@@ -12,10 +12,6 @@
     switch($content)
     {
         case "가입":
-            
-            if (mysqli_connect_errno()){
-                echo "fail to connect mysql : ".mysqli_connect_error();
-            }
             $sql = "SELECT userkey from user";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
