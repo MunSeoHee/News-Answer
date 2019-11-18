@@ -21,7 +21,7 @@
             {
                 "message":
                 {
-                    "text": "당신의 학점은 입니다."
+                    "text": "당신의 학점은 $score 입니다."
                 },
                 "keyboard":
                 {
@@ -30,7 +30,6 @@
                 }
             }
 EOD;
-        }
             
             break;
  
@@ -70,10 +69,6 @@ EOD;
             break;
  
         default:
-            $sql = "insert into user (userkey, pw) values ('$userkey', '$content')";
-            mysqli_query($con, $sql);
-            mysqli_close($con);
-
             echo '
                 {
                     "message":
