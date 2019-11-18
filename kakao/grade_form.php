@@ -6,9 +6,9 @@ echo $user;
 
 
 <form name="form" method="post" action="grade.php">
-    <input type="text" name="subject">
-    <input type="number" name="point">
-    <select name="grade">
+    과목명 : <input type="text" name="subject">
+    학점 : <input type="number" name="point">
+    점수 : <select name="grade">
         <option value="4.5">A+</option>
         <option value="4.0">A</option>
         <option value="3.5">B+</option>

@@ -21,12 +21,12 @@
             {
                 "message":
                 {
-                    "text": "당신의 이수 학점은 $total_point $total_score 입니다."
+                    "text": "당신의 이수 학점은 $total_point 입니다."
                 },
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["학점", "도서관", "공지"]
+                    "buttons": ["학점"]
                 }
             }
 EOD;
@@ -42,7 +42,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["학점", "도서관", "공지"]
+                    "buttons": ["학점"]
                 }
             }
 EOD;
@@ -63,7 +63,7 @@ EOD;
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["학점", "도서관", "공지"]
+                        "buttons": ["학점"]
                     }
                 }
 EOD;
