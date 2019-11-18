@@ -16,8 +16,8 @@ $row = mysqli_fetch_array($result);
 $total_point = 0;
 $total_score = 0;
 foreach($row as $i){
-    $total_point += $i['point'];
-    $total_score += $i['score'] * $i['point'];
+    $total_point = $total_point + $i['point'];
+    $total_score = $total_score + ($i['score'] * $i['point']);
 }
 
 $score = $total_score / $total_point;
