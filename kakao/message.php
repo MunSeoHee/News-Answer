@@ -13,7 +13,7 @@
 
     switch($content)
     {
-        case "가입":
+        case "도서관":
             $sql = "SELECT userkey from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
@@ -49,7 +49,7 @@ EOD;
             
             break;
  
-        case "기록":
+        case "학점":
             echo <<<EOD
                 {
                     "message":
@@ -69,7 +69,7 @@ EOD;
 EOD;
             break;
  
-        case "메뉴3":
+        case "공지":
             echo '
                 {
                     "message":

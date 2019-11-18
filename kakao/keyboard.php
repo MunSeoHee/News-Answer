@@ -2,6 +2,6 @@
     echo '
     {    
         "type": "buttons",
-        "buttons": ["가입", "기록", "확인"]
+        "buttons": ["학점", "도서관", "공지"]
     }';
 ?>
