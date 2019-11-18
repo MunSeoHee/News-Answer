@@ -21,7 +21,7 @@
             {
                 "message":
                 {
-                    "text": "당신의 이수 학점은 $total_point $total_score $r $p 입니다."
+                    "text": "당신의 이수 학점은 $total_point $total_score 입니다."
                 },
                 "keyboard":
                 {
