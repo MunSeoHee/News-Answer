@@ -3,7 +3,7 @@ $user = $_GET["user"];
 echo $user;
 ?>
 
-<form name="login" method="post" action="input.php">
+<form name="login" method="post" action="login.php">
     <input type="text" name="pw">
     <input type="hidden" name="user" value="<?=$user?>">
     <button onclick="check_input()"></button>
