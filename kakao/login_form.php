@@ -6,7 +6,7 @@ echo $user;
 
 <div id="login_form">
     <form name="login" method="post" action="login.php">
-        <input type="text" name="pw">
+        <input type="text" name="pw" id="pw">
         <input type="hidden" name="user" value="<?=$user?>">
         <button onclick="check_input()">제출</button>
     </form>
