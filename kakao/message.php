@@ -3,6 +3,9 @@
     $userkey = $data["user_key"];
     $content = $data["content"];
 
+    $_POST["userkey"] = $userkey;
+    include './grade_point_count.php';
+
     $con = mysqli_connect(
         '18.224.229.40',
         'admin',
@@ -13,43 +16,25 @@
 
     switch($content)
     {
-        case "도서관":
-            $sql = "SELECT userkey from user where userkey='$userkey'";
-            $result = mysqli_query($con, $sql);
-            $row = mysqli_fetch_array($result);
-            if($row['userkey'] == ''){
-                echo <<<EOD
+        case "학점 계산":
+            echo <<<EOD
+            {
+                "message":
                 {
-                    "message":
-                    {
-                        "text": "가입을 위해 비밀번호를 입력해주세요."
-                    },
-                    "keyboard":
-                    {
-                        "type": "text"
-                    }
-                }
-EOD;
-            }
-            else{
-                echo <<<EOD
+                    "text": "당신의 학점은 $score 입니다."
+                },
+                "keyboard":
                 {
-                    "message":
-                    {
-                        "text": "이미 가입이 되어있습니다."
-                    },
-                    "keyboard":
-                    {
-                        "type": "buttons",
-                        "buttons": ["가입", "기록", "확인"]
-                    }
+                    "type": "buttons",
+                    "buttons": ["학점", "도서관", "공지"]
                 }
-EOD;
             }
+EOD;
+        }
             
             break;
  
-        case "학점":
+        case "학점 기록":
             echo <<<EOD
                 {
                     "message":
@@ -63,23 +48,23 @@ EOD;
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["가입", "기록", "확인"]
+                        "buttons": ["학점", "도서관", "공지"]
                     }
                 }
 EOD;
             break;
  
-        case "공지":
+        case "학점":
             echo '
                 {
                     "message":
                     {
-                        "text": "메뉴3을 선택하셨습니다."
+                        "text": "원하는 메뉴를 선택해주세요."
                     },
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["메뉴1", "메뉴2", "메뉴3"]
+                        "buttons": ["학점 기록", "학점 계산"]
                     }
                 }';
             break;
