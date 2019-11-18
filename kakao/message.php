@@ -21,7 +21,7 @@
             {
                 "message":
                 {
-                    "text": "당신의 학점은 $score 입니다."
+                    "text": "당신의 학점은 입니다."
                 },
                 "keyboard":
                 {
