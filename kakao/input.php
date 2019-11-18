@@ -1,5 +1,9 @@
 <?php
+$user = $_POST["user"];
+$pw = $_POST["pw"];
 
+echo $user;
+echo $pw;
 $con = mysqli_connect(
     '18.224.229.40',
     'admin',
@@ -22,4 +26,6 @@ echo $row['userkey'];
 if ($row['userkey'] == ''){
     echo 'dfdf';
 }
+
+
 ?>
