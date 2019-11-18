@@ -18,8 +18,8 @@ $total_score = 0;
 $r = $row['score'];
 $p = $row['point'];
 foreach($row as $i){
-    $total_point = $total_point + $i['point'];
-    $total_score = $total_score + ($i['score'] * $i['point']);
+    $total_point = $total_point + int($i['point']);
+    $total_score = $total_score + (float($i['score']) * int($i['point']));
 }
 
 $score = $total_score / $total_point;
