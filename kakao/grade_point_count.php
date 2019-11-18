@@ -21,4 +21,5 @@ foreach($row as $i){
 }
 
 $score = $total_score / $total_point;
+$score = round($score, 2);
 ?>

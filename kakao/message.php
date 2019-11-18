@@ -16,6 +16,22 @@
 
     switch($content)
     {
+        case "총 이수 학점":
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "당신의 이수 학점은 $total_point 입니다."
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["학점", "도서관", "공지"]
+                }
+            }
+EOD;
+            
+            break;
         case "학점 계산":
             echo <<<EOD
             {
@@ -63,7 +79,7 @@ EOD;
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["학점 기록", "학점 계산"]
+                        "buttons": ["학점 기록", "학점 계산", "총 이수 학점"]
                     }
                 }';
             break;
