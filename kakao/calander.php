@@ -9,7 +9,7 @@ $con = mysqli_connect(
     '3306'
 );
 
-$sql = "insert into calander(month, date, plan) values (";
+
 foreach($date as $d){
     // url을 설정
     curl_setopt($ch, CURLOPT_URL, 'http://www.gachon.ac.kr/affairs/info/02.jsp?mode=list&boardType_seq=395&searchopt=&searchword=&cal_mode=next&in_date='.$d); 
@@ -54,10 +54,11 @@ foreach($date as $d){
         $event = trim($event[0]);
         
 
-        $sql = $sql.$month.",".$day.",".$event.")";
-        echo $sql;
+        
+        $sql = "insert into calander(month, date, plan) values ('$month','$day','$event')";
+        echo $sql.'<br>';
         mysqli_query($con, $sql);
-        $sql = "insert into calander(month, date, plan) values (";
+        
         
 
     }
