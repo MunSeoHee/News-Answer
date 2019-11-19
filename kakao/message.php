@@ -359,7 +359,7 @@ EOD;
         default:
             $sql = "select EXISTS (select * from user where userkey='$userkey') as success";
             $result = mysqli_query($con, $sql);
-            if $result == 1{
+            if ($result == 1){
                 $sql = "UPDATE user SET major = '$content' where userkey='$userkey'";
                 mysqli_query($con, $sql);
                 echo '
@@ -378,7 +378,7 @@ EOD;
             }
                 
             else{
-                $sql = "insert into user (userkey, major) values ('$userkey', '$content')"
+                $sql = "insert into user (userkey, major) values ('$userkey', '$content')";
                 mysqli_query($con, $sql);
                 echo '
                     {
