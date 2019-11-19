@@ -10,8 +10,8 @@ $con = mysqli_connect(
     '3306'
 );
 
-$arr = array('bionano/03', 'bionano/06', 'bionano/05', 'bionano/04', 'bionano/01', 'bionano/02',
-'archi/01', 'archi/02', 'archi/03', 'archi/04', 'archi/05',
+$arr = array('engineering/02', 'engineering/03', 'engineering/09', 'engineering/04', 'engineering/05', 'engineering/06', 'engineering/10',
+'business1/01', 'business1/05'
         );
 
 foreach($arr as $a){
