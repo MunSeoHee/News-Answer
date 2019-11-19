@@ -371,7 +371,7 @@ EOD;
                         "keyboard":
                         {
                             "type": "buttons",
-                            "buttons": ["가입", "기록", "확인"]
+                            "buttons": ["학점", "공지", "학사일정", "교육과정", "학과등록"]
                         }
                     }';
                 break;
@@ -389,7 +389,7 @@ EOD;
                         "keyboard":
                         {
                             "type": "buttons",
-                            "buttons": ["가입", "기록", "확인"]
+                            "buttons": ["학점", "공지", "학사일정", "교육과정", "학과등록"]
                         }
                     }';
 
