@@ -116,7 +116,6 @@ EOD;
             break;
 
         case "11월":
-            
             $sql = "select * from calander where month='11월'";
             $result = mysqli_query($con, $sql);
             $calander = '';
@@ -138,51 +137,68 @@ EOD;
 EOD;
             break;
         case "12월":
-            
-            echo '
+            $sql = "select * from calander where month='12월'";
+            $result = mysqli_query($con, $sql);
+            $calander = '';
+            while( $row = mysqli_fetch_array($result) ) {
+                $calander = $calander.$row['date']." : ".$row['plan'].'\n';
+              }
+            echo <<<EOD
+            {
+                "message":
                 {
-                    "message":
-                    {
-                        "text": "원하는 달을 선택해주세요."
-                    },
-                    "keyboard":
-                    {
-                        "type": "buttons",
-                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
-                    }
-                }';
+                    "text": "$calander"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
+                }
+            }
+EOD;
             break;
         case "1월":
-            
-            echo '
+            $sql = "select * from calander where month='1월'";
+            $result = mysqli_query($con, $sql);
+            $calander = '';
+            while( $row = mysqli_fetch_array($result) ) {
+                $calander = $calander.$row['date']." : ".$row['plan'].'\n';
+              }
+            echo <<<EOD
+            {
+                "message":
                 {
-                    "message":
-                    {
-                        "text": "원하는 달을 선택해주세요."
-                    },
-                    "keyboard":
-                    {
-                        "type": "buttons",
-                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
-                    }
-                }';
+                    "text": "$calander"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
+                }
+            }
+EOD;
             break;
         case "2월":
-            
-            echo '
+            $sql = "select * from calander where month='2월'";
+            $result = mysqli_query($con, $sql);
+            $calander = '';
+            while( $row = mysqli_fetch_array($result) ) {
+                $calander = $calander.$row['date']." : ".$row['plan'].'\n';
+              }
+            echo <<<EOD
+            {
+                "message":
                 {
-                    "message":
-                    {
-                        "text": "원하는 달을 선택해주세요."
-                    },
-                    "keyboard":
-                    {
-                        "type": "buttons",
-                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
-                    }
-                }';
+                    "text": "$calander"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
+                }
+            }
+EOD;
             break;
-
         case "교육과정":
             echo '
                 {
