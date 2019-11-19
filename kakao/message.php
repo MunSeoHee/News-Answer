@@ -120,7 +120,7 @@ EOD;
             $sql = "select * from calander where month='11월'";
             $result = mysqli_query($con, $sql);
             $calander = '';
-            while( $row = mysqli_fetch_array($result) ) {
+            while( $row = mysqli_fetch_array($calander) ) {
                 $calander = $calander.$row['date']." : ".$row['plan'].'\n';
               }
             echo <<<EOD
