@@ -119,17 +119,17 @@ EOD;
             $_POST['date'] = $date;
             include './calander.php';
             echo <<<EOD
+            {
+                "message":
                 {
-                    "message":
-                    {
-                        "text": "$calander"
-                    },
-                    "keyboard":
-                    {
-                        "type": "buttons",
-                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
-                    }
+                    "text": $calander
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
                 }
+            }
 EOD;
             break;
         case "12월":

@@ -2,7 +2,7 @@
 $ch = curl_init(); 
 
 $date = $_POST['date'];
-
+$date = '201910';
 
 // url을 설정
 curl_setopt($ch, CURLOPT_URL, 'http://www.gachon.ac.kr/affairs/info/02.jsp?mode=list&boardType_seq=395&searchopt=&searchword=&cal_mode=next&in_date='.$date); 
