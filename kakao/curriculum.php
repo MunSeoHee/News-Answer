@@ -10,8 +10,8 @@ $con = mysqli_connect(
     '3306'
 );
 
-$arr = array('socialscience/02', 'socialscience/03', 'socialscience/04', 'socialscience/05', 'socialscience/06', 'socialscience/07', 'socialscience/08'
-        );
+$arr = array('civilization/01', 'civilization/02', 'civilization/03', 'civilization/04',
+'law/01', 'law/02', 'law/06', 'law/07');
 
 foreach($arr as $a){
 // url을 설정
