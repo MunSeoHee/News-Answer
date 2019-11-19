@@ -377,6 +377,7 @@ EOD;
                 break;
             else:
                 $sql = "insert into user (userkey, major) values ('$userkey', '$content')"
+                mysqli_query($con, $sql);
                 echo '
                     {
                         "message":
