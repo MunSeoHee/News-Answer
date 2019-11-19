@@ -33,12 +33,10 @@ $content = curl_exec($ch);
 
 $table = explode('<tbody>', $content);
 $table = explode('</tbody>', $table[1]);
-echo $table[0];
 $major = explode('<h3><a', $content);
 $major = explode('alt="', $major[1]);
 $major = explode('"', $major[1]);
 $major = trim($major[0]);
-echo $major;
 
 $tr = explode("<tr>", $table[0]);
 array_shift($tr);
@@ -70,7 +68,6 @@ foreach($tr as $t){
 
 $table = explode('<tbody>', $content);
 $table = explode('</tbody>', $table[2]);
-echo $table[0];
 
 $tr = explode("<tr>", $table[0]);
 array_shift($tr);
