@@ -357,7 +357,7 @@ EOD;
             break;
  
         default:
-            $sql = "select EXISTS (select * from user where userkey='$userkey') as success";
+            $sql = "select * from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
             if (mysql_num_rows($result)){
                 $sql = "UPDATE user SET major = '$content' where userkey='$userkey'";
