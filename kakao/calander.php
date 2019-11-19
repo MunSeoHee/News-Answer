@@ -1,5 +1,3 @@
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-
 <?php 
 $ch = curl_init(); 
 
@@ -29,18 +27,16 @@ $calander = '';
 for($i=1; $i<count($plan); $i++){
     $day = explode('<span>', $plan[$i]);
     $day = trim($day[0]);
-    echo $day.'<br>';
+   
     
 
     $event = explode('">', $plan[$i]);
     $event = explode("</a>", $event[1]);
     $event = trim($event[0]);
-    echo $event.'<br>';
+    
 
     $calander = $calander.$day.' : '.$event."\n";
 }
-
-echo '<br><br>';
 
 
 
