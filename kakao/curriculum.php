@@ -10,7 +10,8 @@ $con = mysqli_connect(
     '3306'
 );
 
-$arr = array('it/02', 'it/03', 'it/04', 'it/07'
+$arr = array('koreanmedicine/01', 
+'arts/01', 'arts/02', 'arts/03', 'arts/04', 'arts/05', 'arts/06', 'arts/07', 'arts/08', 'arts/09', 'arts/010'
         );
 
 foreach($arr as $a){
