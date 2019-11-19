@@ -115,20 +115,25 @@ EOD;
             break;
 
         case "11월":
-            echo '
+            $date = '201910';
+            $_POST['date'] = $date;
+            include './calander.php';
+            echo <<<EOD
                 {
                     "message":
                     {
-                        "text": "원하는 달을 선택해주세요."
+                        "text": "$calander"
                     },
                     "keyboard":
                     {
                         "type": "buttons",
                         "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
                     }
-                }';
+                }
+EOD;
             break;
         case "12월":
+            $date = '201911';
             echo '
                 {
                     "message":
@@ -143,6 +148,7 @@ EOD;
                 }';
             break;
         case "1월":
+            $date = '201912';
             echo '
                 {
                     "message":
@@ -157,6 +163,7 @@ EOD;
                 }';
             break;
         case "2월":
+            $date = '202001';
             echo '
                 {
                     "message":
