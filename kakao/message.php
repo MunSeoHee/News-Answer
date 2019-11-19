@@ -5,6 +5,7 @@
 
     $_POST["userkey"] = $userkey;
     include './grade_point_count.php';
+    include './calander.php';
 
     $con = mysqli_connect(
         '18.224.229.40',
@@ -116,8 +117,6 @@ EOD;
 
         case "11월":
             $date = '201910';
-            $_POST['date'] = $date;
-            include './calander.php';
             echo <<<EOD
             {
                 "message":

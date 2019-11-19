@@ -1,7 +1,5 @@
 <?php 
 $ch = curl_init(); 
-
-$date = $_POST['date'];
 $date = '201910';
 
 // url을 설정
