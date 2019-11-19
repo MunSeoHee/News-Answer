@@ -60,7 +60,7 @@ foreach($tr as $t){
     $point = explode('</td>',$td[2]);
     $point = trim($point[0]);
 
-    $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '1학기')";
+    $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point','$division', '1학기')";
     echo $sql.'<br>';
     mysqli_query($con, $sql);
 
@@ -91,13 +91,7 @@ foreach($tr as $t){
     $point = explode('</td>',$td[2]);
     $point = trim($point[0]);
     
-
-    echo "<br>학년 : ".$year;
-    echo "<br><br>과목 : ".$subject;
-    echo "<br>구분 : ".$division;
-    echo "<br>학점 : ".$point;
-    echo '<br>';
-    $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '2학기')";
+    $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point','$division', '2학기')";
     echo $sql.'<br>';
     mysqli_query($con, $sql);
    
