@@ -15,13 +15,8 @@ $con = mysqli_connect(
 if (mysqli_connect_errno()){
     echo "fail to connect mysql : ".mysqli_connect_error();
 }
-mysql_query("set session character_set_connection=utf8;");
 
-mysql_query("set session character_set_results=utf8;");
-
-mysql_query("set session character_set_client=utf8;");
-
-
+mysql_set_charset('utf8', $con);
 $sql = "insert into grade_point (subject, point, score, user) values ('$subject', '$point', '$grade', '$user')";
 mysqli_query($con, $sql);
 mysqli_close($con);
