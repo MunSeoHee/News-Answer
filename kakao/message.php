@@ -127,7 +127,7 @@ EOD;
             {
                 "message":
                 {
-                    "text": $calander
+                    "text": "$calander"
                 },
                 "keyboard":
                 {
