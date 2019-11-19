@@ -117,7 +117,12 @@ EOD;
 
         case "11월":
             
-            include './calander.php';
+            $sql = "select * from calander where month='11월'";
+            $result = mysqli_query($con, $sql);
+            $calander = '';
+            while( $row = mysqli_fetch_array($result) ) {
+                $calander = $calander.$row['date']." : ".$row['plan'].'\n';
+              }
             echo <<<EOD
             {
                 "message":
