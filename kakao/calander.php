@@ -55,13 +55,14 @@ foreach($date as $d){
         
 
         $sql = $sql.$month.",".$day.",".$event.")";
+        echo $sql;
         mysqli_query($con, $sql);
         $sql = "insert into calander(month, date, plan) values (";
         
 
     }
 
-    echo $calander;
+    
 }
 mysqli_close($con);
 
