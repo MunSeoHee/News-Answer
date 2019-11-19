@@ -36,5 +36,5 @@ for($i=1; $i<count($plan); $i++){
     $calander = $calander.$day.' : '.$event."\n";
 }
 
-
+echo $calander;
 ?>
