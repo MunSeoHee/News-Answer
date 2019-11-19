@@ -116,7 +116,7 @@ EOD;
             break;
 
         case "11월":
-            $date = '201910';
+            
             include './calander.php';
             echo <<<EOD
             {
@@ -133,7 +133,7 @@ EOD;
 EOD;
             break;
         case "12월":
-            $date = '201911';
+            
             echo '
                 {
                     "message":
@@ -148,7 +148,7 @@ EOD;
                 }';
             break;
         case "1월":
-            $date = '201912';
+            
             echo '
                 {
                     "message":
@@ -163,7 +163,7 @@ EOD;
                 }';
             break;
         case "2월":
-            $date = '202001';
+            
             echo '
                 {
                     "message":
