@@ -10,16 +10,7 @@ $con = mysqli_connect(
     '3306'
 );
 
-$arr = array('it/02', 'it/03', 'it/04', 'it/07', 
-            'koreanmedicine/01', 
-            'arts/01', 'arts/02', 'arts/03', 'arts/04', 'arts/05', 'arts/06', 'arts/07', 'arts/08', 'arts/09', 'arts/010',
-            'bionano/03', 'bionano/06', 'bionano/05', 'bionano/04', 'bionano/01', 'bionano/02',
-            'archi/01', 'archi/02', 'archi/03', 'archi/04', 'archi/05',
-            'engineering/02', 'engineering/03', 'engineering/09', 'engineering/04', 'engineering/05', 'engineering/06', 'engineering/10',
-            'business1/01', 'business1/05', 
-            'socialscience/02', 'socialscience/03', 'socialscience/04', 'socialscience/05', 'socialscience/06', 'socialscience/07', 'socialscience/08',
-            'civilization/01', 'civilization/02', 'civilization/03', 'civilization/04',
-            'law/01', 'law/02', 'law/06', 'law/07',
+$arr = array('it/02', 'it/03', 'it/04', 'it/07'
         );
 
 foreach($arr as $a){
@@ -70,14 +61,9 @@ foreach($tr as $t){
     
     $point = explode('</td>',$td[2]);
     $point = trim($point[0]);
-    
-    echo "<br>학년 : ".$year;
-    echo "<br>과목 : ".$subject;
-    echo "<br>구분 : ".$division;
-    echo "<br>학점 : ".$point;
-    echo '<br>';
 
     $sql = "insert into calander(major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '1학기')";
+    echo $sql.'<br>';
     mysqli_query($con, $sql);
 
 }
@@ -115,14 +101,16 @@ foreach($tr as $t){
     echo "<br>학점 : ".$point;
     echo '<br>';
     $sql = "insert into calander(major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '2학기')";
+    echo $sql.'<br>';
     mysqli_query($con, $sql);
+   
 
 }
 
 
 
 }
-
+mysqli_close($con);
 
 
 ?>
