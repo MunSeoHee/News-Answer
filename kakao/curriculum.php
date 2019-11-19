@@ -62,7 +62,7 @@ foreach($tr as $t){
 
     $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point','$division', '1학기')";
     echo $sql.'<br>';
-    mysqli_query($con, $sql);
+    // mysqli_query($con, $sql);
 
 }
 
@@ -93,7 +93,7 @@ foreach($tr as $t){
     
     $sql = "insert into curriculum (major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point','$division', '2학기')";
     echo $sql.'<br>';
-    mysqli_query($con, $sql);
+    // mysqli_query($con, $sql);
    
 
 }

@@ -357,19 +357,40 @@ EOD;
             break;
  
         default:
-            echo '
-                {
-                    "message":
+            $sql = "select EXISTS (select * from user where userkey='$userkey') as success";
+            $result = mysqli_query($con, $sql);
+            if $result == 1:
+                $sql = "UPDATE user SET major = '$content' where userkey='$userkey'";
+                mysqli_query($con, $sql);
+                echo '
                     {
-                        "text": "회원가입 완료"
-                    },
-                    "keyboard":
+                        "message":
+                        {
+                            "text": "학과가 수정되었습니다."
+                        },
+                        "keyboard":
+                        {
+                            "type": "buttons",
+                            "buttons": ["가입", "기록", "확인"]
+                        }
+                    }';
+                break;
+            else:
+                $sql = "insert into user (userkey, major) values ('$userkey', '$content')"
+                echo '
                     {
-                        "type": "buttons",
-                        "buttons": ["가입", "기록", "확인"]
-                    }
-                }';
-            break;
+                        "message":
+                        {
+                            "text": "학과가 등록되었습니다."
+                        },
+                        "keyboard":
+                        {
+                            "type": "buttons",
+                            "buttons": ["가입", "기록", "확인"]
+                        }
+                    }';
+
+                break;
     }
 
     
