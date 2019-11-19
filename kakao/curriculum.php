@@ -2,6 +2,13 @@
 
 <?php 
 $ch = curl_init(); 
+$con = mysqli_connect(
+    '18.224.229.40',
+    'admin',
+    'admin',
+    'db',
+    '3306'
+);
 
 $arr = array('it/02', 'it/03', 'it/04', 'it/07', 
             'koreanmedicine/01', 
@@ -14,8 +21,10 @@ $arr = array('it/02', 'it/03', 'it/04', 'it/07',
             'civilization/01', 'civilization/02', 'civilization/03', 'civilization/04',
             'law/01', 'law/02', 'law/06', 'law/07',
         );
+
+foreach($arr as $a){
 // url을 설정
-curl_setopt($ch, CURLOPT_URL, 'http://www.gachon.ac.kr/major/it/03/curriculum.jsp'); 
+curl_setopt($ch, CURLOPT_URL, 'http://www.gachon.ac.kr/major/'.$a.'/curriculum.jsp'); 
 
 
 // 헤더는 제외하고 content 만 받음
@@ -34,6 +43,11 @@ $content = curl_exec($ch);
 $table = explode('<tbody>', $content);
 $table = explode('</tbody>', $table[1]);
 echo $table[0];
+$major = explode('<h3><a', $content);
+$major = explode('alt="', $major[1]);
+$major = explode('"', $major[1]);
+$major = trim($major[0]);
+echo $major;
 
 $tr = explode("<tr>", $table[0]);
 array_shift($tr);
@@ -62,6 +76,9 @@ foreach($tr as $t){
     echo "<br>구분 : ".$division;
     echo "<br>학점 : ".$point;
     echo '<br>';
+
+    $sql = "insert into calander(major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '1학기')";
+    mysqli_query($con, $sql);
 
 }
 
@@ -97,14 +114,14 @@ foreach($tr as $t){
     echo "<br>구분 : ".$division;
     echo "<br>학점 : ".$point;
     echo '<br>';
+    $sql = "insert into calander(major, year, subject, point, division, semester) values ('$major','$year','$subject', '$point', '2학기')";
+    mysqli_query($con, $sql);
 
 }
 
-$major = explode('<h3><a', $content);
-$major = explode('alt="', $major[1]);
-$major = explode('"', $major[1]);
-$major = trim($major[0]);
-echo $major;
+
+
+}
 
 
 
