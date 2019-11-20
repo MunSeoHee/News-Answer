@@ -200,6 +200,7 @@ EOD;
 EOD;
             break;
         case "교육과정":
+            $sql = "select * from curriculum where "
             echo '
                 {
                     "message":
