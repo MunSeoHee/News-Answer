@@ -52,7 +52,7 @@ $user = $_GET["user"];
   </div>
   <input type="hidden" name="user" value="<?=$user?>">
 
-  <button type="submit" class="btn btn-primary">기록하기</button>
+  <button type="submit" onclick="check_input()" class="btn btn-primary">기록하기</button>
 </form>
 
 </div>
