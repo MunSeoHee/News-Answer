@@ -222,7 +222,7 @@ EOD;
             $result = mysqli_query($con, $sql);
             $curriculum = '';
             while( $row = mysqli_fetch_array($result) ) {
-                $curriculum = $curriculum.$row['year']."학년 ".$row['semester'].$row['subject']." ".$row['point']." 학점 ".$row['division'].'\n';
+                $curriculum = $curriculum.$row['year']."학년 ".$row['semester']." [".$row['division'].'] '.$row['subject']." ".$row['point']." 학점 ".'\n';
               }
             echo <<<EOD
                 {
