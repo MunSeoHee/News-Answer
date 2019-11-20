@@ -25,7 +25,7 @@ $user = $_GET["user"];
     <button onclick="check_input()">제출</button>
 </form> -->
 
-<div class='container d-flex justify-content-center'>
+<div class='container d-flex justify-content-center mt-5'>
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">과목명</label>
