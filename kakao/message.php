@@ -200,7 +200,10 @@ EOD;
 EOD;
             break;
         case "교육과정":
-            echo '
+            $sql = "select major from user where userkey='$userkey'";
+            $result = mysqli_query($con, $sql);
+            if ( mysqli_num_rows($result)){
+                echo '
                 {
                     "message":
                     {
@@ -212,7 +215,25 @@ EOD;
                         "buttons": ["1학기", "2학기"]
                     }
                 }';
-            break;
+                break;
+            }
+            else{
+                echo '
+                {
+                    "message":
+                    {
+                        "text": "학과가 등록되어있지 않습니다."
+                    },
+                    "keyboard":
+                    {
+                        "type": "buttons",
+                        "buttons": ["학점", "공지", "학사일정", "교육과정", "학과 등록"]
+                    }
+                }';
+                break;
+
+            }
+            
         case "1학기":
             $sql = "select major from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
@@ -224,6 +245,31 @@ EOD;
             while( $row = mysqli_fetch_array($result) ) {
                 $curriculum = $curriculum.$row['year']."학년 ".$row['semester']." [".$row['division'].'] ['.$row['point']."학점] ".$row['subject'].'\n';
               }
+            echo <<<EOD
+                {
+                    "message":
+                    {
+                        "text": "$curriculum"
+                    },
+                    "keyboard":
+                    {
+                        "type": "buttons",
+                        "buttons": ["학점", "공지", "학사일정", "교육과정", "학과 등록"]
+                    }
+                }
+EOD;
+            break;
+        case "2학기":
+            $sql = "select major from user where userkey='$userkey'";
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_array($result);
+            $major = $row['major'];
+            $sql = "select * from curriculum where major='$major' and semester='2학기' ORDER BY year";
+            $result = mysqli_query($con, $sql);
+            $curriculum = '';
+            while( $row = mysqli_fetch_array($result) ) {
+                $curriculum = $curriculum.$row['year']."학년 ".$row['semester']." [".$row['division'].'] ['.$row['point']."학점] ".$row['subject'].'\n';
+                }
             echo <<<EOD
                 {
                     "message":
