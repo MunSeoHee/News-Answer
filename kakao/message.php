@@ -226,7 +226,7 @@ EOD;
                 {
                     "message":
                     {
-                        "text": "$curriculum"
+                        "text": "$row"
                     },
                     "keyboard":
                     {
