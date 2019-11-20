@@ -25,6 +25,7 @@ $user = $_GET["user"];
     <button onclick="check_input()">제출</button>
 </form> -->
 
+<div class='container d-flex justify-content-center'>
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">과목명</label>
@@ -53,3 +54,6 @@ $user = $_GET["user"];
 
   <button type="submit" class="btn btn-primary">기록하기</button>
 </form>
+
+</div>
+
