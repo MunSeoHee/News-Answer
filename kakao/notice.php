@@ -1,5 +1,3 @@
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-
 <?php 
 $ch = curl_init(); 
 

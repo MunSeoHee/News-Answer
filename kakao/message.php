@@ -86,11 +86,19 @@ EOD;
             break;
 
         case "공지":
+            include './notice.php';
             echo '
                 {
                     "message":
                     {
-                        "text": "원하는 메뉴를 선택해주세요."
+                        "message_button": {
+                            "label": "반갑습니다.",
+                            "url": "http://hello.world.com/example"
+                        },
+                        "message_button": {
+                            "label": "반갑습니다.",
+                            "url": "http://hello.world.com/example"
+                        }
                     },
                     "keyboard":
                     {
