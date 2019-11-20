@@ -200,19 +200,44 @@ EOD;
 EOD;
             break;
         case "교육과정":
-            $sql = "select * from curriculum where "
             echo '
                 {
                     "message":
                     {
-                        "text": "원하는 달을 선택해주세요."
+                        "text": "원하는 학기를 선택해주세요."
                     },
                     "keyboard":
                     {
                         "type": "buttons",
-                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
+                        "buttons": ["1학기", "2학기"]
                     }
                 }';
+            break;
+        case "1학기":
+            $sql = "select major from user where userkey='$userkey'";
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_array($result);
+            $major = $row['major'];
+            $sql = "select * from curriculum where major='$major' and semester='1학기' ORDER BY year";
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_array($result);
+            $curriculum = '';
+            foreach($row as $i){
+                $curriculum = $curriculum.$i['year']."학년 ".$i['semester']." : ".$i['subject']." ".$i['point']."학점\n";
+            }
+            echo <<<EOD
+                {
+                    "message":
+                    {
+                        "text": "$curriculum"
+                    },
+                    "keyboard":
+                    {
+                        "type": "buttons",
+                        "buttons": ["학점", "공지", "학사일정", "교육과정", "학과 등록"]
+                    }
+                }
+EOD;
             break;
 
         case "학과등록":
