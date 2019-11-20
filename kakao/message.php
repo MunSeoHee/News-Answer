@@ -221,12 +221,15 @@ EOD;
             $sql = "select * from curriculum where major='$major' and semester='1학기' ORDER BY year";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
-            $curriculum = 'test';
+            $curriculum = '';
+            foreach($row as $i){
+                $curriculum = $curriculum.$i['year']."학년 ".$i['semester'];
+            }
             echo <<<EOD
                 {
                     "message":
                     {
-                        "text": "$row"
+                        "text": "$curriculum"
                     },
                     "keyboard":
                     {
