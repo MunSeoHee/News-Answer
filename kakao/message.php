@@ -357,9 +357,11 @@ EOD;
             break;
  
         default:
+        #수정
             $sql = "select * from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
-            if (mysql_num_rows($result)){
+            $if = mysql_num_rows($result);
+            if ($if){
                 $sql = "UPDATE user SET major = '$content' where userkey='$userkey'";
                 mysqli_query($con, $sql);
                 echo '
@@ -380,18 +382,19 @@ EOD;
             else{
                 $sql = "insert into user (userkey, major) values ('$userkey', '$content')";
                 mysqli_query($con, $sql);
-                echo '
+                echo <<<EOD
                     {
                         "message":
                         {
-                            "text": "학과가 등록되었습니다."
+                            "text": "$if"
                         },
                         "keyboard":
                         {
                             "type": "buttons",
                             "buttons": ["학점", "공지", "학사일정", "교육과정", "학과등록"]
                         }
-                    }';
+                    }
+EOD;
 
                 break;
             }
