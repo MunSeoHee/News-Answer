@@ -7,7 +7,7 @@ $user = $_GET["user"];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<form name="form" method="post" action="grade.php">
+<!-- <form name="form" method="post" action="grade.php">
     과목명 : <input type="text" name="subject">
     학점 : <input type="number" name="point">
     점수 : <select name="grade">
@@ -21,23 +21,35 @@ $user = $_GET["user"];
         <option value="1.0">D</option>
         <option value="0">F</option>
     </select>
-    <input type="hidden" name="user" value="<?=$user?>">
+    
     <button onclick="check_input()">제출</button>
-</form>
+</form> -->
 
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="exampleInputEmail1">과목명</label>
+    <input type="text" class="form-control" name='subject' id="subject" aria-describedby="subjectHelp" placeholder="과목이름">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="exampleInputPassword1">학점</label>
+    <input type="number" class="form-control" name='point' id="point" placeholder="학점">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">점수</label>
+    <select name="grade" class="form-control" id="grade">
+        <option value="4.5">A+</option>
+        <option value="4.0">A</option>
+        <option value="3.5">B+</option>
+        <option value="3.0">B</option>
+        <option value="2.5">C+</option>
+        <option value="2.0">C</option>
+        <option value="1.5">D+</option>
+        <option value="1.0">D</option>
+        <option value="0">F</option>
+    </select>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <input type="hidden" name="user" value="<?=$user?>">
+
+  <button type="submit" class="btn btn-primary">기록하기</button>
 </form>
