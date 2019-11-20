@@ -223,7 +223,7 @@ EOD;
             $row = mysqli_fetch_array($result);
             $curriculum = '';
             foreach($row as $i){
-                $curriculum = $curriculum.$i['year']."학년 ".$i['semester'];
+                $curriculum = $curriculum.$i['semester'];
             }
             echo <<<EOD
                 {
