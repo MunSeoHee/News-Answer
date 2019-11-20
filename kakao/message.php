@@ -360,7 +360,7 @@ EOD;
         #수정
             $sql = "select * from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
-            $if = mysql_num_rows($result);
+            $if = mysqli_num_rows($result);
             if ($if){
                 $sql = "UPDATE user SET major = '$content' where userkey='$userkey'";
                 mysqli_query($con, $sql);
@@ -382,6 +382,19 @@ EOD;
             else{
                 $sql = "insert into user (userkey, major) values ('$userkey', '$content')";
                 mysqli_query($con, $sql);
+                echo <<<EOD
+                {
+                    "message":
+                    {
+                        "text": "$calander"
+                    },
+                    "keyboard":
+                    {
+                        "type": "buttons",
+                        "buttons": ["학점", "공지", "학사일정", "교육과정", "정보 등록"]
+                    }
+                }
+EOD;
                 echo <<<EOD
                     {
                         "message":
