@@ -93,9 +93,7 @@ EOD;
                     {
                         "message_button": {
                             "label": "반갑습니다.",
-                            "url": "http://hello.world.com/example"
-                        },
-                        "message_button": {
+                            "url": "http://hello.world.com/example",
                             "label": "반갑습니다.",
                             "url": "http://hello.world.com/example"
                         }
