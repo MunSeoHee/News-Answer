@@ -26,7 +26,7 @@ $user = $_GET["user"];
 </form> -->
 
 <div class='container d-flex justify-content-center mt-5'>
-<form>
+<form name="form" method="post" action="grade.php">
   <div class="form-group">
     <label for="exampleInputEmail1">과목명</label>
     <input type="text" class="form-control" name='subject' id="subject" aria-describedby="subjectHelp" placeholder="과목이름">
@@ -52,7 +52,7 @@ $user = $_GET["user"];
   </div>
   <input type="hidden" name="user" value="<?=$user?>">
 
-  <button type="submit" onclick="check_input()" class="btn btn-primary">기록하기</button>
+  <button type="submit" class="btn btn-primary">기록하기</button>
 </form>
 
 </div>
