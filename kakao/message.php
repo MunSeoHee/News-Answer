@@ -86,7 +86,7 @@ EOD;
             break;
 
         case "공지":
-            include './notice.php';
+            
             echo '
                 {
                     "message":
