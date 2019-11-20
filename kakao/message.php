@@ -222,7 +222,7 @@ EOD;
             $result = mysqli_query($con, $sql);
             $curriculum = '';
             while( $row = mysqli_fetch_array($result) ) {
-                $curriculum = $calander.$row['year'];
+                $curriculum = $curriculum.$row['year'];
               }
             echo <<<EOD
                 {
