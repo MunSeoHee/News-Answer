@@ -5,8 +5,6 @@
 
     $_POST["userkey"] = $userkey;
     include './grade_point_count.php';
-    include './notice.php';
-    
 
     $con = mysqli_connect(
         '18.224.229.40',
@@ -92,11 +90,9 @@ EOD;
                 {
                     "message":
                     {
-                        "text": "원하는 메뉴를 선택해주세요.",
-
                         "message_button": {
-                            "label": "반갑습니다.",
-                            "url": "http://hello.world.com/example"
+                            "label": "가천대학교 공지사항 게시판",
+                            "url": "http://www.gachon.ac.kr/community/opencampus/03.jsp?boardType_seq=358"
                         }
                     },
                     "keyboard":
