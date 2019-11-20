@@ -5,6 +5,7 @@
 
     $_POST["userkey"] = $userkey;
     include './grade_point_count.php';
+    include './notice.php';
     
 
     $con = mysqli_connect(
@@ -91,9 +92,9 @@ EOD;
                 {
                     "message":
                     {
+                        "text": "원하는 메뉴를 선택해주세요.",
+
                         "message_button": {
-                            "label": "반갑습니다.",
-                            "url": "http://hello.world.com/example",
                             "label": "반갑습니다.",
                             "url": "http://hello.world.com/example"
                         }
