@@ -217,7 +217,9 @@ EOD;
             $sql = "select major from user where userkey='$userkey'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
-            $major = $row['major'];
+            while( $row = mysqli_fetch_array($result) ) {
+                $major = $row['major'];
+              }
             $sql = "select * from curriculum where major='$major' and semester='1학기' ORDER BY year";
             $result = mysqli_query($con, $sql);
             $curriculum = '';
