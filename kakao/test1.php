@@ -21,10 +21,13 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
 $plan = explode('"rank num1"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
-$rank = explode('" class=', $plan[1]);
+$plan = explode('" class=', $plan[1]);
 
+$rank = [];
+$rank[0] = $plan[0];
 echo $rank[0];
 
+/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
 $plan = explode('"rank num2"', $plan[1]);
