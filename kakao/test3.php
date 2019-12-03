@@ -19,7 +19,13 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
+$plan = explode('<div id="ranking_100" style="display:none">', $plan[0]);
+$carte = $plan[1];
+$plan = $plan[0];
 
-echo $plan[0];
+$carte=explode('<div id="ranking_104" style="display:none">', $carte);
+$cart='<div id="ranking_104" style="display:none">';
+$plan=$plan+$cart+$carte[1];
 
+echo $plan;
 ?>
