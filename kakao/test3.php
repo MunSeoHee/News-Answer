@@ -21,11 +21,14 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
 $plan = explode('<div id="ranking_100" style="display:none">', $plan[0]);
 
+$carte = $plan[0];
+$array = $plan[1];
+
 $arrayname='<div id="ranking_104" style="display:none">';
-$array=explode('<div id="ranking_104" style="display:none">', $plan[1]);
+$array=explode('<div id="ranking_104" style="display:none">', $array);
 $array=$arrayname+$array[1];
 
 $plan=$plan[0]+$array;
 
-echo $plan;
+echo $plan[0];
 ?>
