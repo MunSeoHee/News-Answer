@@ -24,7 +24,8 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 $rank = [];
-$rank[0] = "https://news.naver.com/"+ $plan[0];
+$rank[0] = "https://news.naver.com/".$plan[0];
+
 echo $rank[0];
 
 
@@ -34,7 +35,7 @@ $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank[1] = "https://news.naver.com/"+ $plan[0];
+$rank[1] = "https://news.naver.com/".$plan[0];
 echo $rank[1];
 
 
@@ -44,7 +45,7 @@ $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank[2] = "https://news.naver.com/"+ $plan[0];
+$rank[2] = 'https://news.naver.com/'.$plan[0];
 echo $rank[2];
 
 
