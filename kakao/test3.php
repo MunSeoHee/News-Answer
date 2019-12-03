@@ -27,4 +27,6 @@ $worldl = explode('<a href="', $worldl[1]);
 $worldl = explode('" class=', $worldl[1]);
 $worldl = "https://news.naver.com/".$worldl[0];
 $world[0] = $worldl;
+
+echo $world[0];
 ?>
