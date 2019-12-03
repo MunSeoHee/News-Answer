@@ -19,11 +19,10 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('<li><span class="rank num1"><em>1</em></span>', $plan[1]);
-//$plan = explode('<em>1</em></span>', $plan[1]);
+$plan = explode('"rank num1"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
-$plna = explode('" class=', $plan[1])
+$plan = explode('" class=', $plan[1]);
 
-echo $plan[1];
+echo $plan[0];
 
 ?>
