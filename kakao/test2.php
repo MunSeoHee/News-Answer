@@ -17,16 +17,169 @@ $content = iconv('euc-kr','utf-8',$content);
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
+$social = [];
+
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-
-$social = [];
-
 $social[0] = "https://news.naver.com".$plan[0];
 
-echo $social[0];
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num2">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[1] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num3">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[2] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num4">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[3] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num5">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[4] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num6">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[5] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num7">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[6] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num8">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[7] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num9">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[8] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
+$plan = explode('<span class="rank num10">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$social[9] = "https://news.naver.com".$plan[0];
+
+
+//--------------------------------------------------
+
+$Life_Culture = [];
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num1">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[0] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num2">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[1] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num3">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[2] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num4">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[3] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num5">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[4] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num6">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[5] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num7">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[6] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num8">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[7] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num9">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[8] = "https://news.naver.com".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
+$plan = explode('<span class="rank num10">', $plan[1]);
+$plan = explode('<a href="',$plan[1]);
+$plan = explode('" class=', $plan[1]);
+$Life_Culture[9] = "https://news.naver.com".$plan[0];
 
 ?>
