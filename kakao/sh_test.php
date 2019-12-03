@@ -22,6 +22,7 @@ $text = explode('</script>', $text[1]);
 $text = explode('▶', $text[1]);
 $text = $text[0];
 echo $text;
-echo preg_replace("/\<[^)]+\>/","",$text);
+echo preg_replace('/\<[^\]]*\>/',"",$text);
+
 
 ?>
