@@ -17,15 +17,18 @@ $content = iconv('euc-kr','utf-8',$content);
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
+$world = [];
+
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
+$plan = explode('<div id="ranking_104" style="display:none">', $plan[0]);
 
-$world = explode('<div id="ranking_104" style="display:none">', $plan[0]);
-$world01 = explode('<span class="rank num1">', $world[1]);
+$world01 = explode('<span class="rank num1">', $plan[1]);
 $world01 = explode('</span>', $world01[1]);
 $world01 = explode('<a href="', $world01[1]);
 $world01 = explode('" class=', $world01[1]);
 $world01 = "https://news.naver.com/".$world01[0];
+$world[0] = $world01;
 
 echo $world01;
 ?>
