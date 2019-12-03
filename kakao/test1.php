@@ -23,6 +23,7 @@ $plan = explode('"rank num1"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
+$rank = [];
 $rank[0] = $plan;
 
 $plan = explode('<div class="section section_wide">', $content);
