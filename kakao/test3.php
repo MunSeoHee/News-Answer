@@ -109,5 +109,94 @@ $plan = explode('" class=', $plan[1]);
 $plan = "https://news.naver.com/".$plan[0];
 $world[9] = $plan;
 
-echo $world[9];
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num1">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[0] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num2">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[1] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num3">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[2] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num4">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[3] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num5">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[4] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num6">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[5] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num7">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[6] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num8">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[7] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num9">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[8] = $plan;
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div id="ranking_105" style="display:none">', $plan[1]);
+$plan = explode('<span class="rank num10">', $plan[1]);
+$plan = explode('</span>', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+$plan = "https://news.naver.com/".$plan[0];
+$science[9] = $plan;
 ?>
