@@ -26,7 +26,6 @@ $array = $plan[1];
 
 $arrayname='<div id="ranking_104" style="display:none">';
 $array=explode('<div id="ranking_104" style="display:none">', $array);
-$array=$arrayname+$array[1];
 
 $plan=$plan[0]+$array;
 
