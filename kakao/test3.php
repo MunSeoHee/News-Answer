@@ -3,7 +3,7 @@
 <?php 
 $ch = curl_init(); 
 
-curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/'); 
+curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/');
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch, CURLOPT_HEADER, 0); 
 // 응답 값을 브라우저에 표시하지 말고 값을 리턴
@@ -19,7 +19,8 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
-$plan = explode('<div id="ranking_100" style="display:none">', $plan[0]);
 
-echo $plan[0];
+$world = explode('<div id="ranking_104" style="display:none">', $plan[0]);
+
+echo $world[1];
 ?>
