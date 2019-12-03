@@ -20,15 +20,11 @@ $content = iconv('euc-kr','utf-8',$content);
 $world = [];
 
 $plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<div class="da" id="doubleDA">', $plan[1]);
-$plan = explode('<div id="ranking_104" style="display:none">', $plan[0]);
 
-$world01 = explode('<span class="rank num1">', $plan[1]);
-$world01 = explode('</span>', $world01[1]);
-$world01 = explode('<a href="', $world01[1]);
-$world01 = explode('" class=', $world01[1]);
-$world01 = "https://news.naver.com/".$world01[0];
-$world[0] = $world01;
-
-echo $world;
+$worldl = explode('<span class="rank num1">', $plan[1]);
+$worldl = explode('</span>', $worldl[1]);
+$worldl = explode('<a href="', $worldl[1]);
+$worldl = explode('" class=', $worldl[1]);
+$worldl = "https://news.naver.com/".$worldl[0];
+$world[0] = $worldl;
 ?>
