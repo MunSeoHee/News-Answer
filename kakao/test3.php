@@ -30,5 +30,5 @@ $world01 = explode('" class=', $world01[1]);
 $world01 = "https://news.naver.com/".$world01[0];
 $world[0] = $world01;
 
-echo $world01;
+echo $world;
 ?>
