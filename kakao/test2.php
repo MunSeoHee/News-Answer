@@ -25,7 +25,7 @@ $plan = explode('" class=', $plan[1]);
 
 $social = [];
 
-$social[0] = "https://news.naver.com"$plan[0];
+$social[0] = "https://news.naver.com".$plan[0];
 
 echo $social[0];
 
