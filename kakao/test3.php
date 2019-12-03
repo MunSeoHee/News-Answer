@@ -23,9 +23,5 @@ $plan = explode('<div id="ranking_100" style="display:none">', $plan[0]);
 $carte = $plan[1];
 $plan = $plan[0];
 
-$carte=explode('<div id="ranking_104" style="display:none">', $carte);
-$cart='<div id="ranking_104" style="display:none">';
-$plan=$plan+$cart+$carte[1];
-
-echo $plan;
+echo $plan+$carte;
 ?>
