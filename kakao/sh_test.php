@@ -22,7 +22,7 @@ $text = explode('</script>', $text[1]);
 $text = explode('▶', $text[1]);
 $text = $text[0];
 
-echo preg_replace("(\<(/?[^\>]+)\>)", "", $text);
+echo preg_replace("(\<(/?[^\>]+)\>)", "", $text).'<br>';
 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=028&aid=0002476899&date=20191203&type=1&rankingSeq=1&rankingSectionId=103'); 
@@ -44,7 +44,7 @@ $text = explode('</script>', $text[1]);
 $text = explode('▶', $text[1]);
 $text = $text[0];
 
-echo preg_replace("(\<(/?[^\>]+)\>)", "", $text);
+echo preg_replace("(\<(/?[^\>]+)\>)", "", $text).'<br>';
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0002957537&date=20191203&type=2&rankingSeq=3&rankingSectionId=100'); 
 // 헤더는 제외하고 content 만 받음
@@ -65,7 +65,7 @@ $text = explode('</script>', $text[1]);
 $text = explode('▶', $text[1]);
 $text = $text[0];
 
-echo preg_replace("(\<(/?[^\>]+)\>)", "", $text);
+echo preg_replace("(\<(/?[^\>]+)\>)", "", $text).'<br>';
 
 
 ?>
