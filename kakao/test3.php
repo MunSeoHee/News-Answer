@@ -21,7 +21,10 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
 
 $world = explode('<div id="ranking_104" style="display:none">', $plan[0]);
-$world01 = explode('</span>', $world[1]);
+$world01 = explode('<span class="rank num1">', $world[1]);
+$world01 = explode('</span>', $world01[1]);
+$world01 = explode('<a href="', $world01[1]);
+$world01 = explode('" class', $world01[1]);
 
-echo $world01[1];
+echo $world01[0];
 ?>
