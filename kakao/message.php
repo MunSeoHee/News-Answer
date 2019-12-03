@@ -7,8 +7,16 @@
     switch($content)
     {
         case "정치":
-            $sql = "insert into user (user_key, category) values ('$userkey', 1)";
-            mysqli_query($con, $sql);
+            $sql = "select * from user where user_key='$userkey'";
+            $result = mysqli_query($con, $sql);
+            if ( mysqli_num_rows($result)){
+                $sql = "update user set category=1 where userkey='$userkey'";
+                mysqli_query($con, $sql);
+            }
+            else{
+                $sql = "insert into user (user_key, category) values ('$userkey', 1)";
+                mysqli_query($con, $sql);
+            }
             echo <<<EOD
             {
                 "message":
@@ -22,7 +30,6 @@
                 }
             }
 EOD;
-            
             break;
         case "카테고리 재선택":
             echo <<<EOD
