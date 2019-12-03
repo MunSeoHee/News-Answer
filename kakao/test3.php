@@ -1,11 +1,6 @@
-<!--<?php 
-#echo 'test3 pagea';
-?> -->
-
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
-<?php
-echo '가장 많이 본 뉴스'
+<?php 
 $ch = curl_init(); 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/'); 
@@ -22,8 +17,8 @@ $content = iconv('euc-kr','utf-8',$content);
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
-$plan = explode('<div id="wrap">', $content);
-$plan = explode('<div id="container">', $plan[1]);
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<div class="main_asdie">', $plan[1]);
 
 echo $plan[1];
 
