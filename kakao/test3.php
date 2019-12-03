@@ -21,5 +21,5 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div class="da" id="doubleDA">', $plan[1]);
 $plan = explode('<div id="ranking_100" style="display:none">', $plan[0]);
 
-echo $plan;
+echo $plan[0];
 ?>
