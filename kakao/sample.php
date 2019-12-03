@@ -13,13 +13,12 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 //크롤링해온 내용 content 변수에 저장
 $content = curl_exec($ch); 
 //인코딩이 utf-8이 아닌경우에만 사용
-// $content = iconv('','utf-8',$content);
+$content = iconv('euc-kr','utf-8',$content);
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
-$plan = explode('<div class="main_aside">', $content);
+$plan = explode('<div class="section section_wide">', $content);
 
-echo $content;
-echo $plan;
+echo $plan[1];
 
 ?>
