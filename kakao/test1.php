@@ -29,16 +29,16 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
 $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
-$rank[1] = explode('" class=', $plan[1]);
-
+$plan = explode('" class=', $plan[1]);
+$rank[1]=$plan[0];
 echo $rank[1];
 
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
 $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
-$rank[2] = explode('" class=', $plan[1]);
-
+$plan = explode('" class=', $plan[1]);
+$rank[2]=$plan[0]
 echo $rank[2];
 
 
