@@ -33,6 +33,7 @@ $plan = explode('" class=', $plan[1]);
 
 $rank[1] = $plan;
 
-echo $rank;
+echo $rank[0];
+echo $rank[1];
 
 ?>
