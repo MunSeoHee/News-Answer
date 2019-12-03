@@ -25,6 +25,7 @@ $world01 = explode('<span class="rank num1">', $world[1]);
 $world01 = explode('</span>', $world01[1]);
 $world01 = explode('<a href="', $world01[1]);
 $world01 = explode('" class', $world01[1]);
+$world01 = 'https://news.naver.com/'+$world01[1];
 
-echo $world01[0];
+echo $world01;
 ?>
