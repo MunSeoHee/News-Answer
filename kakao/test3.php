@@ -1,4 +1,4 @@
 <?php 
-echo 'test3 page';
+echo 'test3 pagea';
 
 ?>
