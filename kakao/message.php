@@ -1,4 +1,5 @@
 <?php
+    include './setting.php';
     $data = json_decode(file_get_contents('php://input'), true);
     $userkey = $data["user_key"];
     $content = $data["content"];
@@ -6,6 +7,8 @@
     switch($content)
     {
         case "정치":
+            $sql = "insert into user (user_key, category) values ('$userkey', 1)";
+            mysqli_query($con, $sql);
             echo <<<EOD
             {
                 "message":
