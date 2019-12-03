@@ -21,6 +21,11 @@ $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('class="rank num1"><em>1</em></span> <a href= "', $plan[1]);
 $plan = explode('" class', $plan[1]);
-echo $plan[0];
+
+$social = [];
+
+$social[0] = "https://news.naver.com/".$plan[0];
+
+echo $social[0];
 
 ?>
