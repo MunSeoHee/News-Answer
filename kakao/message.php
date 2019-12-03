@@ -3,14 +3,15 @@
     $data = json_decode(file_get_contents('php://input'), true);
     $userkey = $data["user_key"];
     $content = $data["content"];
+    $sql = "select * from user where user_key='$userkey'";
+    $result = mysqli_query($con, $sql);
 
     switch($content)
     {
         case "정치":
-            $sql = "select * from user where user_key='$userkey'";
-            $result = mysqli_query($con, $sql);
+            
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where userkey='$userkey'";
+                $sql = "update user set category=1 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -32,10 +33,8 @@
 EOD;
             break;
         case "경제":
-            $sql = "select * from user where user_key='$userkey'";
-            $result = mysqli_query($con, $sql);
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=2 where userkey='$userkey'";
+                $sql = "update user set category=2 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
