@@ -119,8 +119,89 @@ $plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
 $plan = explode('"rank num1"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-echo $plan[0];
+
 $rank_e = [];
 $rank_e[0] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num2"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[1] = "https://news.naver.com/".$plan[0];
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num3"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[2] = "https://news.naver.com/".$plan[0];
+
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num4"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[3] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num5"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[4] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num6"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[5] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num7"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[6] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num8"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[7] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num9"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[8] = "https://news.naver.com/".$plan[0];
+
+
+$plan = explode('<div class="section section_wide">', $content);
+$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
+$plan = explode('"rank num10"', $plan[1]);
+$plan = explode('<a href="', $plan[1]);
+$plan = explode('" class=', $plan[1]);
+
+$rank_e[9] = "https://news.naver.com/".$plan[0];
 
 ?>
