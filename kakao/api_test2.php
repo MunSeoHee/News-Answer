@@ -48,6 +48,7 @@ $end = (int)$end;
 
 //문장
 echo substr($text, $start, $end);
+echo "<br>".substr($text, 0, 60);
 
 curl_close($ch);
 
