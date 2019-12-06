@@ -47,7 +47,7 @@ $end = $body_json["sentenceIndices"][0]["startIdx"];
 $end = (int)$end;
 
 //문장
-echo mb_substr($text, $start, $end);
+echo iconv_substr($$text, 0, 60, "utf-8");
 // substr($text, $start, $end);
 echo "<br>".iconv_substr($$text, 0, 60, "utf-8");
 
