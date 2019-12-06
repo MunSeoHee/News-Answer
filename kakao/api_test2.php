@@ -45,7 +45,7 @@ echo '<br>'.$body_json["sentenceIndices"][0]["endIdx"];
 $end = $body_json["sentenceIndices"][0]["startIdx"];
 
 //문장
-echo substr($test, $start, $end);
+echo substr($text, $start, $end);
 
 curl_close($ch);
 
