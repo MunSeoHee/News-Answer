@@ -48,7 +48,7 @@ for($i=0; $i<2; $i++){
     $end = (int)$end;
 
     //문장
-    echo iconv_substr($text, $start, $end, "utf-8");
+    echo iconv_substr($text, $start, $end - $start, "utf-8");
 }
 
 
