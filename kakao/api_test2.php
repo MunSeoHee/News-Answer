@@ -49,7 +49,8 @@ $end = (int)$end;
 //문장
 echo "<br>".gettype($end)."<br>";
 echo "<br>".gettype(0)."<br>";
-echo iconv_substr($text, $start, $end, "utf-8");
+$test = iconv_substr($text, $start, $end, "utf-8");
+echo $test;
 echo "<br>".iconv_substr($text, 0, 60, "utf-8");
 
 curl_close($ch);
