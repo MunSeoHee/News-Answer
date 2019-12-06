@@ -49,7 +49,7 @@ $end = (int)$end;
 //문장
 echo mb_substr($text, $start, $end);
 // substr($text, $start, $end);
-echo "<br>".substr($text, 0, 60);
+echo "<br>".iconv_substr($$text, 0, 60, "utf-8");
 
 curl_close($ch);
 
