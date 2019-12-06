@@ -35,7 +35,7 @@ $body = substr($res, $header_size);
 $body_json = json_decode($body, true);
 print_r($body_json);
 
-echo '<br>'.$body_json["labels"]["sentenceIndices"][0];
+echo '<br>'.$body_json["labels"]["sentenceIndices"]["startIdx"];
 
 curl_close($ch);
 
