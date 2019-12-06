@@ -36,21 +36,21 @@ $body = substr($res, $header_size);
 $body_json = json_decode($body, true);
 print_r($body_json);
 
-//시작 위치
-echo '<br>'.$body_json["sentenceIndices"][0]["startIdx"];
-$start = $body_json["sentenceIndices"][0]["startIdx"];
-$start = (int)$start;
+for($i=0; $i<2; $i++){
+    //시작 위치
+    echo '<br>'.$body_json["sentenceIndices"][$i]["startIdx"];
+    $start = $body_json["sentenceIndices"][$i]["startIdx"];
+    $start = (int)$start;
 
-//끝위치
-echo '<br>'.$body_json["sentenceIndices"][0]["endIdx"];
-$end = $body_json["sentenceIndices"][0]["endIdx"];
-$end = (int)$end;
+    //끝위치
+    echo '<br>'.$body_json["sentenceIndices"][$i]["endIdx"];
+    $end = $body_json["sentenceIndices"][$i]["endIdx"];
+    $end = (int)$end;
 
-//문장
-echo "<br>".gettype($end)."<br>";
-echo "<br>".gettype(0)."<br>";
-echo iconv_substr($text, $start, $end, "utf-8");
-echo "<br>".iconv_substr($text, 0, 60, "utf-8");
+    //문장
+    echo iconv_substr($text, $start, $end, "utf-8");
+}
+
 
 curl_close($ch);
 
