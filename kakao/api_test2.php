@@ -37,13 +37,11 @@ $body_json = json_decode($body, true);
 print_r($body_json);
 
 for($i=0; $i<2; $i++){
-    //시작 위치
-    echo '<br>'.$body_json["sentenceIndices"][$i]["startIdx"];
+    //시작 위치;
     $start = $body_json["sentenceIndices"][$i]["startIdx"];
     $start = (int)$start;
 
     //끝위치
-    echo '<br>'.$body_json["sentenceIndices"][$i]["endIdx"];
     $end = $body_json["sentenceIndices"][$i]["endIdx"];
     $end = (int)$end;
 
