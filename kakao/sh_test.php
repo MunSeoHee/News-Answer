@@ -111,6 +111,8 @@ $body = substr($res, $header_size);
 $body_json = json_decode($body, true);
 print_r($body_json);
 
+echo '<br>'.$body_json["answer"];
+
  
 // var_dump($res);//결과값 확인하기
 
