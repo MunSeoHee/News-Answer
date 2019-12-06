@@ -106,9 +106,9 @@ $res = curl_exec ($ch);
  
 var_dump($res);//결과값 확인하기
 echo '<br>';
-print_r(curl_getinfo($ch));//마지막 http 전송 정보 출력
-echo curl_errno($ch);//마지막 에러 번호 출력
-echo curl_error($ch);//현재 세션의 마지막 에러 출력
+// print_r(curl_getinfo($ch));//마지막 http 전송 정보 출력
+// echo curl_errno($ch);//마지막 에러 번호 출력
+// echo curl_error($ch);//현재 세션의 마지막 에러 출력
 curl_close($ch);
 
 
