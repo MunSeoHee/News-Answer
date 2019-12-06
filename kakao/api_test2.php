@@ -46,7 +46,7 @@ $end = $body_json["sentenceIndices"][0]["startIdx"];
 $end = (int)$end;
 
 //문장
-echo substr($text, 0, $end);
+echo substr($text, $end);
 
 curl_close($ch);
 
