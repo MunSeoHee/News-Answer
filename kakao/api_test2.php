@@ -47,9 +47,8 @@ $end = $body_json["sentenceIndices"][0]["startIdx"];
 $end = (int)$end;
 
 //문장
-echo iconv_substr($$text, 0, 60, "utf-8");
-// substr($text, $start, $end);
-echo "<br>".iconv_substr($$text, 0, 60, "utf-8");
+echo iconv_substr($text, 0, 60, "utf-8");
+echo "<br>".iconv_substr($text, 0, 60, "utf-8");
 
 curl_close($ch);
 
