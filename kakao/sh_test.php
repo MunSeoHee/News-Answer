@@ -104,11 +104,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json')); //
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); //이 옵션이 0으로 지정되면 curl_exec의 결과값을 브라우저에 바로 보여줌. 이 값을 1로 하면 결과값을 return하게 되어 변수에 저장 가능(테스트 시 기본값은 1인듯?)
 $res = curl_exec ($ch);
  
-var_dump($res);//결과값 확인하기
-echo '<br>';
-// print_r(curl_getinfo($ch));//마지막 http 전송 정보 출력
-// echo curl_errno($ch);//마지막 에러 번호 출력
-// echo curl_error($ch);//현재 세션의 마지막 에러 출력
+// var_dump($res);//결과값 확인하기
+echo $res.'<br>';
+
 curl_close($ch);
 
 
