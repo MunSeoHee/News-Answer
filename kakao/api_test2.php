@@ -39,6 +39,7 @@ print_r($body_json);
 //시작 위치
 echo '<br>'.$body_json["sentenceIndices"][0]["startIdx"];
 $start = $body_json["sentenceIndices"][0]["startIdx"];
+$start = (int)$start;
 
 //끝위치
 echo '<br>'.$body_json["sentenceIndices"][0]["endIdx"];
@@ -46,7 +47,7 @@ $end = $body_json["sentenceIndices"][0]["startIdx"];
 $end = (int)$end;
 
 //문장
-echo substr($text, $end);
+echo substr($text, $start, $end);
 
 curl_close($ch);
 
