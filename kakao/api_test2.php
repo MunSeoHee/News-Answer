@@ -36,7 +36,7 @@ $body_json = json_decode($body, true);
 print_r($body_json);
 
 // echo '<br>'.$body_json["labels"]["sentenceIndices"][0]["startIdx"];
-echo '<br>'.$body_json["labels"]["sentenceIndices"];
+echo '<br>'.$body_json["sentenceIndices"][0]["startIdx"];
 
 curl_close($ch);
 
