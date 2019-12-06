@@ -103,9 +103,17 @@ curl_setopt($ch, CURLOPT_HEADER, true);//헤더 정보를 보내도록 함(*필�
 curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json')); //header 지정하기
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); //이 옵션이 0으로 지정되면 curl_exec의 결과값을 브라우저에 바로 보여줌. 이 값을 1로 하면 결과값을 return하게 되어 변수에 저장 가능(테스트 시 기본값은 1인듯?)
 $res = curl_exec ($ch);
+echo $res.'<br>';
+$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+$header = substr($res, 0, $header_size);
+$body = substr($res, $header_size);    
+ 
+$body_json = json_decode($body, true);
+print_r($body_json);
+
  
 // var_dump($res);//결과값 확인하기
-echo $res.'<br>';
+
 
 curl_close($ch);
 
