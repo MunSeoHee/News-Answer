@@ -70,11 +70,21 @@
 
 $url = 'https://api.maum.ai/api/bert.mrc/'; //접속할 url 입력
  
-$post_data["apiId"] = "gachon.pproject.2564f05e95082";
-$post_data["apiKey"] = "128c573f3404408f80bab4874e0684eb";
-$post_data["lang"] = "eng";
-$post_data["context"] = "Born in Hungary in 1913 as Friedmann Endre Ernő, Capa was forced to leave his native country after his involvement in anti government protests. Capa had originally wanted to become a writer, but after his arrival in Berlin had first found work as a photographer. He later left Germany and moved to France due to the rise in Nazism. He tried to find work as a freelance journalist and it was here that he changed his name to Robert Capa, mainly because he thought it would sound more American.";
-$post_data["question"] = "Why did Capa changed his name?";
+// $post_data["apiId"] = "gachon.pproject.2564f05e95082";
+// $post_data["apiKey"] = "128c573f3404408f80bab4874e0684eb";
+// $post_data["lang"] = "eng";
+// $post_data["context"] = "Born in Hungary in 1913 as Friedmann Endre Ernő, Capa was forced to leave his native country after his involvement in anti government protests. Capa had originally wanted to become a writer, but after his arrival in Berlin had first found work as a photographer. He later left Germany and moved to France due to the rise in Nazism. He tried to find work as a freelance journalist and it was here that he changed his name to Robert Capa, mainly because he thought it would sound more American.";
+// $post_data["question"] = "Why did Capa changed his name?";
+
+$data = array(
+    "apiId" => "gachon.pproject.2564f05e95082",
+    "apiKey" => "128c573f3404408f80bab4874e0684eb",
+    "lang"=>"eng",
+    "context" => "Born in Hungary in 1913 as Friedmann Endre Ernő, Capa was forced to leave his native country after his involvement in anti government protests. Capa had originally wanted to become a writer, but after his arrival in Berlin had first found work as a photographer. He later left Germany and moved to France due to the rise in Nazism. He tried to find work as a freelance journalist and it was here that he changed his name to Robert Capa, mainly because he thought it would sound more American.",
+    "question" => "Why did Capa changed his name?"
+);
+
+$data_string = json_encode($data);
  
 // $access_token_value = "올바른 access token 입력";
  
@@ -86,7 +96,7 @@ $ch = curl_init(); //curl 사용 전 초기화 필수(curl handle)
  
 curl_setopt($ch, CURLOPT_URL, $url); //URL 지정하기
 curl_setopt($ch, CURLOPT_POST, 1); //0이 default 값이며 POST 통신을 위해 1로 설정해야 함
-curl_setopt ($ch, CURLOPT_POSTFIELDS, $post_data); //POST로 보낼 데이터 지정하기
+curl_setopt ($ch, CURLOPT_POSTFIELDS, $data_string); //POST로 보낼 데이터 지정하기
 curl_setopt ($ch, CURLOPT_POSTFIELDSIZE, 0); //이 값을 0으로 해야 알아서 &post_data 크기를 측정하는듯
  
 curl_setopt($ch, CURLOPT_HEADER, true);//헤더 정보를 보내도록 함(*필수)
