@@ -217,7 +217,7 @@ else{
 */
 //----------------------------------------------------------------
 
-
+/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
 $fix = $plan[1];
@@ -298,9 +298,9 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[9] = $plan[0];
 
-
+*/
 curl_close($ch);
 get_script($rank_e[0]);
 
-*/
+
 ?>
