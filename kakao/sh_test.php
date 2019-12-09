@@ -5,7 +5,7 @@ include './test1.php';
 include './test2.php';
 include './test3.php';
 $ch1 = curl_init(); 
-$url = $rank_e[0];
+$url = '/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0002958905&date=20191209&type=1&rankingSeq=1&rankingSectionId=101';
 echo $url;
 echo $rank_e[0];
 curl_setopt($ch1, CURLOPT_URL, 'https://news.naver.com'.$url); 
