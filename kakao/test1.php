@@ -25,28 +25,28 @@ $fix = $plan[1];
 $plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-echo plan[0];
+
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 
-/*
 if ( mysqli_num_rows($result)){
 }
 else{
-    $sql = "insert into set category=1 where user_key='$userkey'";
-    mysqli_query($con, $sql);
+    $sql = "insert into news (url, category) values ('$plan[0]', 1)";
+    $result = mysqli_query($con, $sql);
+    echo $result;
 }
-*/
+
 //$rank_p = [];
 //$rank_p[0] = $plan[0];
 
 
-
+/*
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-echo "2. ".$plan[0];
-$rank[1] = $plan[0];
+
+//$rank[1] = $plan[0];
 
 
 
@@ -218,4 +218,6 @@ $rank_e[9] = $plan[0];
 curl_close($ch);
 
 get_script($rank_e[0]);
+
+*/
 ?>
