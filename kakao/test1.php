@@ -203,5 +203,5 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 $rank_e[9] = "https://news.naver.com/".$plan[0];
-
+curl_close($ch);
 ?>

@@ -181,5 +181,5 @@ $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
 $Life_Culture[9] = "https://news.naver.com".$plan[0];
-
+curl_close($ch);
 ?>

@@ -1,6 +1,9 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
+include './test1.php';
+include './test2.php';
+include './test3.php';
 $ch = curl_init(); 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0002957536&date=20191203&type=1&rankingSeq=2&rankingSectionId=100'); 
@@ -66,6 +69,8 @@ $text = explode('▶', $text[1]);
 $text = $text[0];
 
 echo preg_replace("(\<(/?[^\>]+)\>)", "", $text).'<br>';
+
+curl_close($ch);
 
 
 

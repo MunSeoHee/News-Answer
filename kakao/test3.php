@@ -199,4 +199,5 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 $plan = "https://news.naver.com/".$plan[0];
 $science[9] = $plan;
+curl_close($ch);
 ?>
