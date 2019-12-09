@@ -8,8 +8,9 @@ $result = mysqli_query($con, $sql);
 
 foreach($result as $url){
     echo $url['url'];
+    $url = $url['url'];
     $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com'.$url['url']); 
+    curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com'.$url); 
     // 헤더는 제외하고 content 만 받음
     curl_setopt($ch, CURLOPT_HEADER, 0); 
     // 응답 값을 브라우저에 표시하지 말고 값을 리턴
@@ -32,7 +33,7 @@ foreach($result as $url){
     echo $script;
     
     curl_close($ch);
-    $sql = "insert into news (script) values ($script)";
+    $sql = "insert into news (script) values ('$script') where url='$url'";
     $result = mysqli_query($con, $sql);
     echo $result;
 }
