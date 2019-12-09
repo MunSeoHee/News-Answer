@@ -26,6 +26,7 @@ $plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
+$plan[0] = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
 $sql = "select * from news where url ='$plan[0]'";
 
 $result = mysqli_query($con, $sql);
@@ -50,6 +51,7 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank[1] = $plan[0];
+$plan[0] = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
