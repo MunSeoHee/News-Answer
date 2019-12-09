@@ -29,13 +29,12 @@ $plan = explode('" class=', $plan[1]);
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
-echo $result;
 
-if ( mysqli_num_rows($result)){
+if ($result){
 }
 else{
     $sql = "insert into news (url, category) values ('$plan[0]', 1)";
-    $result = mysqli_query($con, $sql);
+    mysqli_query($con, $sql);
 }
 
 //$rank_p = [];
