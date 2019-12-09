@@ -41,85 +41,173 @@ else{
 //$rank_p[0] = $plan[0];
 
 
-/*
+
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank[1] = $plan[0];
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num3"', $plan[1]);
+
+$plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[2] = $plan[0];
+//$rank_p[2] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num4"', $plan[1]);
+
+$plan = explode('"rank num4"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[3] = $plan[0];
+//$rank_p[3] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num5"', $plan[1]);
+$plan = explode('"rank num5"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[4] = $plan[0];
+//$rank_p[4] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num6"', $plan[1]);
+
+$plan = explode('"rank num6"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[5] = $plan[0];
+//$rank_p[5] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num7"', $plan[1]);
+
+$plan = explode('"rank num7"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[6] = $plan[0];
+//$rank_p[6] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num8"', $plan[1]);
+$plan = explode('"rank num8"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[7] = $plan[0];
+//$rank_p[7] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num9"', $plan[1]);
+
+$plan = explode('"rank num9"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[8] = $plan[0];
+//$rank_p[8] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num10"', $plan[1]);
+
+$plan = explode('"rank num10"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[9] = $plan[0];
+//$rank_p[9] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    mysqli_query($con, $sql);
+}
 
 
 
@@ -128,95 +216,86 @@ $rank_p[9] = $plan[0];
 
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num1"', $plan[1]);
+$fix = $plan[1];
+
+$plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e = [];
-$rank_e[0] = $plan[0];
+//$rank_e = [];
+//$rank_e[0] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num2"', $plan[1]);
+
+$plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[1] = $plan[0];
+//$rank_e[1] = $plan[0];
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num3"', $plan[1]);
+
+$plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[2] = $plan[0];
+//$rank_e[2] = $plan[0];
 
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num4"', $plan[1]);
+$plan = explode('"rank num4"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[3] = $plan[0];
+//$rank_e[3] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num5"', $plan[1]);
+$plan = explode('"rank num5"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[4] = $plan[0];
+//$rank_e[4] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num6"', $plan[1]);
+$plan = explode('"rank num6"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[5] = $plan[0];
+//$rank_e[5] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num7"', $plan[1]);
+
+$plan = explode('"rank num7"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[6] = $plan[0];
+//$rank_e[6] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num8"', $plan[1]);
+
+$plan = explode('"rank num8"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[7] = $plan[0];
+//$rank_e[7] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num9"', $plan[1]);
+
+$plan = explode('"rank num9"', $fix]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[8] = $plan[0];
+//$rank_e[8] = $plan[0];
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
-$plan = explode('"rank num10"', $plan[1]);
+
+$plan = explode('"rank num10"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[9] = $plan[0];
+//$rank_e[9] = $plan[0];
+
+
 curl_close($ch);
-
 get_script($rank_e[0]);
 
 */
