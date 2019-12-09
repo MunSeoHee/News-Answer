@@ -33,9 +33,10 @@ foreach($result as $url){
     echo $script;
 
     $sql = "update news set script='$script' where url='$url'";
-    mysqli_query($con, $sql);
-    echo $result;
+    $result = mysqli_query($con, $sql);
     
+    echo $result;
+    mysql_close($con);
     curl_close($ch);
    
 }
