@@ -32,19 +32,19 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 echo $result;
 
-/*if ($result){
+if ($result){
     
 }
 else{
     $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
-}*/
+}
 
 //$rank_p = [];
 //$rank_p[0] = $plan[0];
 
 
-/*
+
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -59,9 +59,8 @@ if ($result){
 else{
     $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
-    echo "ok2";
 }
-*/
+
 
 
 /*
