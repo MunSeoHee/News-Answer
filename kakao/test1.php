@@ -121,7 +121,7 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 $rank_e = [];
-$rank_e[0] = "https://news.naver.com".$plan[0];
+$rank_e[0] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
