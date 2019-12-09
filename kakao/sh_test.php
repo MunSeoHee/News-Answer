@@ -8,7 +8,7 @@ $ch = curl_init();
 
 foreach($rank_e as $link){
     echo $link;
-    curl_setopt($ch, CURLOPT_URL, "$link"); 
+    curl_setopt($ch, CURLOPT_URL, ''.$link); 
     // 헤더는 제외하고 content 만 받음
     curl_setopt($ch, CURLOPT_HEADER, 0); 
     // 응답 값을 브라우저에 표시하지 말고 값을 리턴
