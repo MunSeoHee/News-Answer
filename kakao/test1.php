@@ -28,8 +28,9 @@ $plan = explode('" class=', $plan[1]);
 
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
-$result = mysqli_num_rows($result);
 echo $result;
+$result = mysqli_num_rows($result);
+
 
 /*if ($result){
     
