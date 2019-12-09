@@ -31,11 +31,13 @@ foreach($result as $url){
     
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     echo $script;
+
+    $sql = "update news set script='$script' where url='$url'";
+    mysqli_query($con, $sql);
+    echo $result;
     
     curl_close($ch);
-    $sql = "update news set script='$script' where url='$url'";
-    $result = mysqli_query($con, $sql);
-    echo $result;
+   
 }
 
 
