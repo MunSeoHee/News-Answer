@@ -8,6 +8,8 @@ $ch1 = curl_init();
 $url = '/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0002958905&date=20191209&type=1&rankingSeq=1&rankingSectionId=101';
 echo $url;
 echo $rank_e[0];
+gettype($url);
+gettype($rank_e[0]);
 curl_setopt($ch1, CURLOPT_URL, 'https://news.naver.com'.$url); 
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch1, CURLOPT_HEADER, 0); 
