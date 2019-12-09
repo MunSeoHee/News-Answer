@@ -1,6 +1,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
+include_once( './setting.php');
 $ch = curl_init(); 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/'); 
@@ -19,12 +20,26 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num1"', $plan[1]);
+$fix = $plan[1];
+echo $fix;
+$plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p = [];
-$rank_p[0] = "https://news.naver.com/".$plan[0];
+echo $plan[0];
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+
+/*
+if ( mysqli_num_rows($result)){
+}
+else{
+    $sql = "insert into set category=1 where user_key='$userkey'";
+    mysqli_query($con, $sql);
+}
+*/
+//$rank_p = [];
+//$rank_p[0] = $plan[0];
 
 
 
@@ -34,7 +49,7 @@ $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank[1] = "https://news.naver.com/".$plan[0];
+$rank[1] = $plan[0];
 
 
 
@@ -44,7 +59,7 @@ $plan = explode('"rank num3"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[2] = 'https://news.naver.com/'.$plan[0];
+$rank_p[2] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -53,7 +68,7 @@ $plan = explode('"rank num4"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[3] = 'https://news.naver.com/'.$plan[0];
+$rank_p[3] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -62,7 +77,7 @@ $plan = explode('"rank num5"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[4] = 'https://news.naver.com/'.$plan[0];
+$rank_p[4] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -71,7 +86,7 @@ $plan = explode('"rank num6"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[5] = 'https://news.naver.com/'.$plan[0];
+$rank_p[5] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -80,7 +95,7 @@ $plan = explode('"rank num7"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[6] = 'https://news.naver.com/'.$plan[0];
+$rank_p[6] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -89,7 +104,7 @@ $plan = explode('"rank num8"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[7] = 'https://news.naver.com/'.$plan[0];
+$rank_p[7] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -98,7 +113,7 @@ $plan = explode('"rank num9"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[8] = 'https://news.naver.com/'.$plan[0];
+$rank_p[8] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -107,7 +122,7 @@ $plan = explode('"rank num10"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_p[9] = 'https://news.naver.com/'.$plan[0];
+$rank_p[9] = $plan[0];
 
 
 
@@ -130,7 +145,7 @@ $plan = explode('"rank num2"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[1] = "https://news.naver.com".$plan[0];
+$rank_e[1] = $plan[0];
 
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">경제</h5>', $plan[1]);
@@ -138,7 +153,7 @@ $plan = explode('"rank num3"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[2] = "https://news.naver.com".$plan[0];
+$rank_e[2] = $plan[0];
 
 
 
@@ -148,7 +163,7 @@ $plan = explode('"rank num4"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[3] = "https://news.naver.com".$plan[0];
+$rank_e[3] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -157,7 +172,7 @@ $plan = explode('"rank num5"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[4] = "https://news.naver.com".$plan[0];
+$rank_e[4] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -166,7 +181,7 @@ $plan = explode('"rank num6"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[5] = "https://news.naver.com".$plan[0];
+$rank_e[5] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -175,7 +190,7 @@ $plan = explode('"rank num7"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[6] = "https://news.naver.com".$plan[0];
+$rank_e[6] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -184,7 +199,7 @@ $plan = explode('"rank num8"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[7] = "https://news.naver.com".$plan[0];
+$rank_e[7] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -193,7 +208,7 @@ $plan = explode('"rank num9"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[8] = "https://news.naver.com".$plan[0];
+$rank_e[8] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -202,7 +217,7 @@ $plan = explode('"rank num10"', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$rank_e[9] = "https://news.naver.com".$plan[0];
+$rank_e[9] = $plan[0];
 curl_close($ch);
 
 get_script($rank_e[0]);
