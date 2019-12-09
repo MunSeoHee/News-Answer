@@ -56,11 +56,12 @@ if ($result){
 else{
     $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
+    echo "ok2";
 }
 
 
 
-
+/*
 $plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -210,7 +211,7 @@ else{
 }
 
 
-
+*/
 //----------------------------------------------------------------
 
 
