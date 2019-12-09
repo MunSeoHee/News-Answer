@@ -5,8 +5,8 @@ include './test1.php';
 include './test2.php';
 include './test3.php';
 $ch1 = curl_init(); 
-curl_setopt($ch1, CURLOPT_URL, 'https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0002958905&date=20191209&type=1&rankingSeq=1&rankingSectionId=101'); 
-echo 'https://news.naver.com'.$rank_e[0];
+$url = $rank_e[0];
+curl_setopt($ch1, CURLOPT_URL, 'https://news.naver.com'.$url); 
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch1, CURLOPT_HEADER, 0); 
 // 응답 값을 브라우저에 표시하지 말고 값을 리턴
