@@ -123,7 +123,6 @@ $plan = explode('" class=', $plan[1]);
 
 $rank_e = [];
 $rank_e[0] = $plan[0];
-get_script($rank_e[0]);
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -206,4 +205,6 @@ $plan = explode('" class=', $plan[1]);
 
 $rank_e[9] = "https://news.naver.com".$plan[0];
 curl_close($ch);
+
+get_script($rank_e[0]);
 ?>
