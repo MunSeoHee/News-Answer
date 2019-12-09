@@ -6,6 +6,8 @@ include './test2.php';
 include './test3.php';
 $ch1 = curl_init(); 
 $url = $rank_e[0];
+echo $url;
+echo $rank_e[0];
 curl_setopt($ch1, CURLOPT_URL, 'https://news.naver.com'.$url); 
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch1, CURLOPT_HEADER, 0); 
