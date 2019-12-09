@@ -31,26 +31,30 @@ foreach($result as $url){
     
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     echo $script;
+    
+    if ($script != ''){
+        $sql = "update news set script='$script' where url='$url'";
+        echo $sql;
 
-    $sql = "update news set script='$script' where url='$url'";
-    echo $sql;
+        if (mysqli_query($con, $sql)) {
 
-    if (mysqli_query($con, $sql)) {
+            echo "레코드 수정 성공!";
 
-        echo "레코드 수정 성공!";
+        } else {
 
-    } else {
+            echo "레코드 수정 실패! : ".mysqli_error($con);
 
-        echo "레코드 수정 실패! : ".mysqli_error($con);
-
+        }
     }
-    mysql_close($con);
+
+    
+   
     curl_close($ch);
    
 }
 
 
-
+mysql_close($con);
 
 
 
