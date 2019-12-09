@@ -21,12 +21,11 @@ $content = iconv('euc-kr','utf-8',$content);
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
 $fix = $plan[1];
-echo $fix;
+
 $plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-
-echo $plan[0];
+echo plan[0];
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 
@@ -43,12 +42,10 @@ else{
 
 
 
-$plan = explode('<div class="section section_wide">', $content);
-$plan = explode('<h5 class="blind">정치</h5>', $plan[1]);
-$plan = explode('"rank num2"', $plan[1]);
+$plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-
+echo $plan[0];
 $rank[1] = $plan[0];
 
 
