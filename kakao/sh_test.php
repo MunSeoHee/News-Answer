@@ -34,10 +34,16 @@ foreach($result as $url){
 
     $sql = "update news set script='$script' where url='$url'";
     echo $sql;
-    
-    $result = mysqli_query($con, $sql);
-    
-    echo $result;
+
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($connection);
+
+    }
     mysql_close($con);
     curl_close($ch);
    
