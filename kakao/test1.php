@@ -35,7 +35,7 @@ if ($result){
 else{
     $sql = "insert into news (url, category) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
-    echo $plan[0];
+    echo "ok";
 }
 
 //$rank_p = [];
