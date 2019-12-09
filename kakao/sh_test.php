@@ -41,7 +41,7 @@ foreach($result as $url){
 
     } else {
 
-        echo "레코드 수정 실패! : ".mysqli_error($connection);
+        echo "레코드 수정 실패! : ".mysqli_error($con);
 
     }
     mysql_close($con);
