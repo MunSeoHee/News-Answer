@@ -7,6 +7,7 @@ $sql = "select url from news where script is null";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $url){
+    echo $url;
     $ch = curl_init(); 
     curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com'.$url); 
     // 헤더는 제외하고 content 만 받음
