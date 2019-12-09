@@ -1,6 +1,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
+include_once('./sh_test.php')
 $ch = curl_init(); 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/'); 
@@ -122,6 +123,7 @@ $plan = explode('" class=', $plan[1]);
 
 $rank_e = [];
 $rank_e[0] = $plan[0];
+get_script($rank_e[0]);
 
 
 $plan = explode('<div class="section section_wide">', $content);
