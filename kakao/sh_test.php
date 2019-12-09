@@ -4,9 +4,10 @@
 include './test1.php';
 include './test2.php';
 include './test3.php';
-$ch = curl_init(); 
+
 
 foreach($rank_e as $link){
+    $ch = curl_init(); 
     echo $link;
     curl_setopt($ch, CURLOPT_URL, ''.$link); 
     // 헤더는 제외하고 content 만 받음
