@@ -33,7 +33,7 @@ foreach($result as $url){
     echo $script;
     
     curl_close($ch);
-    $sql = "insert into news (script) values ('$script') where url='$url'";
+    $sql = "update news set script='$script' where url='$url'";
     $result = mysqli_query($con, $sql);
     echo $result;
 }
