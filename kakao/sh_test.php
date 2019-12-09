@@ -1,16 +1,15 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
-include './test1.php';
-include './test2.php';
-include './test3.php';
+include_once('./test1.php');
 $ch1 = curl_init(); 
 $url = 'https://news.naver.com'.$rank_e[0];
 echo $url;
 echo $rank_e[0];
 echo gettype($url);
 echo gettype($rank_e[0]);
-curl_setopt($ch1, CURLOPT_URL, "$url"); 
+
+curl_setopt($ch1, CURLOPT_URL, $url); 
 echo '<br>'.'https://news.naver.com'.$rank_e[0];
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch1, CURLOPT_HEADER, 0); 
