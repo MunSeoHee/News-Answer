@@ -45,7 +45,7 @@ else{
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
-echo $plan[0];
+echo "2. ".$plan[0];
 $rank[1] = $plan[0];
 
 
