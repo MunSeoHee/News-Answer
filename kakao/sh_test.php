@@ -9,7 +9,7 @@ $result = mysqli_query($con, $sql);
 foreach($result as $url){
     echo $url['url'];
     $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com'.$url); 
+    curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com'.$url['url']); 
     // 헤더는 제외하고 content 만 받음
     curl_setopt($ch, CURLOPT_HEADER, 0); 
     // 응답 값을 브라우저에 표시하지 말고 값을 리턴
