@@ -34,6 +34,7 @@ foreach($result as $url){
     curl_close($ch);
     $sql = "insert into news (script) values ($script)";
     $result = mysqli_query($con, $sql);
+    echo $result;
 }
 
 
