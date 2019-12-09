@@ -41,7 +41,7 @@ else{
 //$rank_p[0] = $plan[0];
 
 
-
+/*
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -58,7 +58,7 @@ else{
     mysqli_query($con, $sql);
     echo "ok2";
 }
-
+*/
 
 
 /*
