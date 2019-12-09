@@ -3,6 +3,7 @@
 <?php 
 
 function get_script($url){
+    echo $url;
     $url = 'https://news.naver.com'.$url;
     $ch1 = curl_init(); 
     
@@ -56,6 +57,7 @@ $plan = explode('" class=', $plan[1]);
 $rank_p = [];
 $rank_p[0] = $plan[0];
 curl_close($ch);
+echo $rank_p[0];
 get_script($rank_p[0]);
 
 
