@@ -20,7 +20,6 @@ foreach($result as $url){
     $content = curl_exec($ch); 
     //인코딩이 utf-8이 아닌경우에만 사용
     $content = iconv('euc-kr','utf-8',$content);
-    echo $content;
     
     //explode로 필요한 부분만 잘라서 사용
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
@@ -29,9 +28,11 @@ foreach($result as $url){
     $text = explode('▶', $text[1]);
     $text = $text[0];
     
-    echo preg_replace("(\<(/?[^\>]+)\>)", "", $text).'<br>';
+    $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
+    echo $script;
     
     curl_close($ch);
+    $sql = "insert into news (script) values ($script)";
 }
 
 
