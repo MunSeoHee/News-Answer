@@ -217,6 +217,7 @@ EOD;
 EOD;
             break;
         default:
+            $question = $content;
             echo <<<EOD
             {
                 "message":
