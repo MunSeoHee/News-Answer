@@ -12,7 +12,7 @@
         case "정치":
             
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where user_key='$userkey'";
+                $sql = "update user set category=0 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -35,7 +35,7 @@ EOD;
             break;
         case "경제":
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=2 where user_key='$userkey'";
+                $sql = "update user set category=1 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -59,7 +59,7 @@ EOD;
         case "사회":
         
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where user_key='$userkey'";
+                $sql = "update user set category=2 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -83,7 +83,7 @@ EOD;
         case "생활/문화":
     
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where user_key='$userkey'";
+                $sql = "update user set category=3 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -107,7 +107,7 @@ EOD;
         case "세계":
 
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where user_key='$userkey'";
+                $sql = "update user set category=4 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
@@ -131,7 +131,7 @@ EOD;
         case "IT/과학":
 
             if ( mysqli_num_rows($result)){
-                $sql = "update user set category=1 where user_key='$userkey'";
+                $sql = "update user set category=5 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
