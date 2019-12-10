@@ -9,9 +9,9 @@ $url = 'https://api.maum.ai/api/bert.mrc/'; //접속할 url 입력
 $data = array(
     "apiId" => "gachon.pproject.2564f05e95082",
     "apiKey" => "128c573f3404408f80bab4874e0684eb",
-    "lang"=>"eng",
-    "context" => "지난해 야구 국가대표 사령탑 지휘봉을 스스로 내려놓은 국보급 투수 선동열 전 감독이 새로운 도전에 나섭니다. 선 전 감독은 오늘(11일) 서울 목동구장에서 기자 회견을 열어 내년 미국프로야구 메이저리그 뉴욕 양키스 구단의 스프링캠프에 참가해 메이저리그 선진 야구를 배울 생각이라고 밝혔습니다. 기자회견에 동석한 스티브 윌슨 양키스 국제담당 총괄 스카우트는 양키스 구단이 일본 지도자를 구단에 초청한 적은 있지만, 한국 지도자는 최초로 초청한다며 영광으로 생각한다고 덧붙였습니다. 자세한 인터뷰 내용은 영상으로 확인하시죠.",
-    "question" => "감독의 이름은?"
+    "lang"=>"kr",
+    "context" => $context,
+    "question" => $question
 );
 
 //body값 json 인코딩
@@ -35,11 +35,11 @@ $header = substr($res, 0, $header_size);
 $body = substr($res, $header_size);    
  //body부분을 json으로 디코딩
 $body_json = json_decode($body, true);
-print_r($body_json);
+// print_r($body_json);
 
-echo '<br>'.$body_json["answer"];
+// echo '<br>'.$body_json["answer"];
 
- 
+ $answer = $body_json["answer"];
 //var_dump($res);//결과값 확인하기
 
 
