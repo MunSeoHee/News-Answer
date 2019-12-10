@@ -218,11 +218,23 @@ EOD;
             break;
         default:
             $question = $content;
+            $sql = "select news from user where user_key='$userkey'";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $num = $res['news'];
+            }
+            $sql = "select script from news where number=$num";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $context = $res['scrip'];
+            }
+            include './api_test.php';
+
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "질문질문"
+                    "text": "$answer"
                 },
                 "keyboard":
                 {
