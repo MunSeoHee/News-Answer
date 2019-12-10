@@ -181,6 +181,25 @@ EOD;
 EOD;
             
             break;
+        case "다른 뉴스":
+            $sql = "select category from user where user_key='$userkey'"
+            $result = mysqli_query($con, $sql);
+            $num=$result['category'];
+            include './api_test2.php';
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "$summ $num"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
     }
 
     
