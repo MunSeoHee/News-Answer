@@ -1,6 +1,9 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
+
+include_once( './setting.php');
+
 $ch = curl_init(); 
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/'); 
@@ -24,7 +27,19 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[0] = "https://news.naver.com".$plan[0];
+$social[0] = $plan[0];
+
+$sql = "select * from news where url ='$social[0]'";
+$result = mysqli_query($con, $sql);
+$num = mysqli_num_rows($result);
+
+if($num!='0') {
+    echo "이미 존재함";
+}
+else {  
+    $sql = "insert into news (url, categorie) values ('$social[0]', 2)";
+    mysqli_query($con, $sql); 
+}
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -32,7 +47,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num2">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[1] = "https://news.naver.com".$plan[0];
+$social[1] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -40,7 +55,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num3">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[2] = "https://news.naver.com".$plan[0];
+$social[2] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -48,7 +63,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num4">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[3] = "https://news.naver.com".$plan[0];
+$social[3] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -56,7 +71,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num5">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[4] = "https://news.naver.com".$plan[0];
+$social[4] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -64,7 +79,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num6">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[5] = "https://news.naver.com".$plan[0];
+$social[5] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -72,7 +87,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num7">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[6] = "https://news.naver.com".$plan[0];
+$social[6] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -80,7 +95,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num8">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[7] = "https://news.naver.com".$plan[0];
+$social[7] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -88,7 +103,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num9">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[8] = "https://news.naver.com".$plan[0];
+$social[8] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -96,7 +111,7 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[9] = "https://news.naver.com".$plan[0];
+$social[9] = $plan[0];
 
 
 //--------------------------------------------------
@@ -108,7 +123,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[0] = "https://news.naver.com".$plan[0];
+$Life_Culture[0] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -116,7 +131,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num2">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[1] = "https://news.naver.com".$plan[0];
+$Life_Culture[1] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -124,7 +139,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num3">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[2] = "https://news.naver.com".$plan[0];
+$Life_Culture[2] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -132,7 +147,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num4">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[3] = "https://news.naver.com".$plan[0];
+$Life_Culture[3] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -140,7 +155,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num5">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[4] = "https://news.naver.com".$plan[0];
+$Life_Culture[4] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -148,7 +163,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num6">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[5] = "https://news.naver.com".$plan[0];
+$Life_Culture[5] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -156,7 +171,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num7">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[6] = "https://news.naver.com".$plan[0];
+$Life_Culture[6] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -164,7 +179,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num8">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[7] = "https://news.naver.com".$plan[0];
+$Life_Culture[7] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -172,7 +187,7 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num9">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[8] = "https://news.naver.com".$plan[0];
+$Life_Culture[8] = $plan[0];
 
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -180,6 +195,6 @@ $plan = explode('<h5 class="blind">생활/문화</h5>', $plan[1]);
 $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$Life_Culture[9] = "https://news.naver.com".$plan[0];
+$Life_Culture[9] = $plan[0];
 curl_close($ch);
 ?>
