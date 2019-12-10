@@ -5,7 +5,11 @@
 
 include_once('./setting.php');
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script from news where categorie=0 order by rand() limit 1;";
+$sql = "select script from news where categorie=0 order by rand() limit 1";
+$result = mysqli_query($con, $sql);
+foreach($result as $url){
+    echo $url['script'];
+}
 if (mysqli_query($con, $sql)) {
 
     $result = mysqli_query($con, $sql);
