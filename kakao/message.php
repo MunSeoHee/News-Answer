@@ -202,6 +202,35 @@ EOD;
             }
 EOD;
             break;
+        case "질문하기":
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "자유롭게 질문해주세요:)"
+                },
+                "keyboard":
+                {
+                    "type": "text"
+                }
+            }
+EOD;
+            break;
+        default:
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "질문질문"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
     }
 
     
