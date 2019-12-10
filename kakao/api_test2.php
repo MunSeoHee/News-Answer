@@ -8,7 +8,7 @@ $sql = "select script from news where categorie=$num order by rand() limit 1";
 $result = mysqli_query($con, $sql);
 foreach($result as $res){
     $text = $res['script'];
-    echo $text;
+    // echo $text;
 }
 
 $summ='';
@@ -53,7 +53,7 @@ for($i=0; $i<2; $i++){
     $end = (int)$end;
 
     //문장
-    echo '<br>'.iconv_substr($text, $start, $end - $start, "utf-8");
+    // echo '<br>'.iconv_substr($text, $start, $end - $start, "utf-8");
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
 
