@@ -64,4 +64,7 @@ function summary($num){
     return $summary;
 }
 
+$s = summary(1);
+echo $s;
+
 ?>
