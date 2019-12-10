@@ -34,6 +34,7 @@ foreach($result as $url){
     else if(strpos($test[1],"[국민일보 채널 구독하기]")){
         $text = explode('[국민일보 채널 구독하기]', $text[1]);
         $text = $text[0];
+        echo "국민일보";
     }
     else{
         $text = explode('▶', $text[1]);
