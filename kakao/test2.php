@@ -33,10 +33,9 @@ $social[0] = $plan[0];
 
 $sql = "select * from news where url ='$social[0]'";
 $result = mysqli_query($con, $sql);
-$num= mysqli_num_rows($result);
+$result= mysqli_num_rows($result);
 
-if($num!='0') {
-    
+if($result) {
 }
 else {  
     $sql = "insert into news (url, date, categorie) values ('$social[0]','$time', 2)";
