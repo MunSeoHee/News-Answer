@@ -7,7 +7,7 @@ $sql = "select url from news where script is null";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $url){
-    echo $url['url'];
+    echo '<pre>'.$url['url'].'</pre>';
     $url = $url['url'];
     $urls = str_replace('amp;','',$url);
     $ch = curl_init(); 
@@ -35,7 +35,7 @@ foreach($result as $url){
     
     if ($script != ''){
         $sql = "update news set script='$script' where url='$url'";
-        echo $sql;
+        echo '<pre>'.$sql.'</pre>';
 
         if (mysqli_query($con, $sql)) {
 
