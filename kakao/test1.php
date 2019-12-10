@@ -15,6 +15,7 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 $content = curl_exec($ch); 
 //인코딩이 utf-8이 아닌경우에만 사용
 $content = iconv('euc-kr','utf-8',$content);
+$today = date("Y-m-d H:i:s");
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
@@ -26,34 +27,31 @@ $plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$test = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
-echo $test;
-echo $plan[0];
-/*$sql = "select * from news where url ='$plan[0]'";
+$sql = "select * from news where url ='$plan[0]'";
 
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
-echo $result;
 
+echo $today;
+/*
 if ($result){
-    
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
     mysqli_query($con, $sql);
 }
-
+*/
 //$rank_p = [];
 //$rank_p[0] = $plan[0];
 
-
+/*
 
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank[1] = $plan[0];
-$plan[0] = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
+
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
@@ -73,25 +71,20 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_p[2] = $plan[0];
 
-$plan[0] = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
 $sql = "select * from news where url ='$plan[0]'";
 
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
-echo $result;
 
 if ($result){
-    
 }
 else{
     $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
 }
-*/
 
 
 
-/*
 $plan = explode('"rank num4"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -109,7 +102,8 @@ else{
     mysqli_query($con, $sql);
 }
 
-
+*/
+/*
 $plan = explode('"rank num5"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
