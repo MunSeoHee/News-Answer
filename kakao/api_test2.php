@@ -13,6 +13,7 @@ foreach($result as $res){
     // echo $text;
 }
 $sql = "update user set news=$news where user_key='$userkey'";
+mysqli_query($con, $sql);
 
 $summ='';
 
