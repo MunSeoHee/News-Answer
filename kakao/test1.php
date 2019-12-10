@@ -259,7 +259,7 @@ else{
     mysqli_query($con, $sql);
 }
 
-/*
+
 
 $plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
@@ -416,5 +416,5 @@ else{
 
 curl_close($ch);
 get_script($rank_e[0]);
-*/
+
 ?>
