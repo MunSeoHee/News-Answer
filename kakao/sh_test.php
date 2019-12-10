@@ -30,6 +30,8 @@ foreach($result as $url){
     $text = explode('▶', $text[1]);
     $text = $text[0]; 
 
+    echo $text;
+
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
