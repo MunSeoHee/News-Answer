@@ -41,7 +41,7 @@ $header = substr($res, 0, $header_size);
 $body = substr($res, $header_size);    
     //body부분을 json으로 디코딩
 $body_json = json_decode($body, true);
-print_r($body_json);
+// print_r($body_json);
 
 for($i=0; $i<2; $i++){
     //시작 위치;
