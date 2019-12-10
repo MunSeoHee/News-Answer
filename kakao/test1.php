@@ -35,7 +35,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, date, categorie) values ('$plan[0]', $today, 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
     echo $sql;
     mysqli_query($con, $sql);
 }
