@@ -27,7 +27,8 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 $plan[0] = mb_convert_encoding($plan[0], "HTML-ENTITIES", "UTF-8");
-$sql = "select * from news where url ='$plan[0]'";
+echo $plan;
+/*$sql = "select * from news where url ='$plan[0]'";
 
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
@@ -85,6 +86,8 @@ else{
     $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
     mysqli_query($con, $sql);
 }
+*/
+
 
 
 /*
