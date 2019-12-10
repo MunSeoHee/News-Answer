@@ -182,7 +182,7 @@ EOD;
             
             break;
         case "다른 뉴스":
-            $sql = "select category from user where user_key='$userkey'"
+            $sql = "select category from user where user_key='$userkey'";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
                 $num = $res['script'];
