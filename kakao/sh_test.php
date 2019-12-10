@@ -28,6 +28,7 @@ foreach($result as $url){
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
     $check = strpos($text, 'target="_blank');
+    echo $check;
     if($check){
         /*$text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
         $text = $text[0];*/
