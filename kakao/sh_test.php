@@ -32,6 +32,7 @@ foreach($result as $url){
         $text = $text[0];*/
         echo "국민일보";
     }
+    echo "if 아님";
     /*
     else{
         $text = explode('▶', $text[1]);
