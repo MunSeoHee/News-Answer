@@ -27,7 +27,7 @@ foreach($result as $url){
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
-    if (strpos($test[1],"- Copyrights ⓒ 조선일보")){
+    /*if (strpos($test[1],"- Copyrights ⓒ 조선일보")){
         echo "조선";
         $text = explode('- Copyrights ⓒ 조선일보', $text[1]);
         $text = $text[0];
@@ -42,8 +42,11 @@ foreach($result as $url){
         $text = explode('▶', $text[1]);
         $text = $text[0];
     }
+   */
    
-    
+    $text = explode('▶', $text[1]);
+    $text = $text[0]; 
+
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
