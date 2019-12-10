@@ -1,6 +1,8 @@
 <?php
 //AI독해
 
+include_once('./setting.php');
+
 $url = 'https://api.maum.ai/api/bert.mrc/'; //접속할 url 입력
 
 //body 파라메터 값
@@ -38,7 +40,7 @@ print_r($body_json);
 echo '<br>'.$body_json["answer"];
 
  
- var_dump($res);//결과값 확인하기
+//var_dump($res);//결과값 확인하기
 
 
 curl_close($ch);
