@@ -376,7 +376,7 @@ else{
 }
 
 
-/*
+
 $plan = explode('"rank num9"', $fix]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -395,7 +395,7 @@ else{
 }
 
 
-
+/*
 $plan = explode('"rank num10"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
