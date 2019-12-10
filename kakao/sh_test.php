@@ -26,26 +26,11 @@ foreach($result as $url){
     //explode로 필요한 부분만 잘라서 사용
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
     $text = explode('articleBodyContents', $content);
-    $text = explode('</script>', $text[1]);
-    /*if (strpos($test[1],"- Copyrights ⓒ 조선일보")){
-        echo "조선";
-        $text = explode('- Copyrights ⓒ 조선일보', $text[1]);
-        $text = $text[0];
-    }
-    else if(strpos($test[1],"[국민일보 채널 구독하기]")){
-        $text = explode('[국민일보 채널 구독하기]', $text[1]);
-        $text = $text[0];
-        echo "국민일보";
-    }
-    else{
-        echo "else"
-        $text = explode('▶', $text[1]);
-        $text = $text[0];
-    }
-   */
-   
+    $text = explode('</script>', $text[1]);   
     $text = explode('▶', $text[1]);
     $text = $text[0]; 
+
+    echo $text;
 
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);

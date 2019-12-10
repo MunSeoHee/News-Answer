@@ -215,7 +215,7 @@ else {
 
 
 //--------------------------------------------------
-
+/*
 $Life_Culture = [];
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -406,7 +406,7 @@ else {
     $sql = "insert into news (url, date, categorie) values ('$Life_culture[9]','$time', 3)";
     mysqli_query($con, $sql); 
 }
-
+*/
 
 curl_close($ch);
 ?>
