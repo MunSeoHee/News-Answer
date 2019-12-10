@@ -1,5 +1,6 @@
 <?php
     include './setting.php';
+    include_once('./api_test2');
     $data = json_decode(file_get_contents('php://input'), true);
     $userkey = $data["user_key"];
     $content = $data["content"];
@@ -8,8 +9,33 @@
 
     switch($content)
     {
+        
         case "정치":
             
+            if ( mysqli_num_rows($result)){
+                $sql = "update user set category=0 where user_key='$userkey'";
+                mysqli_query($con, $sql);
+            }
+            else{
+                $sql = "insert into user (user_key, category) values ('$userkey', 0)";
+                mysqli_query($con, $sql);
+            }
+            $summary = summary(1);
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "$summary"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
+        case "경제":
             if ( mysqli_num_rows($result)){
                 $sql = "update user set category=1 where user_key='$userkey'";
                 mysqli_query($con, $sql);
@@ -32,13 +58,86 @@
             }
 EOD;
             break;
-        case "경제":
+        case "사회":
+        
             if ( mysqli_num_rows($result)){
                 $sql = "update user set category=2 where user_key='$userkey'";
                 mysqli_query($con, $sql);
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 2)";
+                mysqli_query($con, $sql);
+            }
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "뉴스요약"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
+        case "생활/문화":
+    
+            if ( mysqli_num_rows($result)){
+                $sql = "update user set category=3 where user_key='$userkey'";
+                mysqli_query($con, $sql);
+            }
+            else{
+                $sql = "insert into user (user_key, category) values ('$userkey', 3)";
+                mysqli_query($con, $sql);
+            }
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "뉴스요약"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
+        case "세계":
+
+            if ( mysqli_num_rows($result)){
+                $sql = "update user set category=4 where user_key='$userkey'";
+                mysqli_query($con, $sql);
+            }
+            else{
+                $sql = "insert into user (user_key, category) values ('$userkey', 4)";
+                mysqli_query($con, $sql);
+            }
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "text": "뉴스요약"
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
+        case "IT/과학":
+
+            if ( mysqli_num_rows($result)){
+                $sql = "update user set category=5 where user_key='$userkey'";
+                mysqli_query($con, $sql);
+            }
+            else{
+                $sql = "insert into user (user_key, category) values ('$userkey', 5)";
                 mysqli_query($con, $sql);
             }
             echo <<<EOD

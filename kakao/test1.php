@@ -15,6 +15,7 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 $content = curl_exec($ch); 
 //인코딩이 utf-8이 아닌경우에만 사용
 $content = iconv('euc-kr','utf-8',$content);
+$today = date("Y-m-d H:i:s");
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
@@ -27,13 +28,14 @@ $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 $sql = "select * from news where url ='$plan[0]'";
+
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -41,12 +43,13 @@ else{
 //$rank_p[0] = $plan[0];
 
 
-/*
+
 $plan = explode('"rank num2"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank[1] = $plan[0];
+
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
@@ -54,14 +57,12 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
-    echo "ok2";
 }
-*/
 
 
-/*
+
 $plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
@@ -69,13 +70,14 @@ $plan = explode('" class=', $plan[1]);
 //$rank_p[2] = $plan[0];
 
 $sql = "select * from news where url ='$plan[0]'";
+
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -94,9 +96,10 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
+
 
 
 $plan = explode('"rank num5"', $fix);
@@ -112,7 +115,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -131,7 +134,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -150,7 +153,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -168,7 +171,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -187,7 +190,7 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
@@ -206,12 +209,10 @@ $result = mysqli_num_rows($result);
 if ($result){
 }
 else{
-    $sql = "insert into news (url, categorie) values ('$plan[0]', 1)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
 }
 
-
-*/
 //----------------------------------------------------------------
 
 
@@ -223,8 +224,21 @@ $plan = explode('"rank num1"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
 //$rank_e = [];
 //$rank_e[0] = $plan[0];
+
 
 
 
@@ -234,12 +248,36 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[1] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
+
 
 $plan = explode('"rank num3"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank_e[2] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
 
 
 
@@ -249,6 +287,18 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[3] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
+
 
 $plan = explode('"rank num5"', $fix);
 $plan = explode('<a href="', $plan[1]);
@@ -256,12 +306,36 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[4] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
+
 
 $plan = explode('"rank num6"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
 //$rank_e[5] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
 
 
 
@@ -271,6 +345,17 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[6] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
 
 
 $plan = explode('"rank num8"', $fix);
@@ -279,13 +364,35 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[7] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
 
 
-$plan = explode('"rank num9"', $fix]);
+
+$plan = explode('"rank num9"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-//$rank_e[8] = $plan[0];
+//$rank_e[7] = $plan[0];
+
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
 
 
 
@@ -295,9 +402,18 @@ $plan = explode('" class=', $plan[1]);
 
 //$rank_e[9] = $plan[0];
 
+$sql = "select * from news where url ='$plan[0]'";
+$result = mysqli_query($con, $sql);
+$result = mysqli_num_rows($result);
+
+if ($result){
+}
+else{
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
+    mysqli_query($con, $sql);
+}
+
 
 curl_close($ch);
-get_script($rank_e[0]);
 
-*/
 ?>
