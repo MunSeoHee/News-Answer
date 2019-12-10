@@ -5,7 +5,15 @@
 include_once('./setting.php');
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
 $sql = "select script from news where categorie=0 order by rand() limit 1;";
-$result = mysqli_query($con, $sql);
+if (mysqli_query($con, $sql)) {
+
+    echo "레코드 수정 성공!";
+
+} else {
+
+    echo "레코드 수정 실패! : ".mysqli_error($con);
+
+}
 echo $result;
 
 // $text = $result[0]['script'];
