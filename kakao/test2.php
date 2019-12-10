@@ -22,23 +22,23 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $time = date("Y-m-d H:i:s");
 
-$social = [];
+// $social = [];
 
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[0] = $plan[0];
+// $social[0] = $plan[0];
 
-$sql = "select * from news where url ='$social[0]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[0]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
     mysqli_query($con, $sql); 
 }
 
