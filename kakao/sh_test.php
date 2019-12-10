@@ -26,19 +26,16 @@ foreach($result as $url){
     //explode로 필요한 부분만 잘라서 사용
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
     $text = explode('articleBodyContents', $content);
-    $text = explode('</script>', $text[1]);   
+    $text = explode('</script>', $text[1]);
     $text = explode('▶', $text[1]);
-    $text = $text[0]; 
-
+    $text = $text[0];
+    
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
-    $script = preg_replace('/\r\n|\r|\n/','',$text);
-    $script = preg_replace("/\s{2,}/"," ",$str);
+
     echo $script;
     
-
-
     if ($script != ''){
         $sql = "update news set script='$script' where url='$url'";
         echo '<pre>'.$sql.'</pre>';

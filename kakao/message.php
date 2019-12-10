@@ -185,14 +185,14 @@ EOD;
             $sql = "select category from user where user_key='$userkey'";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
-                $num = $res['script'];
+                $num = $res['category'];
             }
-            // include './api_test2.php';
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "$num"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
