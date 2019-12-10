@@ -12,7 +12,7 @@ function summary($num){
         echo $text;
     }
 
-    $summary='';
+    $summ='';
     
     //body 파라메터 값
     $data = array(
@@ -55,15 +55,15 @@ function summary($num){
     
         //문장
         echo '<br>'.iconv_substr($text, $start, $end - $start, "utf-8");
-        $summary = $summary.iconv_substr($text, $start, $end - $start, "utf-8");
+        $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
     }
     
     
     curl_close($ch);
-    return $summary;
+    return $summ;
 }
 
-$s = summary(1);
-echo $s;
+
+echo summary(1);
 
 ?>
