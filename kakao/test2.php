@@ -38,27 +38,27 @@ $result= mysqli_num_rows($result);
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 3)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
     echo $sql;
     mysqli_query($con, $sql); 
 }
 
-/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num2">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[1] = $plan[0];
+// $social[1] = $plan[0];
 
-$sql = "select * from news where url ='$social[1]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[1]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -68,16 +68,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num3">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[2] = $plan[0];
+//$social[2] = $plan[0];
 
-$sql = "select * from news where url ='$social[2]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[2]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -87,16 +88,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num4">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[3] = $plan[0];
+//$social[3] = $plan[0];
 
-$sql = "select * from news where url ='$social[3]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[3]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -106,16 +108,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num5">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[4] = $plan[0];
+//$social[4] = $plan[0];
 
-$sql = "select * from news where url ='$social[4]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[4]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -125,16 +128,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num6">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[5] = $plan[0];
+//$social[5] = $plan[0];
 
-$sql = "select * from news where url ='$social[5]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[5]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -144,16 +148,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num7">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[6] = $plan[0];
+//$social[6] = $plan[0];
 
-$sql = "select * from news where url ='$social[6]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[6]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -163,16 +168,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num8">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[7] = $plan[0];
+//$social[7] = $plan[0];
 
-$sql = "select * from news where url ='$social[7]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[7]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -182,16 +188,17 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num9">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[8] = $plan[0];
+//$social[8] = $plan[0];
 
-$sql = "select * from news where url ='$social[8]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[8]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
@@ -201,22 +208,23 @@ $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
-$social[9] = $plan[0];
+//$social[9] = $plan[0];
 
-$sql = "select * from news where url ='$social[9]'";
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result= mysqli_num_rows($result);
 
 if($result) {
 }
 else {  
-    $sql = "insert into news (url, date, categorie) values ('$social[9]','$time', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
 
 //--------------------------------------------------
-
+/*
 $Life_Culture = [];
 
 $plan = explode('<div class="section section_wide">', $content);
