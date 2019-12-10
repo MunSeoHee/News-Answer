@@ -377,17 +377,17 @@ else{
 
 
 
-$plan = explode('"rank num9"', $fix]);
+$plan = explode('"rank num9"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-//$rank_e[8] = $plan[0];
+//$rank_e[7] = $plan[0];
 
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 echo $result;
-/*
+
 if ($result){
 }
 else{
@@ -396,7 +396,7 @@ else{
 }
 
 
-
+/*
 $plan = explode('"rank num10"', $fix);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
