@@ -184,7 +184,9 @@ EOD;
         case "다른 뉴스":
             $sql = "select category from user where user_key='$userkey'"
             $result = mysqli_query($con, $sql);
-            $num=$result['category'];
+            foreach($result as $res){
+                $num = $res['script'];
+            }
             include './api_test2.php';
             echo <<<EOD
             {
