@@ -7,7 +7,9 @@ $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
 $sql = "select script from news where categorie=0 order by rand() limit 1;";
 if (mysqli_query($con, $sql)) {
 
+    $result = mysqli_query($con, $sql);
     echo "레코드 수정 성공!";
+    echo $result;
 
 } else {
 
