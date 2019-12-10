@@ -27,7 +27,7 @@ foreach($result as $url){
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
-    if(strrpos($text, '<a href="http://naver.me/GxmvUNz3" target="_blank">')){
+    if(strrpos($text, '[국민일보')){
         /*$text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
         $text = $text[0];*/
         echo "국민일보";
@@ -45,7 +45,7 @@ foreach($result as $url){
     $script = str_replace("'", '"', $script);
 
     echo $script;
-    
+    /*
     if ($script != ''){
         $sql = "update news set script='$script' where url='$url'";
         echo '<pre>'.$sql.'</pre>';
@@ -61,7 +61,7 @@ foreach($result as $url){
         }
     }
 
-    
+    */
    
     curl_close($ch);
    
