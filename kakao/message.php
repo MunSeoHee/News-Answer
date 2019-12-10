@@ -187,12 +187,12 @@ EOD;
             foreach($result as $res){
                 $num = $res['script'];
             }
-            include './api_test2.php';
+            // include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "$summ $num"
+                    "text": "$num"
                 },
                 "keyboard":
                 {
