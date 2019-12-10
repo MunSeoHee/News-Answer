@@ -1,9 +1,9 @@
 <?php
 //텍스트 분류
 
-
+$num=1;
 include_once('./setting.php');
-function summary($num){
+
     $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
     $sql = "select script from news where categorie=$num order by rand() limit 1";
     $result = mysqli_query($con, $sql);
@@ -60,10 +60,6 @@ function summary($num){
     
     
     curl_close($ch);
-    return $summ;
-}
 
-
-echo summary(1);
 
 ?>
