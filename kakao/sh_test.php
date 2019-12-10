@@ -31,6 +31,9 @@ foreach($result as $url){
     $text = $text[0];
     
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
+    $script = trim($script);
+    $script = str_replace("'", '"', $script);
+
     echo $script;
     
     if ($script != ''){
