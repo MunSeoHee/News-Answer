@@ -15,7 +15,7 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 $content = curl_exec($ch); 
 //인코딩이 utf-8이 아닌경우에만 사용
 $content = iconv('euc-kr','utf-8',$content);
-$todat = date("Y-m-d H:i:s");
+$today = date("Y-m-d H:i:s");
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
