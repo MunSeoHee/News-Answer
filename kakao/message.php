@@ -1,6 +1,6 @@
 <?php
     include './setting.php';
-    include_once('./api_test2');
+    
     $data = json_decode(file_get_contents('php://input'), true);
     $userkey = $data["user_key"];
     $content = $data["content"];
@@ -20,12 +20,13 @@
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
                 mysqli_query($con, $sql);
             }
-            $summary = summary(1);
+            $num=1;
+            include './api_test2';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "$summary"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
