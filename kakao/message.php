@@ -20,13 +20,13 @@
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
                 mysqli_query($con, $sql);
             }
-            $_POST["num"] = 1;
-            include_once('./api_test2');
+            $num=1;
+            include './api_test2';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "$summary"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {

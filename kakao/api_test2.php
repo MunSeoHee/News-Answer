@@ -1,7 +1,6 @@
 <?php
 //텍스트 분류
 
-$num= $_POST["num"];
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
