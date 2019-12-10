@@ -33,7 +33,8 @@ foreach($result as $url){
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
-
+    $script = preg_replace('/\r\n|\r|\n/','',$text);
+    $script = preg_replace("/\s{2,}/"," ",$str);
     echo $script;
     
     if ($script != ''){

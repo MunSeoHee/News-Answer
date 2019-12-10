@@ -20,7 +20,7 @@
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
                 mysqli_query($con, $sql);
             }
-            $num=1;
+            $num=0;
             include './api_test2.php';
             echo <<<EOD
             {
@@ -45,11 +45,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 1)";
                 mysqli_query($con, $sql);
             }
+            $num=1;
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "뉴스요약"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
@@ -69,11 +71,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 2)";
                 mysqli_query($con, $sql);
             }
+            $num=2;
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "뉴스요약"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
@@ -93,11 +97,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 3)";
                 mysqli_query($con, $sql);
             }
+            $num=3;
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "뉴스요약"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
@@ -117,11 +123,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 4)";
                 mysqli_query($con, $sql);
             }
+            $num=4;
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "뉴스요약"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
@@ -141,11 +149,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 5)";
                 mysqli_query($con, $sql);
             }
+            $num=5;
+            include './api_test2.php';
             echo <<<EOD
             {
                 "message":
                 {
-                    "text": "뉴스요약"
+                    "text": "$summ"
                 },
                 "keyboard":
                 {
