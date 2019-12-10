@@ -42,7 +42,7 @@ else {
     mysqli_query($con, $sql); 
 }
 
-
+/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num2">', $plan[1]);
@@ -215,7 +215,7 @@ else {
 
 
 //--------------------------------------------------
-/*
+
 $Life_Culture = [];
 
 $plan = explode('<div class="section section_wide">', $content);
