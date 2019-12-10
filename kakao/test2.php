@@ -21,7 +21,7 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $time = date("Y-m-d H:i:s");
-/*
+
 // $social = [];
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -211,7 +211,7 @@ else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 2)";
     mysqli_query($con, $sql); 
 }
-*/
+
 
 //--------------------------------------------------
 
@@ -232,7 +232,6 @@ if($result) {
 }
 else {  
     $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 3)";
-    echo $sql;
     mysqli_query($con, $sql); 
 }
 
