@@ -20,6 +20,8 @@ $content = iconv('euc-kr','utf-8',$content);
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
+$time = date("Y-m-d H:i:s");
+
 $social = [];
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -31,17 +33,17 @@ $social[0] = $plan[0];
 
 $sql = "select * from news where url ='$social[0]'";
 $result = mysqli_query($con, $sql);
-$num = mysqli_num_rows($result);
+$num= mysqli_num_rows($result);
 
 if($num!='0') {
-    echo "이미 존재함";
+    
 }
 else {  
-    $sql = "insert into news (url, categorie) values ('$social[0]', 2)";
+    $sql = "insert into news (url, date, categorie) values ('$social[0]','$time', 2)";
     mysqli_query($con, $sql); 
 }
 
-
+/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num2">', $plan[1]);
@@ -196,5 +198,7 @@ $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="',$plan[1]);
 $plan = explode('" class=', $plan[1]);
 $Life_Culture[9] = $plan[0];
+*/
+
 curl_close($ch);
 ?>
