@@ -32,14 +32,15 @@ $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
+echo $today;
+/*
 if ($result){
 }
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 1)";
-    echo $sql;
     mysqli_query($con, $sql);
 }
-
+*/
 //$rank_p = [];
 //$rank_p[0] = $plan[0];
 
