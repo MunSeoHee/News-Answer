@@ -232,6 +232,7 @@ if($result) {
 }
 else {  
     $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 3)";
+    echo $sql;
     mysqli_query($con, $sql); 
 }
 
