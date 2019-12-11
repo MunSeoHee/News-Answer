@@ -59,7 +59,6 @@ for($i=0; $i<2; $i++){
     // echo '<pre>'.iconv_substr($text, $start, $end - $start, "utf-8").'<pre>';
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
-$summ = str_replace('·',' ',$summ);
 $summ = str_replace('"',"'",$summ);
 $sql = "update news set summary='$summ' where number=84";
 mysqli_query($con, $sql);
