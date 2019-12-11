@@ -54,14 +54,36 @@ foreach($result as $url){
         $text = explode("네이버 홈에서 ‘이데일리’ 뉴스", $text[1]);
         $text = $text[0];
     }
-
+    //세계일보 
+    else if(strpos($text[1], 'ⓒ 세상을 보는 눈')){
+        $text = explode("ⓒ 세상을 보는 눈", $text[1]);
+        $text = $text[0];
+    }
+    //매일경제   
+    else if(strpos($text[1], 'ⓒ 매일경제')){
+        $text = explode('target="_blank">▶', $text[1]);
+        $text = $text[0];
+    }
+    //중앙일보  
+    else if(strpos($text[1], 'ⓒ중앙일보')){
+        $text = explode("<br>▶ <a href=", $text[1]);
+        $text = $text[0];
+    }
+    //한국일보  
+    else if(strpos($text[1], '한국일보닷컴')){
+        $text = explode("▶<a href=", $text[1]);
+        $text = $text[0];
+    }
+    //뉴스1   
+    else if(strpos($text[1], '[뉴스1]')){
+        $text = explode("<br><br><p><a target", $text[1]);
+        $text = $text[0];
+    }
     //나머지 언론사
     else{
         $text = explode('<br><br><a href', $text[1]);
         $text = $text[0];
     }
-  
-    
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
@@ -77,7 +99,6 @@ foreach($result as $url){
     $script = str_replace('◆', '', $script);
     $script = str_replace('◀', '', $script);
     $script = str_replace('▶', '', $script);
-    
     
     echo $script;
 

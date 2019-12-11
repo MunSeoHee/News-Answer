@@ -43,6 +43,11 @@ $answer = $body_json["answer"];
 //var_dump($res);//결과값 확인하기
 
 
+$request = $question;
+$response = $answer;
+include './system_insert.php';
+
+
 curl_close($ch);
 
 ?>
