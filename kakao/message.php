@@ -29,13 +29,7 @@
                 }
             }
             include './api_test2.php';
-            // $sql = "select summary from news where number=84";
-            // $result = mysqli_query($con, $sql);
-            // foreach($result as $res){
-            //     if ($res['summary'] != null){
-            //         $summ = $res['summary'];
-            //     }
-            // }
+
             echo <<<EOD
             {
                 "message":
