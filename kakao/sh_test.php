@@ -39,6 +39,11 @@ foreach($result as $url){
         $text = explode('- Copyrights ⓒ 조선일보 & chosun.com', $text[1]);
         $text = $text[0];
     }
+    //데일리안
+    else if(strpos($text[1], '데일리안')){
+        $text = explode('ⓒ (주)데일리안', $text[1]);
+        $text = $text[0];
+    }    
     //나머지 언론사
     else{
         $text = explode('▶', $text[1]);
