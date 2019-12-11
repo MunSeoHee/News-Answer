@@ -34,7 +34,7 @@
             {
                 "message":
                 {
-                    "text": "$summ",
+                    "text": "zzzz",
                     "message_button": {
                       "label": "반갑습니다.",
                       "url": "$url"
