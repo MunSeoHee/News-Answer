@@ -4,7 +4,7 @@
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script from news where number=47";
+$sql = "select script from news where number=$number";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $res){
