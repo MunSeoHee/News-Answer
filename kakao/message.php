@@ -33,7 +33,7 @@
             {
                 "message":
                 {
-                    "text": "$summ"
+                    "text": '$summ'
                 },
                 "keyboard":
                 {
