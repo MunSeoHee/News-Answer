@@ -33,9 +33,11 @@ foreach($result as $url){
     if(strpos($text[1], '국민일보')){
         /*$text[1] = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
         $text = $text[0];*/
-       // echo "국민일보";
+        echo "국민일보";
     }
-    echo "if 아님";
+    else{
+        echo "if 아님";
+    }
     /*
     else{
         $text = explode('▶', $text[1]);
