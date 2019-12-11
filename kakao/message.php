@@ -20,7 +20,12 @@
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
                 mysqli_query($con, $sql);
             }
-            $num=0;
+            // $num=0;
+            $sql = "select number from news where categorie=0 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $number = $res['number'];
+            }
             include './api_test2.php';
             echo <<<EOD
             {
