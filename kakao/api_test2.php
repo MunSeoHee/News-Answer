@@ -4,15 +4,15 @@
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script from news where number=$number";
+$sql = "select script from news where number=84";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $res){
     $text = $res['script'];
     // echo $text;
 }
-$sql = "update user set news=$number where user_key='$userkey'";
-mysqli_query($con, $sql);
+// $sql = "update user set news=$number where user_key='$userkey'";
+// mysqli_query($con, $sql);
 
 $summ='';
 
