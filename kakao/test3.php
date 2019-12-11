@@ -32,7 +32,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -49,7 +48,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -66,7 +64,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -83,7 +80,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -100,7 +96,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -117,7 +112,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -134,7 +128,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -151,7 +144,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -168,7 +160,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -185,7 +176,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
@@ -202,7 +192,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -219,7 +208,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -236,7 +224,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -253,7 +240,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -270,7 +256,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -287,7 +272,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -304,7 +288,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -321,7 +304,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -338,7 +320,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
@@ -355,7 +336,6 @@ $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
 if ($result) {
-
 } else {
     $sql = "insert into news (url, date, cartegorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
