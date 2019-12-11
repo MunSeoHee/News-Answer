@@ -28,13 +28,13 @@ foreach($result as $url){
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
     
-    echo $text;
+    echo $text[0];
     
-    if(strpos($text[1], '국민일보')){
+  //  if(strpos($text[1], '국민일보')){
         /*$text[1] = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
         $text = $text[0];*/
-        echo "국민일보";
-    //}
+       // echo "국민일보";
+   // }
     echo "if 아님";
     /*
     else{
