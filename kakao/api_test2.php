@@ -60,7 +60,8 @@ for($i=0; $i<2; $i++){
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
 $summ = str_replace('"',"'",$summ);
-
+$summ = str_replace('‘',"'",$summ);
+$summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
 
