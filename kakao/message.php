@@ -225,6 +225,13 @@ EOD;
             foreach($result as $res){
                 $num = $res['category'];
             }
+            $sql = "select number from news where categorie=$num order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
