@@ -36,8 +36,8 @@
                 {
                     "text": "$summ",
                     "message_button": {
-                        "label": "$summ",
-                        "url": "$url"
+                      "label": "반갑습니다.",
+                      "url": "$url"
                     }
                 },
                 "keyboard":
