@@ -34,7 +34,11 @@
             {
                 "message":
                 {
-                    "text": "$summ"
+                    "text": "$summ",
+                    "message_button": {
+                        "label": "뉴스 보러가기",
+                        "url": "$url"
+                    }
                 },
                 "keyboard":
                 {
