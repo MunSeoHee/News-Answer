@@ -226,7 +226,7 @@ EOD;
             $sql = "select script from news where number=$num";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
-                $context = $res['scrip'];
+                $context = $res['script'];
             }
             include './api_test.php';
 
