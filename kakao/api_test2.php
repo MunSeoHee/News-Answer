@@ -4,16 +4,14 @@
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script, url from news where number=$number";
+$sql = "select script from news where number=$number";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $res){
     $text = $res['script'];
-    $url = $res['url'];
     // echo $text;
 }
-$url = str_replace('amp;','',$url);
-$url = 'https://news.naver.com'.$url;
+
 $sql = "update user set news=$number where user_key='$userkey'";
 mysqli_query($con, $sql);
 

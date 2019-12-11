@@ -34,16 +34,12 @@
             {
                 "message":
                 {
-                    "message_button": {
-                      "label": "반갑습니다.",
-                      "url": "$url"
-                    },
                     "text": "$summ"
                 },
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -74,7 +70,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -106,7 +102,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -138,7 +134,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -170,7 +166,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -202,7 +198,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -246,7 +242,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -261,6 +257,35 @@ EOD;
                 "keyboard":
                 {
                     "type": "text"
+                }
+            }
+EOD;
+            break;
+        case "기사 원문 보기":
+            $sql = "select news from user where user_key='$userkey'";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $num = $res['news'];
+            }
+            $sql = "select url from news where number=$num";
+            foreach($result as $res){
+                $url = $res['url'];
+            }
+            $url = str_replace('amp;','',$url);
+            $url = 'https://news.naver.com'.$url;
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "message_button": {
+                        "label": "원문 기사 보러가기",
+                        "url": "$url"
+                      }
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
                 }
             }
 EOD;
@@ -288,7 +313,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
