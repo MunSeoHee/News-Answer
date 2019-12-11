@@ -27,7 +27,7 @@ $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -43,7 +43,7 @@ $plan = explode('<span class="rank num2">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -59,7 +59,7 @@ $plan = explode('<span class="rank num3">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -75,7 +75,7 @@ $plan = explode('<span class="rank num4">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -91,7 +91,7 @@ $plan = explode('<span class="rank num5">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -107,7 +107,7 @@ $plan = explode('<span class="rank num6">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -123,7 +123,7 @@ $plan = explode('<span class="rank num7">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -139,7 +139,7 @@ $plan = explode('<span class="rank num8">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -155,7 +155,7 @@ $plan = explode('<span class="rank num9">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -171,7 +171,7 @@ $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -187,7 +187,7 @@ $plan = explode('<span class="rank num1">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -203,7 +203,7 @@ $plan = explode('<span class="rank num2">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -219,7 +219,7 @@ $plan = explode('<span class="rank num3">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -235,7 +235,7 @@ $plan = explode('<span class="rank num4">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -251,7 +251,7 @@ $plan = explode('<span class="rank num5">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -267,7 +267,7 @@ $plan = explode('<span class="rank num6">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -283,7 +283,7 @@ $plan = explode('<span class="rank num7">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -299,7 +299,7 @@ $plan = explode('<span class="rank num8">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -315,7 +315,7 @@ $plan = explode('<span class="rank num9">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 
@@ -331,7 +331,7 @@ $plan = explode('<span class="rank num10">', $plan[1]);
 $plan = explode('<a href="', $plan[1]);
 $plan = explode('" class=', $plan[1]);
 
-$sql = "select * from news where url ='$plan[0]'"
+$sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
 $result = mysqli_num_rows($result);
 

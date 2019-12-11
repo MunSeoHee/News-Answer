@@ -23,7 +23,7 @@ $content = iconv('euc-kr','utf-8',$content);
 $time = date("Y-m-d H:i:s");
 
 // $social = [];
-
+/*
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<h5 class="blind">사회</h5>', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
@@ -405,6 +405,13 @@ else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]','$time', 3)";
     mysqli_query($con, $sql); 
 }
+*/
+$sql = "delete from news where category in(
+        select * from (
+            select category from news order by date desc limit 5, 100000) as A
+        ) ";
+$result = mysqli_query($con, $sql);
+
 
 
 curl_close($ch);
