@@ -268,6 +268,7 @@ EOD;
                 $num = $res['news'];
             }
             $sql = "select url from news where number=$num";
+            $result = mysqli_query($con, $sql);
             foreach($result as $res){
                 $url = $res['url'];
             }
