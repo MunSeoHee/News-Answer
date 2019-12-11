@@ -53,7 +53,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 1)";
                 mysqli_query($con, $sql);
             }
-            $num=1;
+            $sql = "select number from news where categorie=1 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -79,7 +85,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 2)";
                 mysqli_query($con, $sql);
             }
-            $num=2;
+            $sql = "select number from news where categorie=2 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -105,7 +117,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 3)";
                 mysqli_query($con, $sql);
             }
-            $num=3;
+            $sql = "select number from news where categorie=3 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -131,7 +149,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 4)";
                 mysqli_query($con, $sql);
             }
-            $num=4;
+            $sql = "select number from news where categorie=4 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -157,7 +181,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 5)";
                 mysqli_query($con, $sql);
             }
-            $num=5;
+            $sql = "select number from news where categorie=5 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
