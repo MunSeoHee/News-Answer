@@ -36,7 +36,7 @@
                 {
                     "text": "$summ",
                     "message_button": {
-                        "label": "뉴스 보러가기",
+                        "label": "$summ",
                         "url": "$url"
                     }
                 },
