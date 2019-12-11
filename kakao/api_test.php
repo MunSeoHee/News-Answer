@@ -10,8 +10,8 @@ $data = array(
     "apiId" => "gachon.pproject.2564f05e95082",
     "apiKey" => "128c573f3404408f80bab4874e0684eb",
     "lang"=>"kor",
-    "context" => $context,
-    "question" => $question
+    "context" => "경사진 주차장 고임목 설치 의무화 '하준이법'도 통과내년도 예산안은 오후에 협상 계속할 듯여야는 10일 오전 정기국회 마지막 본회의를 열어 스쿨존에 과속카메라 설치를 의무화하고 사망 사고가 발생할 경우 가중 처벌하는 것을 골자로 한 일명 '민식이법'과 '하준이법' 등을 통과시켰다.10일 본회의에서 의원들이 국가인권위원(양정숙) 선출안에 대해 투표하고 있다.",
+    "question" => "민식이 법이 뭐야?"
 );
 
 //body값 json 인코딩
@@ -35,9 +35,9 @@ $header = substr($res, 0, $header_size);
 $body = substr($res, $header_size);    
  //body부분을 json으로 디코딩
 $body_json = json_decode($body, true);
-// print_r($body_json);
+print_r($body_json);
 
-// echo '<br>'.$body_json["answer"];
+echo '<br>'.$body_json["answer"];
 
 $answer = $body_json["answer"];
 //var_dump($res);//결과값 확인하기
