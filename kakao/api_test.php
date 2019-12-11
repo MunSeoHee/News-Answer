@@ -9,7 +9,7 @@ $url = 'https://api.maum.ai/api/bert.mrc/'; //접속할 url 입력
 $data = array(
     "apiId" => "gachon.pproject.2564f05e95082",
     "apiKey" => "128c573f3404408f80bab4874e0684eb",
-    "lang"=>"kr",
+    "lang"=>"kor",
     "context" => $context,
     "question" => $question
 );
@@ -39,7 +39,7 @@ $body_json = json_decode($body, true);
 
 // echo '<br>'.$body_json["answer"];
 
- $answer = $body_json["answer"];
+$answer = $body_json["answer"];
 //var_dump($res);//결과값 확인하기
 
 

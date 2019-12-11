@@ -4,15 +4,15 @@
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script, number from news where categorie=$num order by rand() limit 1";
+$sql = "select script from news where number=$number";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $res){
     $text = $res['script'];
-    $news = $res['number'];
     // echo $text;
 }
-$sql = "update user set news=$news where user_key='$userkey'";
+
+$sql = "update user set news=$number where user_key='$userkey'";
 mysqli_query($con, $sql);
 
 $summ='';
@@ -57,11 +57,12 @@ for($i=0; $i<2; $i++){
     $end = (int)$end;
 
     //문장
-    // echo '<br>'.iconv_substr($text, $start, $end - $start, "utf-8");
+    // echo '<pre>'.iconv_substr($text, $start, $end - $start, "utf-8").'<pre>';
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
-
-
+$summ = str_replace('"',"'",$summ);
+$summ = str_replace('‘',"'",$summ);
+$summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
 

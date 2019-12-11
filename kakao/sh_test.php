@@ -27,25 +27,61 @@ foreach($result as $url){
     //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
-    if(strpos($text, 'target="_blank')){
-        /*$text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
-        $text = $text[0];*/
-        echo "국민일보";
+        
+
+    //국민일보
+    if(strpos($text[1], '[국민일보')){
+        $text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
+        $text = $text[0];
     }
-    echo "if 아님";
-    /*
+    //조선일보
+    else if(strpos($text[1], 'ⓒ 조선일보')){
+        $text = explode('- Copyrights ⓒ 조선일보 & chosun.com', $text[1]);
+        $text = $text[0];
+    }
+    //데일리안
+    else if(strpos($text[1], 'ⓒ (주)데일리안')){
+        $text = explode('ⓒ (주)데일리안', $text[1]);
+        $text = $text[0];
+    }    
+    //문화닷컴
+    else if(strpos($text[1], '문화닷컴 바로가기')){
+        $text = explode("[ <a href='http://www.munhwa.com'", $text[1]);
+        $text = $text[0];
+    }    
+    //이데일리
+    else if(strpos($text[1], 'ⓒ종합 경제정보 미디어 이데일리')){
+        $text = explode("네이버 홈에서 ‘이데일리’ 뉴스", $text[1]);
+        $text = $text[0];
+    }
+
+    //나머지 언론사
     else{
-        $text = explode('▶', $text[1]);
-         $text = $text[0];
+        $text = explode('<br><br><a href', $text[1]);
+        $text = $text[0];
     }
-    */
+  
     
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
 
+    $script = str_replace('▲', '', $script);
+    $script = str_replace('△', '', $script);
+    $script = str_replace('▷', '', $script);
+    $script = str_replace('■', '', $script);
+    $script = str_replace('◇', '', $script);
+    $script = str_replace('◆', '', $script);
+    $script = str_replace('○', '', $script);
+    $script = str_replace('▽', '', $script);
+    $script = str_replace('◆', '', $script);
+    $script = str_replace('◀', '', $script);
+    $script = str_replace('▶', '', $script);
+    
+    
     echo $script;
-    /*
+
+    
     if ($script != ''){
         $sql = "update news set script='$script' where url='$url'";
         echo '<pre>'.$sql.'</pre>';
@@ -61,7 +97,7 @@ foreach($result as $url){
         }
     }
 
-    */
+
    
     curl_close($ch);
    

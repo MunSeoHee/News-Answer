@@ -20,8 +20,16 @@
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
                 mysqli_query($con, $sql);
             }
-            $num=0;
+            // $num=0;
+            $sql = "select number from news where categorie=0 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
+
             echo <<<EOD
             {
                 "message":
@@ -31,7 +39,7 @@
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -45,7 +53,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 1)";
                 mysqli_query($con, $sql);
             }
-            $num=1;
+            $sql = "select number from news where categorie=1 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -56,7 +70,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -71,7 +85,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 2)";
                 mysqli_query($con, $sql);
             }
-            $num=2;
+            $sql = "select number from news where categorie=2 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -82,7 +102,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -97,7 +117,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 3)";
                 mysqli_query($con, $sql);
             }
-            $num=3;
+            $sql = "select number from news where categorie=3 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -108,7 +134,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -123,7 +149,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 4)";
                 mysqli_query($con, $sql);
             }
-            $num=4;
+            $sql = "select number from news where categorie=4 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -134,7 +166,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -149,7 +181,13 @@ EOD;
                 $sql = "insert into user (user_key, category) values ('$userkey', 5)";
                 mysqli_query($con, $sql);
             }
-            $num=5;
+            $sql = "select number from news where categorie=5 order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -160,7 +198,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -187,6 +225,13 @@ EOD;
             foreach($result as $res){
                 $num = $res['category'];
             }
+            $sql = "select number from news where categorie=$num order by rand() limit 1";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
+            }
             include './api_test2.php';
             echo <<<EOD
             {
@@ -197,7 +242,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
@@ -216,6 +261,36 @@ EOD;
             }
 EOD;
             break;
+        case "기사 원문 보기":
+            $sql = "select news from user where user_key='$userkey'";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $num = $res['news'];
+            }
+            $sql = "select url from news where number=$num";
+            $result = mysqli_query($con, $sql);
+            foreach($result as $res){
+                $url = $res['url'];
+            }
+            $url = str_replace('amp;','',$url);
+            $url = 'https://news.naver.com'.$url;
+            echo <<<EOD
+            {
+                "message":
+                {
+                    "message_button": {
+                        "label": "원문 기사 보러가기",
+                        "url": "$url"
+                      }
+                },
+                "keyboard":
+                {
+                    "type": "buttons",
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                }
+            }
+EOD;
+            break;
         default:
             $question = $content;
             $sql = "select news from user where user_key='$userkey'";
@@ -226,7 +301,7 @@ EOD;
             $sql = "select script from news where number=$num";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
-                $context = $res['scrip'];
+                $context = $res['script'];
             }
             include './api_test.php';
 
@@ -239,7 +314,7 @@ EOD;
                 "keyboard":
                 {
                     "type": "buttons",
-                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기"]
+                    "buttons": ["카테고리 재선택", "다른 뉴스", "질문하기", "기사 원문 보기"]
                 }
             }
 EOD;
