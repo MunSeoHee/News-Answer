@@ -21,10 +21,12 @@
                 mysqli_query($con, $sql);
             }
             // $num=0;
-            $sql = "select number from news where categorie=0 order by rand() limit 1";
+            $sql = "select number from news where categorie=0 order by rand() limit 0";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
-                $number = $res['number'];
+                if ($res['number'] != null){
+                    $number = $res['number'];
+                }
             }
             include './api_test2.php';
             echo <<<EOD
