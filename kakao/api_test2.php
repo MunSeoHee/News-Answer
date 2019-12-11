@@ -4,12 +4,12 @@
 include_once('./setting.php');
 
 $url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
-$sql = "select script from news where number=$number";
+$sql = "select script from news where number=47";
 $result = mysqli_query($con, $sql);
 
 foreach($result as $res){
     $text = $res['script'];
-    // echo $text;
+    echo $text;
 }
 // $sql = "update user set news=$number where user_key='$userkey'";
 // mysqli_query($con, $sql);
@@ -56,7 +56,7 @@ for($i=0; $i<2; $i++){
     $end = (int)$end;
 
     //문장
-    // echo '<pre>'.iconv_substr($text, $start, $end - $start, "utf-8").'<pre>';
+    echo '<pre>'.iconv_substr($text, $start, $end - $start, "utf-8").'<pre>';
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
 $summ = str_replace('"',"'",$summ);
