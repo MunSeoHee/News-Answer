@@ -30,8 +30,8 @@ foreach($result as $url){
     
     echo $text;
     
-    //if($check){
-        /*$text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
+    if(strpos($text[1], '국민일보')){
+        /*$text[1] = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
         $text = $text[0];*/
         echo "국민일보";
     //}
