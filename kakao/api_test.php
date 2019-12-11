@@ -41,6 +41,9 @@ $body_json = json_decode($body, true);
 
 $answer = $body_json["answer"];
 //var_dump($res);//결과값 확인하기
+if($answer==''){
+    $answer = "알 수 없습니다:(";
+}
 
 
 curl_close($ch);
