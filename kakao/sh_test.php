@@ -55,6 +55,17 @@ foreach($result as $url){
     $script = trim($script);
     $script = str_replace("'", '"', $script);
 
+    $script = str_replace('▲', '', $script);
+    $script = str_replace('△', '', $script);
+    $script = str_replace('▷', '', $script);
+    $script = str_replace('■', '', $script);
+    $script = str_replace('◇', '', $script);
+    $script = str_replace('◆', '', $script);
+    $script = str_replace('○', '', $script);
+    $script = str_replace('▽', '', $script);
+    $script = str_replace('◆', '', $script);
+
+    
     echo $script;
 
     
