@@ -60,7 +60,8 @@ for($i=0; $i<2; $i++){
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
 
-
+$sql = "update news set summary='$summ' where number=84";
+mysqli_query($con, $sql);
 curl_close($ch);
 
 
