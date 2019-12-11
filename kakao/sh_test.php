@@ -28,7 +28,7 @@ foreach($result as $url){
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
         
-    
+
     //국민일보
     if(strpos($text[1], '국민일보')){
         $text = explode('<a href="http://naver.me/GxmvUNz3" target="_blank"', $text[1]);
@@ -51,7 +51,8 @@ foreach($result as $url){
     $script = str_replace("'", '"', $script);
 
     echo $script;
-    /*
+
+    
     if ($script != ''){
         $sql = "update news set script='$script' where url='$url'";
         echo '<pre>'.$sql.'</pre>';
@@ -67,7 +68,7 @@ foreach($result as $url){
         }
     }
 
-    */
+
    
     curl_close($ch);
    
