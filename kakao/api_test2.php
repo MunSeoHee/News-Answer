@@ -11,8 +11,8 @@ foreach($result as $res){
     $text = $res['script'];
     // echo $text;
 }
-// $sql = "update user set news=$number where user_key='$userkey'";
-// mysqli_query($con, $sql);
+$sql = "update user set news=$number where user_key='$userkey'";
+mysqli_query($con, $sql);
 
 $summ='';
 
