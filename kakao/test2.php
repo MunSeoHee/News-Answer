@@ -407,7 +407,7 @@ else {
 }
 */
 
-$sql = "delete from news where category = 1 order by date desc limit 5, 100000 ";
+$sql = "delete from news where category=1 order by date desc limit 5, 100000 ";
 $result = mysqli_query($con, $sql);
 
 curl_close($ch);
