@@ -409,12 +409,11 @@ else {
 
 $sql = "delete from news where categorie in (
             select * from (
-                select categorie from news order by date desc limit 5, 10000) A )";
-if (mysqli_query($con, $sql)) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: ";
-}
+                select categorie from news where categorie=0 order by date desc limit 5, 10000
+            ) as A 
+        )";
+
+mysqli_query($con, $sql); 
 
 curl_close($ch);
 ?>
