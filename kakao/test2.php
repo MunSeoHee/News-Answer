@@ -407,9 +407,9 @@ else {
 }
 
 /*
-$sql = "delete from news where categorie in (
+$sql = "delete from news where url in (
             select * from (
-                select categorie from news order by date desc limit 30, 1000 
+                select url from news where categorie=0 order by date desc limit 30, 1000 
             ) as A 
         )";
 
