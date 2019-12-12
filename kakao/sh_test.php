@@ -74,7 +74,7 @@ foreach($result as $url){
         $text = explode("▶<a href=", $text[1]);
         $text = $text[0];
     }
-     //한국경제TV
+     //한국경제TV, 한국경제
      else if(strpos($text[1], '한국경제')){
         $text = explode("▶ <a href=", $text[1]);
         $text = $text[0];
@@ -89,7 +89,11 @@ foreach($result as $url){
         $text = explode("▶ 지디넷코리아 '홈페이지'", $text[1]);
         $text = $text[0];
     }
-    
+    //시사저널
+    else if(strpos($text[1], '시사저널')){
+        $text = explode("ⓒ 시사저널", $text[1]);
+        $text = $text[0];
+    }
     //나머지 언론사
     else{
         $text = explode('<br><br><a href', $text[1]);
