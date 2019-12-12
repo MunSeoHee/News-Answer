@@ -75,7 +75,7 @@ foreach($result as $url){
         $text = $text[0];
     }
      //한국경제TV
-     else if(strpos($text[1], '한국경제TV')){
+     else if(strpos($text[1], '한국경제')){
         $text = explode("▶ <a href=", $text[1]);
         $text = $text[0];
     }
@@ -95,7 +95,7 @@ foreach($result as $url){
         $text = explode('<br><br><a href', $text[1]);
         $text = $text[0];
     }
-    
+
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
