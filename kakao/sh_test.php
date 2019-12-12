@@ -61,7 +61,7 @@ foreach($result as $url){
     }
     //매일경제   
     else if(strpos($text[1], 'ⓒ 매일경제')){
-        $text = explode('target="_blank">▶', $text[1]);
+        $text = explode('<a href="http://www.mk.co.kr', $text[1]);
         $text = $text[0];
     }
     //중앙일보  
@@ -74,16 +74,28 @@ foreach($result as $url){
         $text = explode("▶<a href=", $text[1]);
         $text = $text[0];
     }
+     //한국경제TV
+     else if(strpos($text[1], '한국경제TV')){
+        $text = explode("▶ <a href=", $text[1]);
+        $text = $text[0];
+    }
     //뉴스1   
     else if(strpos($text[1], '[뉴스1]')){
         $text = explode("<br><br><p><a target", $text[1]);
         $text = $text[0];
     }
+    //지디넷코리아
+    else if(strpos($text[1], '지디넷코리아')){
+        $text = explode("▶ 지디넷코리아 '홈페이지'", $text[1]);
+        $text = $text[0];
+    }
+    
     //나머지 언론사
     else{
         $text = explode('<br><br><a href', $text[1]);
         $text = $text[0];
     }
+    
     $script = preg_replace("(\<(/?[^\>]+)\>)", "", $text);
     $script = trim($script);
     $script = str_replace("'", '"', $script);
