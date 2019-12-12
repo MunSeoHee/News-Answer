@@ -4,6 +4,8 @@
 include_once( './setting.php');
 $ch = curl_init();
 
+$now = date("Y-m-d H:i:s");
+
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/');
 // 헤더는 제외하고 content 만 받음
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -16,11 +18,8 @@ $content = curl_exec($ch);
 //인코딩이 utf-8이 아닌경우에만 사용
 $content = iconv('euc-kr','utf-8', $content);
 
-$now = date("Y-m-d H:i:s");
-
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
-
 $plan = explode('<div class="section section_wide">', $content);
 $plan = explode('<div id="ranking_104" style="display:none">', $plan[1]);
 $plan = explode('<span class="rank num1">', $plan[1]);
