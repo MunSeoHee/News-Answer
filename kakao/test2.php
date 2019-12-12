@@ -408,8 +408,8 @@ else {
 */
 
 $sql = "delete from news where categorie in (
-            select categorie from (
-                select categorie from news where categorie=0 order by date limit 5, 10000) as A ) ";
+            select * from (
+                select categorie from news order by date limit 5, 10000) A ) ";
 $result = mysqli_query($con, $sql);
 
 curl_close($ch);
