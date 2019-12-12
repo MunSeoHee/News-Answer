@@ -33,7 +33,7 @@ $plan = explode('" class=', $plan[1]);
 
 $sql = "select * from news where url ='$plan[0]'";
 $result = mysqli_query($con, $sql);
-$result= mysqli_num_rows($result);
+$result = mysqli_num_rows($result);
 
 if($result) {
 }
@@ -409,7 +409,7 @@ else {
 /*
 $sql = "delete from news where categorie in (
             select * from (
-                select categorie from news order by date desc limit 5, 1000 
+                select categorie from news order by date desc limit 30, 1000 
             ) as A 
         )";
 
