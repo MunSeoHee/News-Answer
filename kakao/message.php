@@ -2,10 +2,23 @@
     include './setting.php';
     
     $data = json_decode(file_get_contents('php://input'), true);
+
     $userkey = $data["user_key"];
     $content = $data["content"];
+
     $sql = "select * from user where user_key='$userkey'";
     $result = mysqli_query($con, $sql);
+
+    $request = $sql;
+    if($result){
+        $response = 'success';
+    }else{
+        $request = 'DB select error';
+    }
+    $type = 'DB';
+    $file = 'message.php';
+    include './system_insert.php';
+    
 
     switch($content)
     {
@@ -14,15 +27,43 @@
             
             if ( mysqli_num_rows($result)){
                 $sql = "update user set category=0 where user_key='$userkey'";
-                mysqli_query($con, $sql);
+                $result = mysqli_query($con, $sql);
+                $request = $sql;
+                if($result){
+                    $response = 'success';
+                }else{
+                    $request = 'DB update error';
+                }
+                $type = 'DB';
+                $file = 'message.php';
+                include './system_insert.php';
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
-                mysqli_query($con, $sql);
+                $result = mysqli_query($con, $sql);
+                $request = $sql;
+                if($result){
+                    $response = 'success';
+                }else{
+                    $request = 'DB insert error';
+                }
+                $type = 'DB';
+                $file = 'message.php';
+                include './system_insert.php';
             }
             // $num=0;
             $sql = "select number from news where categorie=0 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+            if($result){
+                $response = 'success';
+            }else{
+                $request = 'DB select error';
+            }
+            $type = 'DB';
+            $file = 'message.php';
+            include './system_insert.php';
+            
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];

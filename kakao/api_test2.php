@@ -19,6 +19,7 @@ if($result){
 }else{
     $request = 'DB update error';
 }
+$request = $sql;
 $type = 'DB';
 $file = 'api_test2.php';
 include './system_insert.php';
