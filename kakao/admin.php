@@ -4,10 +4,21 @@ include_once('./setting.php');
 
 $sql = "select * from system";
 $result = mysqli_query($con, $sql);
-foreach($result as $res){
-    echo $res['user'].'<br>'.$res['date'].'<br>'.$res['url'].'<br>'.$res['request'].'<br>'.$res['response'].$res['type'].$res['file'].'<br><br>';
-}
 
+echo '<table>';
+foreach($result as $res){
+    echo '<tr>';
+    echo '<td>'.$res['num'].'</td>';
+    echo '<td>'.$res['user'].'</td>';
+    echo '<td>'.$res['date'].'</td>';
+    echo '<td>'.$res['url'].'</td>';
+    echo '<td>'.$res['request'].'</td>';
+    echo '<td>'.$res['response'].'</td>';
+    echo '<td>'.$res['type'].'</td>';
+    echo '<td>'.$res['file'].'</td>';
+    echo '</tr>';
+}
+echo '</table>';
 ?>
 
 <script language='javascript'>
