@@ -13,7 +13,7 @@
     if($result){
         $response = 'success';
     }else{
-        $request = 'DB select error';
+        $response = 'DB select error';
     }
     $type = 'DB';
     $file = 'message.php';
@@ -29,13 +29,9 @@
             
             if (mysqli_num_rows($result)){
                 $sql = "update user set category=0 where user_key='$userkey'";
-                $result = mysqli_query($con, $sql);
+                mysqli_query($con, $sql);
                 $request = $sql;
-                if($result){
-                    $response = 'success';
-                }else{
-                    $request = 'DB update error';
-                }
+                $response = 'success';
                 $type = 'DB';
                 $file = 'message.php';
                 $today = date("Y-m-d H:i:s");
@@ -44,13 +40,9 @@
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
-                $result = mysqli_query($con, $sql);
+                mysqli_query($con, $sql);
                 $request = $sql;
-                if($result){
-                    $response = 'success';
-                }else{
-                    $request = 'DB insert error';
-                }
+                $response = 'success';
                 $type = 'DB';
                 $file = 'message.php';
                 $today = date("Y-m-d H:i:s");
