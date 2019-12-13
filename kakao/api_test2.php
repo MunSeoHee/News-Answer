@@ -13,7 +13,16 @@ foreach($result as $res){
 }
 
 $sql = "update user set news=$number where user_key='$userkey'";
-mysqli_query($con, $sql);
+$result = mysqli_query($con, $sql);
+if($result){
+    $response = 'success';
+}else{
+    $request = 'DB update error';
+}
+$type = 'DB';
+$file = 'api_test2.php';
+include './system_insert.php';
+
 
 $summ='';
 
@@ -65,5 +74,10 @@ $summ = str_replace('‘',"'",$summ);
 $summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
+$request = substr($text, 0, 100);;
+$response = $summ;
+$type = 'api';
+$file = 'api_test2.php';
+include './system_insert.php';
 
 ?>

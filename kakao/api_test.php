@@ -45,6 +45,8 @@ $answer = $body_json["answer"];
 
 $request = $question;
 $response = $answer;
+$type = 'api';
+$file = 'api_test.php';
 include './system_insert.php';
 
 
