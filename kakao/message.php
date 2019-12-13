@@ -17,15 +17,17 @@
     }
     $type = 'DB';
     $file = 'message.php';
-    include './system_insert.php';
-    
+    $today = date("Y-m-d H:i:s");
+    $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+    mysqli_query($con, $sql);
+        
 
     switch($content)
     {
         
         case "정치":
             
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=0 where user_key='$userkey'";
                 $result = mysqli_query($con, $sql);
                 $request = $sql;
@@ -36,7 +38,9 @@
                 }
                 $type = 'DB';
                 $file = 'message.php';
-                include './system_insert.php';
+                $today = date("Y-m-d H:i:s");
+                $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+                mysqli_query($con, $sql);
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 0)";
@@ -49,7 +53,9 @@
                 }
                 $type = 'DB';
                 $file = 'message.php';
-                include './system_insert.php';
+                $today = date("Y-m-d H:i:s");
+                $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+                mysqli_query($con, $sql);
             }
             // $num=0;
             $sql = "select number from news where categorie=0 order by rand() limit 1";
@@ -62,8 +68,10 @@
             }
             $type = 'DB';
             $file = 'message.php';
-            include './system_insert.php';
-            
+            $today = date("Y-m-d H:i:s");
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            mysqli_query($con, $sql);
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];

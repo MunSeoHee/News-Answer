@@ -22,7 +22,9 @@ if($result){
 $request = $sql;
 $type = 'DB';
 $file = 'api_test2.php';
-include './system_insert.php';
+$today = date("Y-m-d H:i:s");
+$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+mysqli_query($con, $sql);
 
 
 $summ='';
@@ -79,6 +81,8 @@ $request = substr($text, 0, 100);;
 $response = $summ;
 $type = 'api';
 $file = 'api_test2.php';
-include './system_insert.php';
+$today = date("Y-m-d H:i:s");
+$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+mysqli_query($con, $sql);
 
 ?>
