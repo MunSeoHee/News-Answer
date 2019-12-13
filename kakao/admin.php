@@ -6,6 +6,16 @@ $sql = "select * from system";
 $result = mysqli_query($con, $sql);
 
 echo '<table border="1">';
+echo '<tr>
+        <th>#</th>
+        <th>user</th>
+        <th>date</th>
+        <th>url</th>
+        <th>요청</th>
+        <th>응답</th>
+        <th>type</th>
+        <th>file</th>
+        </tr>';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
