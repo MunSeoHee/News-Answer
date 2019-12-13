@@ -5,7 +5,7 @@ include_once('./setting.php');
 $sql = "select * from system";
 $result = mysqli_query($con, $sql);
 
-echo '<table>';
+echo '<table border="1">';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
