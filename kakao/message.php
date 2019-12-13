@@ -6,6 +6,7 @@
     $content = $data["content"];
     $sql = "select * from user where user_key='$userkey'";
     $result = mysqli_query($con, $sql);
+    syslog(LOG_NOTICE, 'ssssssssssssssss');
 
     switch($content)
     {
