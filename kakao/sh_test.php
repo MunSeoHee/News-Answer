@@ -6,6 +6,10 @@ include_once('./setting.php');
 $sql = "select url from news where script is null";
 $result = mysqli_query($con, $sql);
 
+$type = "DB";
+$file = "sh_test.php";
+$today = date("Y-m-d H:i:s");
+
 foreach($result as $url){
     echo '<pre>'.$url['url'].'</pre>';
     $url = $url['url'];
@@ -28,6 +32,10 @@ foreach($result as $url){
     $text = explode('articleBodyContents', $content);
     $text = explode('</script>', $text[1]);
         
+    $request = "select url from news where script is null";
+    $sql = "insert into system (date, url, request, response, file, type) values ('$today', '$url', '$request', 'success', $file', '$type')";
+    echo $sql;
+    mysqli_query($con, $sql);
 
     //국민일보
     if(strpos($text[1], '[국민일보')){
@@ -134,9 +142,6 @@ foreach($result as $url){
         }
        
         $response = $script;
-        $type = "DB";
-        $file = "sh_test.php";
-        $today = date("Y-m-d H:i:s");
         $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
         mysqli_query($con, $sql);
         
