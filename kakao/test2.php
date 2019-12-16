@@ -409,7 +409,7 @@ else {
 
 $sql = "delete from news where url in (
             select * from (
-                select url from news where categorie=5 order by date desc limit 23, 1000 
+                select url from news where categorie=0 order by date desc limit 25, 1000 
             ) as A 
         )";
 
