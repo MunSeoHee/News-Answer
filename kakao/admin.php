@@ -15,14 +15,14 @@ echo '<div class="container m-0 p-0">';
 echo '<table class="table table-bordered m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
-        <th style="width: 5%;">#</th>
-        <th style="width: 10%;">date</th>
-        <th style="width: 10%;">user</th>
-        <th style="width: 20%;">요청</th>
-        <th style="width: 20%;">응답</th>
-        <th style="width: 20%;>url</th>
-        <th style="width: 5%;>type</th>
-        <th style="width: 10%;>file</th>
+        <th>#</th>
+        <th>date</th>
+        <th>user</th>
+        <th>요청</th>
+        <th>응답</th>
+        <th>url</th>
+        <th>type</th>
+        <th>file</th>
         </tr>
         </thead>';
 echo '<tbody>';
@@ -44,5 +44,5 @@ echo '</div>';
 ?>
 
 <script language='javascript'>
-window.setTimeout('window.location.reload()',800); //60초마다 새로고침
+window.setTimeout('window.location.reload()',1); //60초마다 새로고침
 </script>
