@@ -12,7 +12,7 @@ $sql = "select * from system order by num desc limit 50";
 $result = mysqli_query($con, $sql);
 
 echo '<div class="container m-0 p-0">';
-echo '<table class="table m-1">';
+echo '<table class="table border-1 m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
         <th>#</th>
