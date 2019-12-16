@@ -136,9 +136,8 @@ foreach($result as $url){
         $type = 'DB';
         $file = 'sh_test.php';
         $today = date("Y-m-d H:i:s");
-        $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
+        $sql = "insert into system (date, url, response, file, type) values (".$today.", ".$url.", ".$response.", ".$file.", ".$type.")";
         mysqli_query($con, $sql);
-        mysqli_error($con);
     }
   
     curl_close($ch);
