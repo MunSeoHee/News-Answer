@@ -11,7 +11,8 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<table class="table mt-3">';
+echo '<div class="container">';
+echo '<table class="table m-1">';
 echo '<thead class="thead-dark">
       <tr>
         <th>#</th>
@@ -39,6 +40,7 @@ foreach($result as $res){
 }
 echo '</tbody>';
 echo '</table>';
+echo '</div>';
 ?>
 
 <script language='javascript'>
