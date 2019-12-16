@@ -3,7 +3,7 @@
 
 include_once('./setting.php');
 
-$url = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
+$urls = 'https://api.maum.ai/api/bert.xdc/'; //접속할 url 입력
 $sql = "select script from news where number=$number";
 $result = mysqli_query($con, $sql);
 
@@ -11,6 +11,13 @@ foreach($result as $res){
     $text = $res['script'];
     // echo $text;
 }
+$request = "select script from news where number=".$number;
+$response = $text;
+$type = 'DB';
+$file = 'api_test2.php';
+include "./system_insert.php";
+
+
 
 $sql = "update user set news=$number where user_key='$userkey'";
 $result = mysqli_query($con, $sql);
@@ -22,9 +29,7 @@ if($result){
 $request = "update user set news=".$number." where user_key=".$userkey;
 $type = 'DB';
 $file = 'api_test2.php';
-$today = date("Y-m-d H:i:s");
-$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-mysqli_query($con, $sql);
+include "./system_insert.php";
 
 
 $summ='';
@@ -36,12 +41,13 @@ $data = array(
     "context" => $text,
 );
 
+
 //body값 json 인코딩
 $data_string = json_encode($data);
     
 $ch = curl_init(); //curl 사용 전 초기화 필수(curl handle)
     
-curl_setopt($ch, CURLOPT_URL, $url); //URL 지정하기
+curl_setopt($ch, CURLOPT_URL, $urls); //URL 지정하기
 curl_setopt($ch, CURLOPT_POST, 1); //0이 default 값이며 POST 통신을 위해 1로 설정해야 함
 curl_setopt ($ch, CURLOPT_POSTFIELDS, $data_string); //POST로 보낼 데이터 지정하기
 curl_setopt ($ch, CURLOPT_POSTFIELDSIZE, 0); //이 값을 0으로 해야 알아서 &post_data 크기를 측정하는듯
@@ -59,30 +65,42 @@ $body = substr($res, $header_size);
 $body_json = json_decode($body, true);
 // print_r($body_json);
 
+$response = '';
 for($i=0; $i<2; $i++){
     //시작 위치;
     $start = $body_json["sentenceIndices"][$i]["startIdx"];
     $start = (int)$start;
+    $response = $response."startIdx:".$start."\n";
 
     //끝위치
     $end = $body_json["sentenceIndices"][$i]["endIdx"];
     $end = (int)$end;
+    $response = $response."endIdx:".$end."\n";
 
     //문장
     // echo '<pre>'.iconv_substr($text, $start, $end - $start, "utf-8").'<pre>';
     $summ = $summ.iconv_substr($text, $start, $end - $start, "utf-8");
 }
+
+$url = $urls;
+$request = "apiId:gachon.pproject.2564f05e95082\napiKey:128c573f3404408f80bab4874e0684eb\ncontext:".substr($text, 0, 100);
+$type = 'DB';
+$file = 'api_test2.php';
+include "./system_insert.php";
+
 $summ = str_replace('"',"'",$summ);
 $summ = str_replace('‘',"'",$summ);
 $summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
-$request = substr($text, 0, 100);;
+$request = substr($text, 0, 100);
 $response = $summ;
-$type = 'api';
+
+$url = "";
+$request = $response."context:".substr($text, 0, 100);
+$response = $summ;
+$type = 'text';
 $file = 'api_test2.php';
-$today = date("Y-m-d H:i:s");
-$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-mysqli_query($con, $sql);
+include "./system_insert.php";
 
 ?>

@@ -325,6 +325,12 @@ EOD;
             foreach($result as $res){
                 $num = $res['category'];
             }
+            $request = "select category from user where user_key=".$userkey;
+            $response = $num;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+
             $sql = "select number from news where categorie=$num order by rand() limit 1";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
@@ -332,6 +338,12 @@ EOD;
                     $number = $res['number'];
                 }
             }
+            $request = "select number from news where categorie=".$num." order by rand() limit 1";
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+
             include './api_test2.php';
             echo <<<EOD
             {
@@ -367,11 +379,23 @@ EOD;
             foreach($result as $res){
                 $num = $res['news'];
             }
+            $request = "select news from user where user_key=".$userkey;
+            $response = $num;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+
             $sql = "select url from news where number=$num";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
                 $url = $res['url'];
             }
+            $request = "select url from news where number=".$num;
+            $response = $url;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+
             $url = str_replace('amp;','',$url);
             $url = 'https://news.naver.com'.$url;
             echo <<<EOD
@@ -398,11 +422,23 @@ EOD;
             foreach($result as $res){
                 $num = $res['news'];
             }
+            $request = "select news from user where user_key=".$userkey;
+            $response = $num;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+
             $sql = "select script from news where number=$num";
             $result = mysqli_query($con, $sql);
             foreach($result as $res){
                 $context = $res['script'];
             }
+            $request = "select script from news where number=".$num;
+            $response = $context;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+            
             include './api_test.php';
 
             echo <<<EOD
