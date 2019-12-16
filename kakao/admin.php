@@ -23,8 +23,8 @@ echo '<thead class="thead-dark text-center">
         <th>url</th>
         <th>type</th>
         <th>file</th>
-        </tr>
-        </thead>';
+      </tr>
+      </thead>';
 echo '<tbody>';
 foreach($result as $res){
     echo '<tr>';
@@ -38,9 +38,9 @@ foreach($result as $res){
     echo '<td>'.$res['file'].'</td>';
     echo '</tr>';
 }
-echo '</tbody>';
-echo '</table>';
-echo '</div>';
+echo '</tbody>
+    </table>
+    </div>';
 ?>
 
 <script language='javascript'>
