@@ -33,7 +33,8 @@ foreach($result as $url){
     $text = explode('</script>', $text[1]);
         
     $request = "select url from news where script is null";
-    $sql = "insert into system (date, url, request, response, file, type) values ('$today', '$url', '$request', 'success', $file', '$type')";
+    $sql = "insert into system (date, url, request, response, file, type) values ('$today', 'https://news.naver.com'.'$url', '$request', success".", ".$file.", "
+    .$type")";
     echo $sql;
     if (mysqli_query($con, $sql)) {
 
