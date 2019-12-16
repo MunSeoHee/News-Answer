@@ -19,7 +19,7 @@ $today = date("Y-m-d H:i:s");
 
 $url = "http://news.naver.com";
 $file= "test1.php";
-$type="DB";
+$type= "DB";
 
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째

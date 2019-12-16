@@ -5,6 +5,9 @@ include_once( './setting.php');
 $ch = curl_init();
 
 $now = date("Y-m-d H:i:s");
+$url = "http://news.naver.com";
+$file= "test3.php";
+$type= "DB";
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/');
 // 헤더는 제외하고 content 만 받음
@@ -35,6 +38,18 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
+    $response = $url.$plan[0];
+    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
+    echo $sql;
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 $plan = explode('<div class="section section_wide">', $content);
