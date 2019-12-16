@@ -39,8 +39,16 @@ if ($result) {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
     $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
+    $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -57,9 +65,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -76,9 +81,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -95,9 +97,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -114,9 +113,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -133,9 +129,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -152,9 +145,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -171,9 +161,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -190,9 +177,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -209,9 +193,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -228,9 +209,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -247,9 +225,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -266,9 +241,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -285,9 +257,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -304,9 +273,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -323,9 +289,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -342,9 +305,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -361,9 +321,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -380,9 +337,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -399,9 +353,6 @@ if ($result) {
 } else {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 5)";
     mysqli_query($con, $sql);
-    $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
 }
 
 // 30개 이상 삭제
