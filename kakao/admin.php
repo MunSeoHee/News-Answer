@@ -11,7 +11,7 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<table class="table">';
+echo '<table class="table m-1">';
 echo '<thead class="thead-dark">
       <tr>
         <th>#</th>
