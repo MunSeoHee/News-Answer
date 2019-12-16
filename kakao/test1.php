@@ -440,6 +440,21 @@ else{
     mysqli_query($con, $sql);
 }
 
+// 30개 이상 삭제
+$sql = "delete from news where url in (
+    select * from (
+        select url from news where categorie=0 order by date desc limit 30, 1000 
+    ) as A 
+)";
+mysqli_query($con, $sql); 
+
+$sql = "delete from news where url in (
+    select * from (
+        select url from news where categorie=1 order by date desc limit 30, 1000 
+    ) as A 
+)";
+mysqli_query($con, $sql);
+
 curl_close($ch);
 
 ?>
