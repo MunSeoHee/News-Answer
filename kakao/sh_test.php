@@ -34,6 +34,7 @@ foreach($result as $url){
         
     $request = "select url from news where script is null";
     $sql = "insert into system (date, url, request, response, file, type) values ('$today', '$url', '$request', 'success', $file', '$type')";
+    echo $sql;
     mysqli_query($con, $sql);
 
     //국민일보
