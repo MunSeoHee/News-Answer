@@ -11,16 +11,16 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<table class="table m-1">';
+echo '<table class="table m-3">';
 echo '<thead class="thead-dark">
       <tr>
         <th>#</th>
-        <th>user</th>
         <th>date</th>
-        <th>url</th>
+        <th>user</th>
         <th>요청</th>
         <th>응답</th>
         <th>type</th>
+        <th>url</th>
         <th>file</th>
         </tr>
         </thead>';
@@ -28,12 +28,12 @@ echo '<tbody>';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
-    echo '<td>'.$res['user'].'</td>';
     echo '<td>'.$res['date'].'</td>';
-    echo '<td>'.$res['url'].'</td>';
+    echo '<td>'.$res['user'].'</td>';
     echo '<td>'.$res['request'].'</td>';
     echo '<td>'.$res['response'].'</td>';
     echo '<td>'.$res['type'].'</td>';
+    echo '<td>'.$res['url'].'</td>';
     echo '<td>'.$res['file'].'</td>';
     echo '</tr>';
 }
