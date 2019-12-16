@@ -110,6 +110,12 @@ foreach($result as $url){
         $text = explode("☞ SBSCNBC를 만나는 법", $text[1]);
         $text = $text[0];
     }
+    //디지털타임스
+    else if(strpos($text[1], '<br><br>핫 섹션 :')){
+        $text = explode("<br><br>핫 섹션 :", $text[1]);
+        $text = $text[0];
+    }
+    
     //나머지 언론사
     else{
         $text = explode('<br><br><a href', $text[1]);
