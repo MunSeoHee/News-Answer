@@ -44,7 +44,15 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql);
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -65,7 +73,15 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql);
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 
@@ -87,7 +103,15 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql);
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 
