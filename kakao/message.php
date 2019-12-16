@@ -9,7 +9,7 @@
     $sql = "select * from user where user_key='$userkey'";
     $result = mysqli_query($con, $sql);
 
-    $request = $sql;
+    $request = "select * from user where user_key=".$userkey;
     if($result){
         $response = 'success';
     }else{
