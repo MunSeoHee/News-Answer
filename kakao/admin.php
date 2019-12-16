@@ -2,11 +2,7 @@
 
 include_once('./setting.php');
 
-<<<<<<< HEAD
 $sql = "select * from system";
-=======
-$sql = "select * from system order by num desc";
->>>>>>> 2e656c9b443e89b5d2f428a10396383f075d76ec
 $result = mysqli_query($con, $sql);
 
 echo '<table border="1">';
@@ -33,10 +29,6 @@ foreach($result as $res){
     echo '</tr>';
 }
 echo '</table>';
-echo '<style>
-        table { width:100%; border-collapse: collapse };
-        td, th { border: 1px solid #dddddd; padding: 5px };
-    </style>';
 ?>
 
 <script language='javascript'>
