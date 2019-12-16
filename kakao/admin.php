@@ -1,7 +1,11 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script language='javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script language='javascript' src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script language='javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 <?php
 
 include_once('./setting.php');
-
 
 $sql = "select * from system order by num desc limit 50";
 
@@ -31,10 +35,6 @@ foreach($result as $res){
     echo '</tr>';
 }
 echo '</table>';
-echo '<style>
-        table { width:100%; border-collapse: collapse; }
-        td, th { border: 1px solid #dddddd; padding: 5px; }
-    </style>';
 ?>
 
 <script language='javascript'>
