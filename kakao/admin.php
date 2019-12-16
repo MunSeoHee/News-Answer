@@ -12,17 +12,17 @@ $sql = "select * from system order by num desc limit 50";
 $result = mysqli_query($con, $sql);
 
 echo '<div class="container m-0 p-0">';
-echo '<table class="table m-3">';
-echo '<thead class="thead-dark">
+echo '<table class="table table-bordered m-1">';
+echo '<thead class="thead-dark text-center">
       <tr>
-        <th>#</th>
-        <th>date</th>
-        <th>user</th>
-        <th>요청</th>
-        <th>응답</th>
-        <th>url</th>
-        <th>type</th>
-        <th>file</th>
+        <th style="width: 5%">#</th>
+        <th style="width: 10%">date</th>
+        <th style="width: 10%">user</th>
+        <th style="width: 20%">요청</th>
+        <th style="width: 20%">응답</th>
+        <th style="width: 5%">url</th>
+        <th style="width: 5%">type</th>
+        <th style="width: 10%">file</th>
         </tr>
         </thead>';
 echo '<tbody>';

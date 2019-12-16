@@ -17,6 +17,10 @@ $content = curl_exec($ch);
 $content = iconv('euc-kr','utf-8',$content);
 $today = date("Y-m-d H:i:s");
 
+$url = "http://news.naver.com";
+$flie="test1.php";
+$type="DB";
+
 //explode로 필요한 부분만 잘라서 사용
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $plan = explode('<div class="section section_wide">', $content);
@@ -37,6 +41,18 @@ if ($result){
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
+    $response = $url.$plan[0];
+    $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
+    echo $sql;
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
 }
 
 //$rank_p = [];
@@ -59,8 +75,19 @@ if ($result){
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
-}
+    $response = $url.$plan[0];
+    $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
+    echo $sql;
+    if (mysqli_query($con, $sql)) {
 
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
+}
 
 
 $plan = explode('"rank num3"', $fix);
