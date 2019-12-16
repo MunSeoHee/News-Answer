@@ -120,7 +120,7 @@ foreach($result as $url){
 
     
     if ($script != ''){
-        $sql = "update news set script=".$script." where url=".$url;
+        $sql = "update news set script='$script' where url='$url';
         echo '<pre>'.$sql.'</pre>';
 
         if (mysqli_query($con, $sql)) {
