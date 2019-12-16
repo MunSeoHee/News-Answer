@@ -17,10 +17,8 @@
     }
     $type = 'DB';
     $file = 'message.php';
-    $today = date("Y-m-d H:i:s");
     $url = '';
-    $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-    mysqli_query($con, $sql);
+    include "./system_insert.php";
 
         
 
@@ -28,7 +26,6 @@
     {
         
         case "정치":
-            
             if (mysqli_num_rows($result)){
                 $sql = "update user set category=0 where user_key='$userkey'";
                 mysqli_query($con, $sql);
@@ -43,29 +40,23 @@
             $response = 'success';
             $type = 'DB';
             $file = 'message.php';
-            $today = date("Y-m-d H:i:s");
             $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-            mysqli_query($con, $sql);
-            // $num=0;
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=0 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
             $request = $sql;
-            if($result){
-                $response = 'success';
-            }else{
-                $request = 'DB select error';
-            }
-            $type = 'DB';
-            $file = 'message.php';
-            $today = date("Y-m-d H:i:s");
-            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-            mysqli_query($con, $sql);
 
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
+            
             include './api_test2.php';
 
             echo <<<EOD
@@ -83,21 +74,36 @@
 EOD;
             break;
         case "경제":
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=1 where user_key='$userkey'";
                 mysqli_query($con, $sql);
+                $request = "update user set category=1 where user_key=".$userkey;
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 1)";
                 mysqli_query($con, $sql);
+                $request = "insert into user (user_key, category) values (".$userkey.", 1)";
+                
             }
+            $response = 'success';
+            $type = 'DB';
+            $file = 'message.php';
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=1 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
             include './api_test2.php';
             echo <<<EOD
             {
@@ -114,22 +120,36 @@ EOD;
 EOD;
             break;
         case "사회":
-        
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=2 where user_key='$userkey'";
                 mysqli_query($con, $sql);
+                $request = "update user set category=2 where user_key=".$userkey;
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 2)";
                 mysqli_query($con, $sql);
+                $request = "insert into user (user_key, category) values (".$userkey.", 2)";
+                
             }
+            $response = 'success';
+            $type = 'DB';
+            $file = 'message.php';
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=2 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
             include './api_test2.php';
             echo <<<EOD
             {
@@ -146,22 +166,36 @@ EOD;
 EOD;
             break;
         case "생활/문화":
-    
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=3 where user_key='$userkey'";
                 mysqli_query($con, $sql);
+                $request = "update user set category=3 where user_key=".$userkey;
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 3)";
                 mysqli_query($con, $sql);
+                $request = "insert into user (user_key, category) values (".$userkey.", 3)";
+                
             }
+            $response = 'success';
+            $type = 'DB';
+            $file = 'message.php';
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=3 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
             include './api_test2.php';
             echo <<<EOD
             {
@@ -178,22 +212,36 @@ EOD;
 EOD;
             break;
         case "세계":
-
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=4 where user_key='$userkey'";
                 mysqli_query($con, $sql);
+                $request = "update user set category=4 where user_key=".$userkey;
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 4)";
                 mysqli_query($con, $sql);
+                $request = "insert into user (user_key, category) values (".$userkey.", 4)";
+                
             }
+            $response = 'success';
+            $type = 'DB';
+            $file = 'message.php';
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=4 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
             include './api_test2.php';
             echo <<<EOD
             {
@@ -210,22 +258,36 @@ EOD;
 EOD;
             break;
         case "IT/과학":
-
-            if ( mysqli_num_rows($result)){
+            if (mysqli_num_rows($result)){
                 $sql = "update user set category=5 where user_key='$userkey'";
                 mysqli_query($con, $sql);
+                $request = "update user set category=5 where user_key=".$userkey;
             }
             else{
                 $sql = "insert into user (user_key, category) values ('$userkey', 5)";
                 mysqli_query($con, $sql);
+                $request = "insert into user (user_key, category) values (".$userkey.", 5)";
+                
             }
+            $response = 'success';
+            $type = 'DB';
+            $file = 'message.php';
+            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            
             $sql = "select number from news where categorie=5 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
+            $request = $sql;
+
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            include "./system_insert.php";
             include './api_test2.php';
             echo <<<EOD
             {
