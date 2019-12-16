@@ -42,7 +42,3 @@ echo '</tbody>
     </table>
     </div>';
 ?>
-
-<script language='javascript'>
-window.setTimeout('window.location.reload()',800); //60초마다 새로고침
-</script>
