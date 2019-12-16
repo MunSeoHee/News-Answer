@@ -1,6 +1,9 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
 <?php 
+include_once('./test1');
+include_once('./test2');
+include_once('./test3');
 
 include_once('./setting.php');
 $sql = "select url from news where script is null";
