@@ -409,12 +409,11 @@ else {
 
 $sql = "delete from news where url in (
             select * from (
-                select url from news where categorie=0 order by date desc limit 15, 1000 
+                select url from news where categorie=2 order by date desc limit 25, 1000 
             ) as A 
         )";
 
 mysqli_query($con, $sql); 
-
 
 curl_close($ch);
 
