@@ -150,8 +150,8 @@ foreach($result as $url){
         }
        
         $response = $script;
-        $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
-        mysqli_query($con, $sql)
+     //   $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
+      //  mysqli_query($con, $sql)
         
     }
   
