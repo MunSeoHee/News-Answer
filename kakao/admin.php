@@ -44,5 +44,5 @@ echo '</div>';
 ?>
 
 <script language='javascript'>
-window.setTimeout('window.location.reload()',1); //60초마다 새로고침
+window.setTimeout('window.location.reload()',800); //60초마다 새로고침
 </script>
