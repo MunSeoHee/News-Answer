@@ -18,7 +18,7 @@ $content = iconv('euc-kr','utf-8',$content);
 $today = date("Y-m-d H:i:s");
 
 $url = "http://news.naver.com";
-$flie="test1.php";
+$file= "test1.php";
 $type="DB";
 
 //explode로 필요한 부분만 잘라서 사용
@@ -41,6 +41,7 @@ if ($result){
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
+
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
     echo $sql;
