@@ -409,9 +409,17 @@ else {
 
 $sql = "delete from news where url in (
             select * from (
-                select url from news where categorie=5 order by date desc limit 23, 1000 
+                select url from news where categorie=0 order by date desc limit 24, 1000 
             ) as A 
         )";
+
+mysqli_query($con, $sql); 
+
+$sql = "delete from news where url in (
+    select * from (
+        select url from news where categorie=1 order by date desc limit 30, 1000 
+    ) as A 
+)";
 
 mysqli_query($con, $sql); 
 
