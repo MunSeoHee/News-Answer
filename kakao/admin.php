@@ -38,9 +38,9 @@ foreach($result as $res){
     echo '<td>'.$res['file'].'</td>';
     echo '</tr>';
 }
-echo '</tbody>
-    </table>
-    </div>';
+echo '</tbody>';
+echo '</table>';
+echo '</div>';
 ?>
 
 <script language='javascript'>
