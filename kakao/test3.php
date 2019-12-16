@@ -39,7 +39,7 @@ if ($result) {
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$now', 4)";
     mysqli_query($con, $sql);
     $response = $url.$plan[0];
-    $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
+    $sql = "insert into system (date, url, response, file, type) values ('$now', '$url', '$response', '$file', '$type')";
     echo $sql;
     if (mysqli_query($con, $sql)) {
 
