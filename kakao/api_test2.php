@@ -17,7 +17,7 @@ $result = mysqli_query($con, $sql);
 if($result){
     $response = 'success';
 }else{
-    $request = 'DB update error';
+    $response = 'DB update error';
 }
 $request = $sql;
 $type = 'DB';
