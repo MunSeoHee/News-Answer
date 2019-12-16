@@ -15,14 +15,14 @@ echo '<div class="container m-0 p-0">';
 echo '<table class="table table-bordered m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
-        <th>#</th>
-        <th>date</th>
-        <th>user</th>
-        <th>요청</th>
-        <th style="min-width:100px !important;">응답</th>
-        <th>url</th>
-        <th>type</th>
-        <th>file</th>
+        <th style="width: 5%">#</th>
+        <th style="width: 10%">date</th>
+        <th style="width: 10%">user</th>
+        <th style="width: 25%">요청</th>
+        <th style="width: 25%">응답</th>
+        <th style="width: 10%">url</th>
+        <th style="width: 5%">type</th>
+        <th style="width: 10%">file</th>
         </tr>
         </thead>';
 echo '<tbody>';
@@ -32,7 +32,7 @@ foreach($result as $res){
     echo '<td>'.$res['date'].'</td>';
     echo '<td>'.$res['user'].'</td>';
     echo '<td>'.$res['request'].'</td>';
-    echo '<td style="min-width:100px !important;">'.$res['response'].'</td>';
+    echo '<td>'.$res['response'].'</td>';
     echo '<td>'.$res['url'].'</td>';
     echo '<td>'.$res['type'].'</td>';
     echo '<td>'.$res['file'].'</td>';
@@ -44,5 +44,5 @@ echo '</div>';
 ?>
 
 <script language='javascript'>
-window.setTimeout('window.location.reload()',800); //60초마다 새로고침
+window.setTimeout('window.location.reload()',1); //60초마다 새로고침
 </script>
