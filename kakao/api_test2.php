@@ -13,7 +13,19 @@ foreach($result as $res){
 }
 
 $sql = "update user set news=$number where user_key='$userkey'";
+$result = mysqli_query($con, $sql);
+if($result){
+    $response = 'success';
+}else{
+    $request = 'DB update error';
+}
+$request = $sql;
+$type = 'DB';
+$file = 'api_test2.php';
+$today = date("Y-m-d H:i:s");
+$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
 mysqli_query($con, $sql);
+
 
 $summ='';
 
@@ -65,5 +77,12 @@ $summ = str_replace('‘',"'",$summ);
 $summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
+$request = substr($text, 0, 100);;
+$response = $summ;
+$type = 'api';
+$file = 'api_test2.php';
+$today = date("Y-m-d H:i:s");
+$sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+mysqli_query($con, $sql);
 
 ?>
