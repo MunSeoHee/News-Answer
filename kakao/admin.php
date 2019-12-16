@@ -2,7 +2,7 @@
 
 include_once('./setting.php');
 
-$sql = "select * from system order by num desc";
+$sql = "select * from system order by num desc limit 50";
 $result = mysqli_query($con, $sql);
 
 echo '<table border="1">';
