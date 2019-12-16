@@ -40,7 +40,7 @@ $body_json = json_decode($body, true);
 // echo '<br>'.$body_json["answer"];
 
 $prob = $body_json["prob"];
-if ((int)$prob < 0.2){
+if (((float)$prob) < 0.2){
     $answer = "신뢰성이 낮은 결과라 답변 제공이 불가능합니다. 다른 요청을 해주세요.";
 }
 else{
