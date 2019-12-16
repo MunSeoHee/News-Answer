@@ -2,7 +2,7 @@
 
 include_once('./setting.php');
 
-$sql = "select * from system order by num desc";
+$sql = "select * from system";
 $result = mysqli_query($con, $sql);
 
 echo '<table border="1">';
