@@ -89,6 +89,11 @@ foreach($result as $url){
         $text = explode("ⓒ 시사저널", $text[1]);
         $text = $text[0];
     }
+    // SBSCNBC
+    else if(strpos($text[1], 'SBSCNBC')){
+        $text = explode("☞ SBSCNBC를 만나는 법", $text[1]);
+        $text = $text[0];
+    }
     //나머지 언론사
     else{
         $text = explode('<br><br><a href', $text[1]);
