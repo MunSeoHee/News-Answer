@@ -39,12 +39,20 @@ $body_json = json_decode($body, true);
 
 // echo '<br>'.$body_json["answer"];
 
-$answer = $body_json["answer"];
+$prob = $body_json["prob"];
+if ((int)$prob < 0.2){
+    $answer = "신뢰성이 낮은 결과라 답변 제공이 불가능합니다. 다른 요청을 해주세요.";
+}
+else{
+    $answer = $body_json["answer"];
+}
+
+
 //var_dump($res);//결과값 확인하기
 
 
 $request = "apiId:gachon.pproject.2564f05e95082\napiKey:128c573f3404408f80bab4874e0684eb\nlang:kor\ncontext:".substr($context, 0, 100)."\nquestion:".$question;
-$response = $answer;
+$response = "answer:".$answer."\nprob:".$prob;
 $type = 'api';
 $file = 'api_test.php';
 include "./system_insert.php";
