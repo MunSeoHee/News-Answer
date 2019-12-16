@@ -41,7 +41,7 @@ if ($result){
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
-    $response = "$plan[0]";
+    $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
     echo $sql;
     if (mysqli_query($con, $sql)) {
@@ -75,7 +75,7 @@ if ($result){
 else{
     $sql = "insert into news (url, date, categorie) values ('$plan[0]', '$today', 0)";
     mysqli_query($con, $sql);
-    $response = "$plan[0]";
+    $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
     echo $sql;
     if (mysqli_query($con, $sql)) {
