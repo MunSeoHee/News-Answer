@@ -150,8 +150,17 @@ foreach($result as $url){
         }
        
         $response = $script;
-     //   $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
-      //  mysqli_query($con, $sql)
+        $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
+        if (mysqli_query($con, $sql)) {
+
+            echo "레코드 수정 성공!";
+
+        } else {
+
+            echo "레코드 수정 실패! : ".mysqli_error($con);
+
+        }
+
         
     }
   
