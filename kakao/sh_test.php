@@ -132,15 +132,15 @@ foreach($result as $url){
             echo "레코드 수정 실패! : ".mysqli_error($con);
 
         }
-       /*
-       $response = $script;
+       
+        $response = $script;
         $type = 'DB';
         $file = 'sh_test.php';
         $today = date("Y-m-d H:i:s");
-        $sql = "insert into system (date, url, response, file, type) values (".$today.", ".$url.", ".$response.", ". $file.", ".$type.")";
+        $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
         echo $sql;
         //mysqli_query($con, $sql);
-        */
+        
     }
   
     curl_close($ch);
