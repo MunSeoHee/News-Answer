@@ -50,22 +50,19 @@
             $sql = "select number from news where categorie=0 order by rand() limit 1";
             $result = mysqli_query($con, $sql);
             $request = $sql;
-            if($result){
-                $response = 'success';
-            }else{
-                $request = 'DB select error';
-            }
-            $type = 'DB';
-            $file = 'message.php';
-            $today = date("Y-m-d H:i:s");
-            $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
-            mysqli_query($con, $sql);
 
             foreach($result as $res){
                 if ($res['number'] != null){
                     $number = $res['number'];
                 }
             }
+            $response = $number;
+            $type = 'DB';
+            $file = 'message.php';
+            // $today = date("Y-m-d H:i:s");
+            // $sql = "insert into system (user, date, url, request, response, file, type) values ('$userkey', '$today', '$url', '$request', '$response', '$file', '$type')";
+            include "./system_insert.php";
+            mysqli_query($con, $sql);
             include './api_test2.php';
 
             echo <<<EOD
