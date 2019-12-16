@@ -31,6 +31,10 @@ foreach($result as $res){
     echo '</tr>';
 }
 echo '</table>';
+echo '<style>
+        table { width:100%; border-collapse: collapse; }
+        td, th { border: 1px solid #dddddd; padding: 5px; }
+    </style>';
 ?>
 
 <script language='javascript'>
