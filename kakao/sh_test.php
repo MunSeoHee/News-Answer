@@ -35,7 +35,16 @@ foreach($result as $url){
     $request = "select url from news where script is null";
     $sql = "insert into system (date, url, request, response, file, type) values ('$today', '$url', '$request', 'success', $file', '$type')";
     echo $sql;
-    mysqli_query($con, $sql);
+    if (mysqli_query($con, $sql)) {
+
+        echo "레코드 수정 성공!";
+
+    } else {
+
+        echo "레코드 수정 실패! : ".mysqli_error($con);
+
+    }
+
 
     //국민일보
     if(strpos($text[1], '[국민일보')){
