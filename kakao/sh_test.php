@@ -34,7 +34,6 @@ foreach($result as $url){
         
     $request = "select url from news where script is null";
     $sql = "insert into system (date, request, response, file, type) values ('$today', '$request', 'success', '$file', '$type')";
-    echo $sql;
     if (mysqli_query($con, $sql)) {
 
         echo "레코드 수정 성공!";
@@ -152,15 +151,7 @@ foreach($result as $url){
        
         $response = $script;
         $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
-        if (mysqli_query($con, $sql)) {
-
-            echo "레코드 수정 성공!";
-    
-        } else {
-    
-            echo "레코드 수정 실패! : ".mysqli_error($con);
-    
-        }
+        mysqli_query($con, $sql)
         
     }
   
