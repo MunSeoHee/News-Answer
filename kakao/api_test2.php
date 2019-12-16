@@ -93,9 +93,6 @@ $summ = str_replace('‘',"'",$summ);
 $summ = str_replace('’',"'",$summ);
 curl_close($ch);
 
-$request = substr($text, 0, 100);
-$response = $summ;
-
 $url = "";
 $request = $response."context:".substr($text, 0, 100);
 $response = $summ;
