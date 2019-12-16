@@ -19,7 +19,7 @@ if($result){
 }else{
     $response = 'DB update error';
 }
-$request = $sql;
+$request = "update user set news=".$number." where user_key=".$userkey;
 $type = 'DB';
 $file = 'api_test2.php';
 $today = date("Y-m-d H:i:s");
