@@ -11,8 +11,9 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<table border="1">';
-echo '<tr>
+echo '<table class="table">';
+echo '<thead class="thead-dark">
+      <tr>
         <th>#</th>
         <th>user</th>
         <th>date</th>
@@ -21,7 +22,9 @@ echo '<tr>
         <th>응답</th>
         <th>type</th>
         <th>file</th>
-        </tr>';
+        </tr>
+        </thead>';
+echo '<tbody>';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
@@ -34,9 +37,10 @@ foreach($result as $res){
     echo '<td>'.$res['file'].'</td>';
     echo '</tr>';
 }
+echo '</tbody>';
 echo '</table>';
 ?>
 
 <script language='javascript'>
-window.setTimeout('window.location.reload()',800); //60초마다 새로고침
+window.setTimeout('window.location.reload()',1); //60초마다 새로고침
 </script>
