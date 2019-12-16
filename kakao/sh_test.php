@@ -2,7 +2,6 @@
 
 <?php 
 include_once('./test1');
-include_once('./test2');
 include_once('./test3');
 
 include_once('./setting.php');
