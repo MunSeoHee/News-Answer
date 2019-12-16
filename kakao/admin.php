@@ -32,7 +32,7 @@ foreach($result as $res){
     echo '<td>'.$res['date'].'</td>';
     echo '<td>'.$res['user'].'</td>';
     echo '<td>'.$res['request'].'</td>';
-    echo '<td>'.$res['response'].'</td>';
+    echo '<td style="min-width:100px !important;">'.$res['response'].'</td>';
     echo '<td>'.$res['url'].'</td>';
     echo '<td>'.$res['type'].'</td>';
     echo '<td>'.$res['file'].'</td>';
