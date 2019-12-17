@@ -55,6 +55,12 @@ foreach($result as $url){
         $text = explode('- Copyrights ⓒ 조선일보 & chosun.com', $text[1]);
         $text = $text[0];
     }
+    //조선비즈
+    
+    else if(strpos($text[1], '조선일비즈')){
+        $text = explode('[<a href="https://news.chosun.com/svc/event/urban.html"', $text[1]);
+        $text = $text[0];
+    }
     //데일리안
     else if(strpos($text[1], 'ⓒ (주)데일리안')){
         $text = explode('ⓒ (주)데일리안', $text[1]);
@@ -85,6 +91,12 @@ foreach($result as $url){
         $text = explode("<br>▶ <a href=", $text[1]);
         $text = $text[0];
     }
+    //서울경제
+    else if(strpos($text[1], '[서울경제 바로가기]')){
+        $text = explode("[서울경제 바로가기]", $text[1]);
+        $text = $text[0];
+    }
+    
     //한국일보  
     else if(strpos($text[1], '한국일보닷컴')){
         $text = explode("▶<a href=", $text[1]);
@@ -115,6 +127,12 @@ foreach($result as $url){
         $text = explode("<br><br>핫 섹션 :", $text[1]);
         $text = $text[0];
     }
+    //아이뉴스
+    else if(strpos($text[1], '아이뉴스24')){
+        $text = explode("<br><br><a target='new'", $text[1]);
+        $text = $text[0];   
+    }
+    
     
     //나머지 언론사
     else{
