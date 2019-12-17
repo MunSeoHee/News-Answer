@@ -2,14 +2,6 @@
 <script language='javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script language='javascript' src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script language='javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<style>
-  html, body, div {
-    width: screen.width !important;
-  }
-  .table {
-    width: screen.width !important;
-  }
-</style>
 
 <?php
 
@@ -19,9 +11,8 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<div class="container m-0 p-0">
-      <div class="row">';
-echo '<table class="col table table-bordered m-1">';
+echo '<div class="container-fluid m-0 p-0">';
+echo '<table class="table table-bordered m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
         <th>#</th>
@@ -47,8 +38,7 @@ foreach($result as $res){
     echo '</tr>';
 }
 echo '</table>';
-echo '</div>
-      </div>';
+echo '</div>';
 ?>
 
 <script language='javascript'>
