@@ -18,7 +18,7 @@ $content = iconv('euc-kr','utf-8',$content);
 $today = date("Y-m-d H:i:s");
 
 $url = "http://news.naver.com";
-$file= "test1.php";
+$file= "crawling1.php";
 $type= "DB";
 
 //explode로 필요한 부분만 잘라서 사용
