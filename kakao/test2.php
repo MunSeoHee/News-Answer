@@ -44,7 +44,7 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
+    mysqli_query($con, $sql);
 }
 
 $plan = explode('<div class="section section_wide">', $content);
@@ -65,7 +65,7 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
+    mysqli_query($con, $sql);
 }
 
 
@@ -87,7 +87,7 @@ else {
     mysqli_query($con, $sql); 
     $response = $url.$plan[0];
     $sql = "insert into system (date, url, response, file, type) values ('$time', '$url', '$response', '$file', '$type')";
-    mysqli_query($con, $sql)
+    mysqli_query($con, $sql);
 }
 
 
