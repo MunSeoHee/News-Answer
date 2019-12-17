@@ -1,8 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script language='javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script language='javascript' src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script language='javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
 <?php
 
 include_once('./setting.php');
@@ -11,10 +6,8 @@ $sql = "select * from system order by num desc limit 50";
 
 $result = mysqli_query($con, $sql);
 
-echo '<div class="container m-0 p-0">';
-echo '<table class="table table-bordered m-1" style="width: 100%">';
-echo '<thead class="thead-dark text-center">
-      <tr>
+echo '<table>';
+echo '<tr>
         <th style="width: 5%">#</th>
         <th style="width: 10%">date</th>
         <th style="width: 10%">user</th>
@@ -23,9 +16,7 @@ echo '<thead class="thead-dark text-center">
         <th style="width: 20%">url</th>
         <th style="width: 5%">type</th>
         <th style="width: 10%">file</th>
-      </tr>
-      </thead>';
-echo '<tbody>';
+      </tr>';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
@@ -38,9 +29,7 @@ foreach($result as $res){
     echo '<td>'.$res['file'].'</td>';
     echo '</tr>';
 }
-echo '</tbody>';
 echo '</table>';
-echo '</div>';
 ?>
 
 <script language='javascript'>
