@@ -174,6 +174,7 @@ foreach($result as $url){
         }
        
         $response = $script;
+        $url = "https://news.naver.com".$url;
         $sql = "insert into system (date, url, response, file, type) values ('$today', '$url', '$response', '$file', '$type')";
         if (mysqli_query($con, $sql)) {
 
