@@ -6,7 +6,7 @@ $ch = curl_init();
 
 $now = date("Y-m-d H:i:s");
 $url = "http://news.naver.com";
-$file= "test3.php";
+$file= "crawling3.php";
 $type= "DB";
 
 curl_setopt($ch, CURLOPT_URL, 'https://news.naver.com/');

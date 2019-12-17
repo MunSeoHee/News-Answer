@@ -22,7 +22,7 @@ $content = iconv('euc-kr','utf-8',$content);
 //explode('',$변수) -> ''을 기준으로 $변수 의 내용을 자르게 됨. ''기준으로 앞이 0번째 뒤가 1번째
 $time = date("Y-m-d H:i:s");
 $url = "http://news.naver.com";
-$file= "test2.php";
+$file= "crawling2.php";
 $type= "DB";
 // $social = [];
 

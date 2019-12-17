@@ -7,7 +7,7 @@ $sql = "select url from news where script is null";
 $result = mysqli_query($con, $sql);
 
 $type = "DB";
-$file = "sh_test.php";
+$file = "script_crawling.php";
 $today = date("Y-m-d H:i:s");
 
 foreach($result as $url){
