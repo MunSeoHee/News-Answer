@@ -55,9 +55,8 @@ foreach($result as $url){
         $text = explode('- Copyrights ⓒ 조선일보 & chosun.com', $text[1]);
         $text = $text[0];
     }
-    //조선비즈
-    
-    else if(strpos($text[1], '조선일비즈')){
+    //조선비즈    
+    else if(strpos($text[1], '조선비즈')){
         $text = explode('[<a href="https://news.chosun.com/svc/event/urban.html"', $text[1]);
         $text = $text[0];
     }
@@ -95,10 +94,9 @@ foreach($result as $url){
     else if(strpos($text[1], '[서울경제 바로가기]')){
         $text = explode("[서울경제 바로가기]", $text[1]);
         $text = $text[0];
-    }
-    
+    }    
     //한국일보  
-    else if(strpos($text[1], '한국일보닷컴')){
+    else if(strpos($text[1], '한국일보닷컴') || strpos($text[1], '헬스조선')){
         $text = explode("▶<a href=", $text[1]);
         $text = $text[0];
     }
@@ -130,6 +128,16 @@ foreach($result as $url){
     //아이뉴스
     else if(strpos($text[1], '아이뉴스24')){
         $text = explode("<br><br><a target='new'", $text[1]);
+        $text = $text[0];   
+    }
+    //미디어오늘
+    else if(strpos($text[1], '미디어오늘')){
+        $text = explode('<br><br><a href="h', $text[1]);
+        $text = $text[0];   
+    }
+    // 파이낸셜뉴스
+    else if(strpos($text[1], 'ⓒ 파이낸셜뉴스')){
+        $text = explode('<br> <br> <strong><a target="_blank"', $text[1]);
         $text = $text[0];   
     }
     
@@ -196,7 +204,8 @@ foreach($result as $url){
 
 mysql_close($con);
 
-
-
-
 ?>
+
+<script language='javascript'>
+window.setTimeout('window.location.reload()',800); //60초마다 새로고침
+</script>
