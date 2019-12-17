@@ -21,7 +21,7 @@ $result = mysqli_query($con, $sql);
 
 echo '<div class="container m-0 p-0">
       <div class="row">';
-echo '<table class="table table-bordered m-1">';
+echo '<table class="col table table-bordered m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
         <th>#</th>
