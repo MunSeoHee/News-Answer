@@ -6,6 +6,9 @@
   html, body, div {
     width: screen.width !important;
   }
+  .table {
+    width: screen.width !important;
+  }
 </style>
 
 <?php
