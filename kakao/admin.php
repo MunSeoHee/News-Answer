@@ -39,6 +39,10 @@ foreach($result as $res){
 }
 echo '</table>';
 echo '</div>';
+
+echo '<style>
+        body { width: 100%; }
+      </style>'
 ?>
 
 <script language='javascript'>
