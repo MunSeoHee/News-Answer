@@ -42,7 +42,7 @@ echo '</div>';
 
 echo '<style>
         body { max-width: 100% !important; }
-      </style>'
+      </style>';
 ?>
 
 <script language='javascript'>
