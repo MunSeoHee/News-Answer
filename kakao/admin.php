@@ -41,7 +41,7 @@ echo '</table>';
 echo '</div>';
 
 echo '<style>
-        body { width: 100%; }
+        body { width: 100% !important; }
       </style>'
 ?>
 
