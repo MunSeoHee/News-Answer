@@ -15,12 +15,12 @@ echo '<table class="table table-bordered m-1">';
 echo '<thead class="thead-dark text-center">
       <tr>
         <th style="width: 5%">#</th>
-        <th style="width: 15%">date</th>
+        <th style="width: 10%">date</th>
         <th style="width: 10%">user</th>
-        <th style="width: 20%">요청</th>
-        <th style="width: 20%">응답</th>
-        <th style="width: 20%">url</th>
-        <th style="width: 5%">type</th>
+        <th style="width: 25%">요청</th>
+        <th style="width: 25%">응답</th>
+        <th style="width: 10%">url</th>
+        <th style="width: 10%">type</th>
         <th style="width: 5%">file</th>
       </tr>
       </thead>';
