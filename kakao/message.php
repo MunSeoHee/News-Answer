@@ -57,7 +57,7 @@
             $file = 'message.php';
             include "./system_insert.php";
             
-            include './api_test2.php';
+            include './summary.php';
 
             echo <<<EOD
             {
@@ -104,7 +104,7 @@ EOD;
             $type = 'DB';
             $file = 'message.php';
             include "./system_insert.php";
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -150,7 +150,7 @@ EOD;
             $type = 'DB';
             $file = 'message.php';
             include "./system_insert.php";
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -196,7 +196,7 @@ EOD;
             $type = 'DB';
             $file = 'message.php';
             include "./system_insert.php";
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -242,7 +242,7 @@ EOD;
             $type = 'DB';
             $file = 'message.php';
             include "./system_insert.php";
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -288,7 +288,7 @@ EOD;
             $type = 'DB';
             $file = 'message.php';
             include "./system_insert.php";
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -344,7 +344,7 @@ EOD;
             $file = 'message.php';
             include "./system_insert.php";
 
-            include './api_test2.php';
+            include './summary.php';
             echo <<<EOD
             {
                 "message":
@@ -439,7 +439,7 @@ EOD;
             $file = 'message.php';
             include "./system_insert.php";
             
-            include './api_test.php';
+            include './answer.php';
 
             echo <<<EOD
             {
