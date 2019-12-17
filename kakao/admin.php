@@ -12,7 +12,8 @@ $sql = "select * from system order by num desc limit 50";
 $result = mysqli_query($con, $sql);
 
 echo '<table class="table table-bordered m-1">';
-echo '<tr>
+echo '<thead class="thead-dark text-center">
+      <tr>
         <th>#</th>
         <th>date</th>
         <th>user</th>
@@ -21,7 +22,8 @@ echo '<tr>
         <th>url</th>
         <th>type</th>
         <th>file</th>
-      </tr>';
+      </tr>
+      </thead>';
 foreach($result as $res){
     echo '<tr>';
     echo '<td>'.$res['num'].'</td>';
