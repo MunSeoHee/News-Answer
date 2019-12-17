@@ -19,7 +19,7 @@ echo '<thead class="thead-dark text-center">
         <th>user</th>
         <th>요청</th>
         <th>응답</th>
-        <th">url</th>
+        <th>url</th>
         <th>type</th>
         <th>file</th>
       </tr>
