@@ -86,7 +86,7 @@ foreach($result as $url){
         $text = $text[0];
     }
     //중앙일보, 한국경제TV, 한국경제, 서울신문
-    else if(strpos($text[1], 'ⓒ중앙일보') || strpos($text[1], '한국경제') || strpos($text[1], '서울신문')){
+    else if(strpos($text[1], 'ⓒ중앙일보') || strpos($text[1], '한국경제') || strpos($text[1], '서울신문') || strpos($text[1], 'ⓒ(주)블로터앤미디어')){
         $text = explode("<br>▶ <a href=", $text[1]);
         $text = $text[0];
     }
