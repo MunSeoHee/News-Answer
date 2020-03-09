@@ -54,7 +54,7 @@ else{
 $request = "apiId:gachon.pproject.2564f05e95082\napiKey:128c573f3404408f80bab4874e0684eb\nlang:kor\ncontext:".substr($context, 0, 100)."\nquestion:".$question;
 $response = "answer:".$answer."\nprob:".$prob;
 $type = 'api';
-$file = 'api_test.php';
+$file = 'answer.php';
 include "./system_insert.php";
 
 

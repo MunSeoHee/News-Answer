@@ -14,7 +14,7 @@ foreach($result as $res){
 $request = "select script from news where number=".$number;
 $response = $text;
 $type = 'DB';
-$file = 'api_test2.php';
+$file = 'summary.php';
 include "./system_insert.php";
 
 
@@ -28,7 +28,7 @@ if($result){
 }
 $request = "update user set news=".$number." where user_key=".$userkey;
 $type = 'DB';
-$file = 'api_test2.php';
+$file = 'summary.php';
 include "./system_insert.php";
 
 
@@ -85,7 +85,7 @@ for($i=0; $i<2; $i++){
 $url = $urls;
 $request = "apiId:gachon.pproject.2564f05e95082\napiKey:128c573f3404408f80bab4874e0684eb\ncontext:".substr($text, 0, 100);
 $type = 'DB';
-$file = 'api_test2.php';
+$file = 'summary.php';
 include "./system_insert.php";
 
 $summ = str_replace('"',"'",$summ);
@@ -97,7 +97,7 @@ $url = "";
 $request = $response."context:".substr($text, 0, 100);
 $response = $summ;
 $type = 'text';
-$file = 'api_test2.php';
+$file = 'summary.php';
 include "./system_insert.php";
 
 ?>
